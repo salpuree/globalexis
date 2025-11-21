@@ -88,14 +88,34 @@ export function HowItWorks() {
                   className={`relative ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}
                   style={{ animationDelay: `${index * 200}ms` }}
                 >
-                  <div className="bg-dark-800/50 backdrop-blur-sm rounded-2xl p-8 border border-dark-700 hover:border-primary-600 transition-all hover:transform hover:-translate-y-2 h-full group">
+                  <div className={`bg-dark-800/50 backdrop-blur-sm rounded-2xl p-10 border transition-all hover:transform hover:-translate-y-2 h-full group ${
+                    index % 4 === 0 ? 'border-dark-700 hover:border-primary-600' :
+                    index % 4 === 1 ? 'border-dark-700 hover:border-accent-600' :
+                    index % 4 === 2 ? 'border-dark-700 hover:border-amber-600' :
+                    'border-dark-700 hover:border-primary-600'
+                  }`}>
                     <div className="flex flex-col items-center text-center h-full">
-                      <div className="mb-6 relative">
-                        <div className="absolute inset-0 bg-primary-600/20 rounded-full blur-xl group-hover:bg-primary-600/40 transition-all"></div>
-                        <div className="relative p-6 bg-gradient-to-br from-primary-600 to-accent-600 rounded-full group-hover:scale-110 transition-transform">
+                      <div className="mb-8 relative">
+                        <div className={`absolute inset-0 rounded-full blur-xl transition-all group-hover:scale-125 ${
+                          index % 4 === 0 ? 'bg-primary-600/20 group-hover:bg-primary-600/40' :
+                          index % 4 === 1 ? 'bg-accent-600/20 group-hover:bg-accent-600/40' :
+                          index % 4 === 2 ? 'bg-amber-600/20 group-hover:bg-amber-600/40' :
+                          'bg-primary-600/20 group-hover:bg-primary-600/40'
+                        }`}></div>
+                        <div className={`relative p-6 rounded-full group-hover:scale-110 transition-transform bg-gradient-to-br ${
+                          index % 4 === 0 ? 'from-primary-600 to-amber-600' :
+                          index % 4 === 1 ? 'from-accent-600 to-amber-600' :
+                          index % 4 === 2 ? 'from-amber-600 to-primary-600' :
+                          'from-primary-600 to-accent-600'
+                        }`}>
                           <Icon className="w-10 h-10 text-white" />
                         </div>
-                        <div className="absolute -top-2 -right-2 w-8 h-8 bg-dark-900 border-2 border-primary-600 rounded-full flex items-center justify-center text-primary-400 font-bold text-sm">
+                        <div className={`absolute -top-2 -right-2 w-8 h-8 bg-dark-900 border-2 rounded-full flex items-center justify-center font-bold text-sm ${
+                          index % 4 === 0 ? 'border-primary-600 text-primary-400' :
+                          index % 4 === 1 ? 'border-accent-600 text-accent-400' :
+                          index % 4 === 2 ? 'border-amber-600 text-amber-400' :
+                          'border-primary-600 text-primary-400'
+                        }`}>
                           {index + 1}
                         </div>
                       </div>
