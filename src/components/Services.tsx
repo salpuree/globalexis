@@ -104,28 +104,48 @@ export function Services() {
             return (
               <div
                 key={index}
-                className={`group relative flex gap-6 transition-all duration-500 pb-4 ${
+                className={`group relative flex gap-7 transition-all duration-500 pb-6 ${
                   isVisible ? 'animate-fade-in-up' : 'opacity-0'
                 }`}
                 style={{ animationDelay: `${index * 80}ms` }}
                 onMouseMove={handleMouseMove}
               >
                 {/* Neon glow background on hover */}
-                <div className="absolute inset-0 bg-gradient-to-r from-primary-600/0 via-primary-600/0 to-accent-600/0 group-hover:from-primary-600/5 group-hover:via-primary-600/10 group-hover:to-accent-600/5 opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-lg blur-xl -z-10"></div>
+                <div className={`absolute inset-0 bg-gradient-to-r opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-lg blur-xl -z-10 ${
+                  index % 3 === 0 ? 'from-primary-600/5 via-primary-600/10 to-amber-600/5' :
+                  index % 3 === 1 ? 'from-accent-600/5 via-accent-600/10 to-amber-600/5' :
+                  'from-amber-600/5 via-amber-600/10 to-primary-600/5'
+                }`}></div>
 
                 {/* Icon container with neon glow */}
                 <div className="flex-shrink-0 pt-1 relative">
                   <div className="relative">
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary-600 to-accent-400 opacity-0 group-hover:opacity-30 blur-xl transition-all duration-500 rounded-lg"></div>
-                    <div className="relative flex items-center justify-center w-14 h-14 rounded-lg bg-primary-600/20 group-hover:bg-primary-600/40 transition-all duration-500 group-hover:scale-110 border border-primary-600/30 group-hover:border-primary-400/60">
-                      <Icon className="w-7 h-7 text-primary-400 group-hover:text-primary-300 transition-colors" />
+                    <div className={`absolute inset-0 opacity-0 group-hover:opacity-30 blur-xl transition-all duration-500 rounded-lg ${
+                      index % 3 === 0 ? 'bg-gradient-to-br from-primary-600 to-amber-400' :
+                      index % 3 === 1 ? 'bg-gradient-to-br from-accent-600 to-amber-400' :
+                      'bg-gradient-to-br from-amber-600 to-primary-400'
+                    }`}></div>
+                    <div className={`relative flex items-center justify-center w-16 h-16 rounded-lg transition-all duration-500 group-hover:scale-110 border ${
+                      index % 3 === 0 ? 'bg-primary-600/20 group-hover:bg-primary-600/40 border-primary-600/30 group-hover:border-primary-400/60' :
+                      index % 3 === 1 ? 'bg-accent-600/20 group-hover:bg-accent-600/40 border-accent-600/30 group-hover:border-accent-400/60' :
+                      'bg-amber-600/20 group-hover:bg-amber-600/40 border-amber-600/30 group-hover:border-amber-400/60'
+                    }`}>
+                      <Icon className={`w-8 h-8 transition-colors ${
+                        index % 3 === 0 ? 'text-primary-400 group-hover:text-primary-300' :
+                        index % 3 === 1 ? 'text-accent-400 group-hover:text-accent-300' :
+                        'text-amber-400 group-hover:text-amber-300'
+                      }`} />
                     </div>
                   </div>
                 </div>
 
                 {/* Text content */}
                 <div className="flex-1 min-w-0">
-                  <h3 className="text-lg font-bold text-white mb-2 group-hover:text-primary-400 transition-colors duration-500">
+                  <h3 className={`text-lg font-bold text-white mb-3 transition-colors duration-500 ${
+                    index % 3 === 0 ? 'group-hover:text-primary-400' :
+                    index % 3 === 1 ? 'group-hover:text-accent-400' :
+                    'group-hover:text-amber-400'
+                  }`}>
                     {service.title}
                   </h3>
                   <p className="text-gray-400 text-sm leading-relaxed group-hover:text-gray-300 transition-colors duration-500">
@@ -134,10 +154,18 @@ export function Services() {
                 </div>
 
                 {/* Animated bottom border */}
-                <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-primary-600/0 via-primary-600/50 to-primary-600/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className={`absolute bottom-0 left-0 right-0 h-px opacity-0 group-hover:opacity-100 transition-opacity duration-500 ${
+                  index % 3 === 0 ? 'bg-gradient-to-r from-primary-600/0 via-primary-600/50 to-primary-600/0' :
+                  index % 3 === 1 ? 'bg-gradient-to-r from-accent-600/0 via-accent-600/50 to-accent-600/0' :
+                  'bg-gradient-to-r from-amber-600/0 via-amber-600/50 to-amber-600/0'
+                }`}></div>
 
                 {/* Top accent bar on hover */}
-                <div className="absolute top-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary-600 to-accent-400 group-hover:w-8 transition-all duration-500"></div>
+                <div className={`absolute top-0 left-0 w-0 h-0.5 group-hover:w-8 transition-all duration-500 ${
+                  index % 3 === 0 ? 'bg-gradient-to-r from-primary-600 to-amber-400' :
+                  index % 3 === 1 ? 'bg-gradient-to-r from-accent-600 to-amber-400' :
+                  'bg-gradient-to-r from-amber-600 to-primary-400'
+                }`}></div>
               </div>
             );
           })}
