@@ -15,7 +15,7 @@ export function Hero() {
     >
       {/* Animated background with parallax */}
       <div
-        className="absolute inset-0 bg-cover bg-center opacity-40"
+        className="absolute inset-0 bg-cover bg-center opacity-70"
         style={{
           backgroundImage: "url('https://images.pexels.com/photos/5717044/pexels-photo-5717044.jpeg?w=1600&q=80')",
           backgroundPosition: 'center',
