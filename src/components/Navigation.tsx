@@ -50,7 +50,7 @@ export function Navigation() {
               <span className="text-xl font-bold">Globalexis</span>
             </button>
 
-            <div className="hidden md:flex items-center gap-8">
+            <div className="hidden md:flex items-center gap-8" style={{ margin: '120px 0 160px' }}>
               {navLinks.map((link) => (
                 <button
                   key={link.id}
