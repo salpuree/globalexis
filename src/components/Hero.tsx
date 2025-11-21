@@ -13,10 +13,10 @@ export function Hero() {
       id="hero"
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-dark-950 via-dark-900 to-dark-800"
     >
-      <div 
-        className="absolute inset-0 bg-cover bg-center opacity-30"
+      <div
+        className="absolute inset-0 bg-cover bg-center opacity-25"
         style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1600&q=80')",
+          backgroundImage: "url('https://images.pexels.com/photos/5717044/pexels-photo-5717044.jpeg?w=1600&q=80')",
           backgroundPosition: 'center',
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
