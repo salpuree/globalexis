@@ -196,4 +196,27 @@
     background-size: 200% auto;
     animation: text-reveal 3s linear infinite;
   }
+
+  /* Ambient Glow - Subtle amber enhancement */
+  @keyframes ambient-glow {
+    0%, 100% {
+      box-shadow: 0 0 20px rgba(217, 119, 6, 0), 0 0 40px rgba(217, 119, 6, 0);
+    }
+    50% {
+      box-shadow: 0 0 20px rgba(217, 119, 6, 0.15), 0 0 40px rgba(217, 119, 6, 0.08);
+    }
+  }
+
+  .ambient-glow {
+    animation: ambient-glow 4s ease-in-out infinite;
+  }
+
+  /* Enhanced hover effects for cards */
+  .card-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .card-hover:hover {
+    transform: translateY(-4px);
+  }
 }
