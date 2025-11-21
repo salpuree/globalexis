@@ -62,15 +62,6 @@ export function Services() {
     return () => observer.disconnect();
   }, []);
 
-  const colors = [
-    'primary',
-    'accent',
-    'cyan',
-    'blue',
-    'accent',
-    'primary'
-  ];
-
   return (
     <section
       id="services"
@@ -90,53 +81,38 @@ export function Services() {
           </p>
         </div>
 
-        <div className="space-y-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
           {services.map((service, index) => {
             const Icon = service.icon;
             const isVisible = visibleItems.includes(index);
-            const isEven = index % 2 === 0;
 
             return (
               <div
                 key={index}
-                className={`group relative overflow-hidden rounded-2xl transition-all duration-500 ${
+                className={`group flex gap-6 transition-all duration-500 ${
                   isVisible ? 'animate-fade-in-up' : 'opacity-0'
                 }`}
                 style={{ animationDelay: `${index * 80}ms` }}
               >
-                {/* Accent bar on left */}
-                <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-primary-600 via-accent-600 to-primary-600 opacity-30 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-                <div className="relative bg-dark-800/30 backdrop-blur-sm border border-dark-700/50 group-hover:border-dark-600 transition-all duration-500 p-8 hover:bg-dark-800/50">
-                  <div className="flex gap-8 items-start">
-                    {/* Icon */}
-                    <div className="flex-shrink-0">
-                      <div className="flex items-center justify-center w-16 h-16 rounded-xl bg-primary-600/10 group-hover:bg-primary-600/20 transition-all duration-500">
-                        <Icon className="w-8 h-8 text-primary-400 group-hover:text-primary-300 transition-colors" />
-                      </div>
-                    </div>
-
-                    {/* Content */}
-                    <div className="flex-1 min-w-0">
-                      <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-primary-400 transition-colors duration-500">
-                        {service.title}
-                      </h3>
-                      <p className="text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors duration-500">
-                        {service.description}
-                      </p>
-                    </div>
-
-                    {/* Arrow accent */}
-                    <div className="flex-shrink-0 text-primary-600/30 group-hover:text-primary-400 transition-colors duration-500 transform group-hover:translate-x-2 duration-500">
-                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </div>
+                {/* Icon container */}
+                <div className="flex-shrink-0 pt-1">
+                  <div className="flex items-center justify-center w-14 h-14 rounded-lg bg-primary-600/20 group-hover:bg-primary-600/30 transition-all duration-500 group-hover:scale-110">
+                    <Icon className="w-7 h-7 text-primary-400" />
                   </div>
-
-                  {/* Gradient overlay on hover */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-primary-600/0 to-accent-600/0 group-hover:from-primary-600/5 group-hover:to-accent-600/5 rounded-2xl transition-all duration-500 pointer-events-none"></div>
                 </div>
+
+                {/* Text content */}
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-lg font-bold text-white mb-2 group-hover:text-primary-400 transition-colors duration-500">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-400 text-sm leading-relaxed group-hover:text-gray-300 transition-colors duration-500">
+                    {service.description}
+                  </p>
+                </div>
+
+                {/* Bottom border on hover */}
+                <div className="absolute bottom-0 left-6 right-6 h-px bg-gradient-to-r from-primary-600/0 via-primary-600/50 to-primary-600/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
             );
           })}
