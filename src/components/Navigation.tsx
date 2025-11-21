@@ -42,9 +42,9 @@ export function Navigation() {
           <div className="flex items-center justify-between h-20">
             <button
               onClick={() => scrollToSection('hero')}
-              className="flex items-center gap-2 text-white hover:text-primary-400 transition-colors group"
+              className="flex items-center gap-3 text-white hover:text-amber-400 transition-colors group"
             >
-              <div className="p-2 bg-primary-600 rounded-lg group-hover:bg-primary-500 transition-colors">
+              <div className="p-2 bg-gradient-to-br from-primary-600 to-amber-600 rounded-lg group-hover:from-primary-500 group-hover:to-amber-500 transition-colors shadow-lg shadow-amber-600/30">
                 <Headphones className="w-6 h-6" />
               </div>
               <span className="text-xl font-bold">Globalexis</span>
