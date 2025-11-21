@@ -72,16 +72,16 @@ export function Stats() {
     <section
       id="stats"
       ref={sectionRef}
-      className="py-20 bg-gradient-to-r from-dark-900 via-dark-950 to-dark-900 relative overflow-hidden border-y border-dark-800"
+      className="py-24 bg-gradient-to-r from-dark-900 via-dark-950 to-dark-900 relative overflow-hidden border-y border-amber-600/10"
     >
       {/* Animated background effects */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-gradient-to-br from-primary-600/10 to-transparent rounded-full blur-3xl opacity-40 animate-float-enhanced"></div>
-        <div className="absolute top-1/2 right-1/4 w-96 h-96 bg-gradient-to-br from-accent-600/10 to-transparent rounded-full blur-3xl opacity-40 animate-float-enhanced" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-gradient-to-br from-primary-600/10 to-amber-600/5 rounded-full blur-3xl opacity-40 animate-float-enhanced"></div>
+        <div className="absolute top-1/2 right-1/4 w-96 h-96 bg-gradient-to-br from-accent-600/10 to-amber-600/5 rounded-full blur-3xl opacity-40 animate-float-enhanced" style={{ animationDelay: '1s' }}></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {stats.map((stat, index) => (
             <div
               key={index}
@@ -94,13 +94,23 @@ export function Stats() {
               <div className="absolute inset-0 bg-gradient-to-br from-primary-600/0 to-accent-600/0 group-hover:from-primary-600/10 group-hover:to-accent-600/10 rounded-lg transition-all duration-500 blur-xl -z-10"></div>
 
               {/* Card */}
-              <div className="relative p-8 rounded-lg border border-primary-600/20 group-hover:border-primary-600/50 transition-all duration-500 glass-pulse">
+              <div className={`relative p-10 rounded-lg transition-all duration-500 glass-pulse`}>
                 {/* Number with animation */}
-                <div className="mb-4">
-                  <span className="text-5xl lg:text-6xl font-bold bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent">
+                <div className="mb-6">
+                  <span className={`text-5xl lg:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r ${
+                    index % 4 === 0 ? 'from-primary-400 to-amber-400' :
+                    index % 4 === 1 ? 'from-accent-400 to-amber-400' :
+                    index % 4 === 2 ? 'from-amber-400 to-primary-400' :
+                    'from-primary-400 to-accent-400'
+                  }`}>
                     {counters[index] || 0}
                   </span>
-                  <span className="text-3xl font-bold text-accent-400 ml-1">
+                  <span className={`text-3xl font-bold ml-1 ${
+                    index % 4 === 0 ? 'text-primary-400' :
+                    index % 4 === 1 ? 'text-accent-400' :
+                    index % 4 === 2 ? 'text-amber-400' :
+                    'text-primary-400'
+                  }`}>
                     {stat.suffix}
                   </span>
                 </div>
@@ -111,7 +121,12 @@ export function Stats() {
                 </p>
 
                 {/* Top accent line */}
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-0 h-1 bg-gradient-to-r from-primary-600 to-accent-400 group-hover:w-12 transition-all duration-500"></div>
+                <div className={`absolute top-0 left-1/2 -translate-x-1/2 w-0 h-1 group-hover:w-12 transition-all duration-500 ${
+                  index % 4 === 0 ? 'bg-gradient-to-r from-primary-600 to-amber-400' :
+                  index % 4 === 1 ? 'bg-gradient-to-r from-accent-600 to-amber-400' :
+                  index % 4 === 2 ? 'bg-gradient-to-r from-amber-600 to-primary-400' :
+                  'bg-gradient-to-r from-primary-600 to-accent-400'
+                }`}></div>
               </div>
             </div>
           ))}

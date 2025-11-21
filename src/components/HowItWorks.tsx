@@ -56,7 +56,7 @@ export function HowItWorks() {
     <section
       id="how-it-works"
       ref={sectionRef}
-      className="py-24 bg-gradient-to-b from-dark-950 via-dark-900 to-dark-950 relative overflow-hidden"
+      className="py-24 bg-gradient-to-b from-dark-950 via-dark-900 to-dark-950 relative overflow-hidden border-b border-amber-600/10"
     >
       <div className="absolute inset-0">
         <div className="absolute top-1/4 right-0 w-96 h-96 bg-primary-600/5 rounded-full blur-3xl"></div>
@@ -64,20 +64,20 @@ export function HowItWorks() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
+        <div className="text-center mb-20">
+          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-8">
             How It Works
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
             Getting started is simple. Our proven process ensures you're up and running
             quickly with minimal disruption to your operations.
           </p>
         </div>
 
         <div className="relative">
-          <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-primary-600/20 via-accent-600/20 to-primary-600/20 transform -translate-y-1/2"></div>
+          <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-primary-600/20 via-amber-600/20 via-accent-600/20 to-primary-600/20 transform -translate-y-1/2"></div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 relative">
             {steps.map((step, index) => {
               const Icon = step.icon;
               const isVisible = visibleSteps.includes(index);
@@ -88,14 +88,34 @@ export function HowItWorks() {
                   className={`relative ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}
                   style={{ animationDelay: `${index * 200}ms` }}
                 >
-                  <div className="bg-dark-800/50 backdrop-blur-sm rounded-2xl p-8 border border-dark-700 hover:border-primary-600 transition-all hover:transform hover:-translate-y-2 h-full group">
+                  <div className={`bg-dark-800/50 backdrop-blur-sm rounded-2xl p-10 border transition-all hover:transform hover:-translate-y-2 h-full group ${
+                    index % 4 === 0 ? 'border-dark-700 hover:border-primary-600' :
+                    index % 4 === 1 ? 'border-dark-700 hover:border-accent-600' :
+                    index % 4 === 2 ? 'border-dark-700 hover:border-amber-600' :
+                    'border-dark-700 hover:border-primary-600'
+                  }`}>
                     <div className="flex flex-col items-center text-center h-full">
-                      <div className="mb-6 relative">
-                        <div className="absolute inset-0 bg-primary-600/20 rounded-full blur-xl group-hover:bg-primary-600/40 transition-all"></div>
-                        <div className="relative p-6 bg-gradient-to-br from-primary-600 to-accent-600 rounded-full group-hover:scale-110 transition-transform">
+                      <div className="mb-8 relative">
+                        <div className={`absolute inset-0 rounded-full blur-xl transition-all group-hover:scale-125 ${
+                          index % 4 === 0 ? 'bg-primary-600/20 group-hover:bg-primary-600/40' :
+                          index % 4 === 1 ? 'bg-accent-600/20 group-hover:bg-accent-600/40' :
+                          index % 4 === 2 ? 'bg-amber-600/20 group-hover:bg-amber-600/40' :
+                          'bg-primary-600/20 group-hover:bg-primary-600/40'
+                        }`}></div>
+                        <div className={`relative p-6 rounded-full group-hover:scale-110 transition-transform bg-gradient-to-br ${
+                          index % 4 === 0 ? 'from-primary-600 to-amber-600' :
+                          index % 4 === 1 ? 'from-accent-600 to-amber-600' :
+                          index % 4 === 2 ? 'from-amber-600 to-primary-600' :
+                          'from-primary-600 to-accent-600'
+                        }`}>
                           <Icon className="w-10 h-10 text-white" />
                         </div>
-                        <div className="absolute -top-2 -right-2 w-8 h-8 bg-dark-900 border-2 border-primary-600 rounded-full flex items-center justify-center text-primary-400 font-bold text-sm">
+                        <div className={`absolute -top-2 -right-2 w-8 h-8 bg-dark-900 border-2 rounded-full flex items-center justify-center font-bold text-sm ${
+                          index % 4 === 0 ? 'border-primary-600 text-primary-400' :
+                          index % 4 === 1 ? 'border-accent-600 text-accent-400' :
+                          index % 4 === 2 ? 'border-amber-600 text-amber-400' :
+                          'border-primary-600 text-primary-400'
+                        }`}>
                           {index + 1}
                         </div>
                       </div>
@@ -121,8 +141,8 @@ export function HowItWorks() {
           </div>
         </div>
 
-        <div className="mt-16 text-center">
-          <p className="text-gray-300 text-lg mb-6">
+        <div className="mt-20 text-center">
+          <p className="text-gray-300 text-lg mb-8">
             Ready to elevate your back-office operations?
           </p>
           <button
@@ -130,7 +150,7 @@ export function HowItWorks() {
               const element = document.getElementById('contact');
               element?.scrollIntoView({ behavior: 'smooth' });
             }}
-            className="px-8 py-4 bg-gradient-to-r from-primary-600 to-accent-600 hover:from-primary-500 hover:to-accent-500 text-white rounded-lg font-semibold text-lg transition-all hover:scale-105 hover:shadow-2xl hover:shadow-primary-600/50"
+            className="px-10 py-4 bg-gradient-to-r from-primary-600 via-amber-600 to-accent-600 hover:from-primary-500 hover:via-amber-500 hover:to-accent-500 text-white rounded-lg font-semibold text-lg transition-all hover:scale-105 hover:shadow-2xl hover:shadow-amber-600/50"
           >
             Start Your Journey Today
           </button>

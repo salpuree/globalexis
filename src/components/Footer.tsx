@@ -11,12 +11,12 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-dark-950 border-t border-dark-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+    <footer className="bg-dark-950 border-t border-amber-600/20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16">
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="p-2 bg-primary-600 rounded-lg">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="p-2 bg-gradient-to-br from-primary-600 to-amber-600 rounded-lg">
                 <Headphones className="w-6 h-6 text-white" />
               </div>
               <span className="text-xl font-bold text-white">Globalexis</span>
@@ -27,13 +27,13 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold text-white mb-4">Quick Links</h3>
-            <ul className="space-y-3">
+            <h3 className="text-lg font-semibold text-white mb-6">Quick Links</h3>
+            <ul className="space-y-4">
               {['Services', 'Why Us', 'How It Works', 'Contact'].map((item) => (
                 <li key={item}>
                   <button
                     onClick={() => scrollToSection(item.toLowerCase().replace(' ', '-'))}
-                    className="text-gray-400 hover:text-primary-400 transition-colors"
+                    className="text-gray-400 hover:text-amber-400 transition-colors"
                   >
                     {item}
                   </button>
@@ -43,7 +43,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold text-white mb-4">Services</h3>
+            <h3 className="text-lg font-semibold text-white mb-6">Services</h3>
             <ul className="space-y-3 text-gray-400 text-sm">
               <li>Call Handling</li>
               <li>Email Management</li>
@@ -54,18 +54,18 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold text-white mb-4">Contact Info</h3>
-            <div className="space-y-4">
-              <div className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-primary-400 flex-shrink-0 mt-1" />
+            <h3 className="text-lg font-semibold text-white mb-6">Contact Info</h3>
+            <div className="space-y-6">
+              <div className="flex items-start gap-4">
+                <MapPin className="w-5 h-5 text-amber-400 flex-shrink-0 mt-1" />
                 <div className="text-gray-400 text-sm">
                   <p>4500 Cypresswood Drive</p>
                   <p>Apt 825, Spring, TX 77379</p>
-                  <p className="text-accent-400 mt-1 font-medium">Remote services only</p>
+                  <p className="text-amber-400 mt-2 font-medium">Remote services only</p>
                 </div>
               </div>
 
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-4">
                 <Mail className="w-5 h-5 text-primary-400 flex-shrink-0" />
                 <button
                   onClick={() => scrollToSection('contact')}
@@ -78,14 +78,14 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-dark-800">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="mt-16 pt-10 border-t border-dark-700">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <p className="text-gray-400 text-sm">
               © {currentYear} Globalexis Inc. All rights reserved.
             </p>
 
             <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-green-400 rounded-full animate-glow"></div>
+              <div className="w-2 h-2 bg-amber-400 rounded-full animate-glow"></div>
               <span className="text-gray-400 text-sm">Available 24/7</span>
             </div>
           </div>

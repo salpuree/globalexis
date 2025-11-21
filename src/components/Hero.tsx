@@ -11,7 +11,7 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-dark-950 via-dark-900 to-dark-800"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-dark-950 via-dark-900 to-dark-800 border-b border-amber-600/10"
     >
       {/* Animated background with parallax */}
       <div 
@@ -31,13 +31,13 @@ export function Hero() {
       {/* Floating glassmorphic elements */}
       <div className="absolute inset-0 pointer-events-none">
         {/* Top left floating card */}
-        <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-br from-primary-600/5 to-accent-600/5 rounded-full blur-3xl animate-float-enhanced opacity-60"></div>
-        
+        <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-br from-primary-600/5 to-amber-600/5 rounded-full blur-3xl animate-float-enhanced opacity-60"></div>
+
         {/* Bottom right floating card */}
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-br from-accent-600/5 to-primary-600/5 rounded-full blur-3xl animate-float-enhanced opacity-60" style={{ animationDelay: '1s' }}></div>
-        
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-br from-amber-600/5 to-accent-600/5 rounded-full blur-3xl animate-float-enhanced opacity-60" style={{ animationDelay: '1s' }}></div>
+
         {/* Center floating element */}
-        <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-gradient-to-r from-primary-600/3 to-accent-600/3 rounded-full blur-3xl animate-float-enhanced opacity-40" style={{ animationDelay: '2s', transform: 'translate(-50%, -50%)' }}></div>
+        <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-gradient-to-r from-accent-600/3 to-amber-600/3 rounded-full blur-3xl animate-float-enhanced opacity-40" style={{ animationDelay: '2s', transform: 'translate(-50%, -50%)' }}></div>
       </div>
 
       {/* Grid pattern overlay */}
@@ -47,17 +47,17 @@ export function Hero() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-32">
         <div className="animate-fade-in-up">
           {/* Accent badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary-600/10 border border-primary-600/30 rounded-full mb-12 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
-            <Sparkles className="w-4 h-4 text-primary-400 animate-pulse-glow" />
-            <span className="text-sm text-primary-300 font-medium">Elevated Back-Office Solutions</span>
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-amber-600/10 border border-amber-600/30 rounded-full mb-12 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
+            <Sparkles className="w-4 h-4 text-amber-400 animate-pulse-glow" />
+            <span className="text-sm text-amber-300 font-medium">Elevated Back-Office Solutions</span>
           </div>
 
           {/* Main heading with animated gradient */}
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
             Elite Back-Office Services
             <br />
-            <span 
-              className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 via-accent-300 to-primary-400 animate-gradient-text"
+            <span
+              className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 via-amber-300 to-accent-400 animate-gradient-text"
               style={{
                 backgroundSize: '200% 200%'
               }}
@@ -67,19 +67,19 @@ export function Hero() {
           </h1>
 
           {/* Description */}
-          <p className="text-xl sm:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+          <p className="text-xl sm:text-2xl text-gray-300 mb-14 max-w-3xl mx-auto leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
             Professional call handling, booking management, and customer support
             tailored exclusively for luxury ground transportation companies
           </p>
 
           {/* CTA Buttons with neon glow */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
             <button
               onClick={() => scrollToSection('contact')}
-              className="relative px-8 py-4 bg-primary-600 hover:bg-primary-500 text-white rounded-lg font-semibold text-lg transition-all hover:scale-105 group overflow-hidden"
+              className="relative px-10 py-4 bg-gradient-to-r from-primary-600 to-amber-600 hover:from-primary-500 hover:to-amber-500 text-white rounded-lg font-semibold text-lg transition-all hover:scale-105 group overflow-hidden shadow-lg shadow-primary-600/30"
             >
               {/* Neon glow effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-primary-600 to-accent-400 opacity-0 group-hover:opacity-20 blur-lg transition-opacity"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-primary-600 to-amber-400 opacity-0 group-hover:opacity-20 blur-lg transition-opacity"></div>
               <span className="relative flex items-center gap-2">
                 Get Started Today
                 <span className="inline-block group-hover:translate-x-1 transition-transform">→</span>
@@ -109,18 +109,18 @@ export function Hero() {
         </div>
 
         {/* Floating stats cards */}
-        <div className="grid grid-cols-3 gap-4 mt-24 max-w-2xl mx-auto">
-          <div className="glass-pulse backdrop-blur-sm bg-dark-800/30 border border-primary-600/20 rounded-xl p-4 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
+        <div className="grid grid-cols-3 gap-6 mt-3 max-w-2xl mx-auto">
+          <div className="glass-pulse backdrop-blur-sm bg-dark-800/30 rounded-xl p-6 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
             <div className="text-2xl font-bold text-primary-400">24/7</div>
-            <div className="text-xs text-gray-400 mt-1">Always Available</div>
+            <div className="text-xs text-gray-400 mt-2">Always Available</div>
           </div>
-          <div className="glass-pulse backdrop-blur-sm bg-dark-800/30 border border-accent-600/20 rounded-xl p-4 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
-            <div className="text-2xl font-bold text-accent-400">100%</div>
-            <div className="text-xs text-gray-400 mt-1">Client Focused</div>
+          <div className="glass-pulse backdrop-blur-sm bg-dark-800/30 rounded-xl p-6 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
+            <div className="text-2xl font-bold text-amber-400">100%</div>
+            <div className="text-xs text-gray-400 mt-2">Client Focused</div>
           </div>
-          <div className="glass-pulse backdrop-blur-sm bg-dark-800/30 border border-primary-600/20 rounded-xl p-4 animate-fade-in-up" style={{ animationDelay: '0.7s' }}>
-            <div className="text-2xl font-bold text-primary-400">Expert</div>
-            <div className="text-xs text-gray-400 mt-1">Team Support</div>
+          <div className="glass-pulse backdrop-blur-sm bg-dark-800/30 rounded-xl p-6 animate-fade-in-up" style={{ animationDelay: '0.7s' }}>
+            <div className="text-2xl font-bold text-accent-400">Expert</div>
+            <div className="text-xs text-gray-400 mt-2">Team Support</div>
           </div>
         </div>
       </div>

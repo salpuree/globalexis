@@ -52,38 +52,46 @@ export function WhyChooseUs() {
     <section
       id="why-us"
       ref={sectionRef}
-      className="py-24 bg-gradient-to-b from-dark-900 to-dark-950 relative overflow-hidden"
+      className="py-24 bg-gradient-to-b from-dark-900 to-dark-950 relative overflow-hidden border-b border-amber-600/10"
     >
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary-600/50 to-transparent"></div>
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-amber-600/30 to-transparent"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-20 items-center">
           <div className={`${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
-            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
+            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-8">
               Why Choose
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-accent-400">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 via-amber-300 to-accent-400">
                 {' '}Globalexis
               </span>
             </h2>
 
-            <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+            <p className="text-xl text-gray-300 mb-10 leading-relaxed">
               When your reputation depends on flawless service, you need a back-office partner
               who understands the luxury transport industry inside and out.
             </p>
 
-            <div className="space-y-6">
+            <div className="space-y-8">
               {benefits.map((benefit, index) => {
                 const Icon = benefit.icon;
+                const colors = [
+                  { bg: 'bg-primary-600/10', text: 'text-primary-400' },
+                  { bg: 'bg-accent-600/10', text: 'text-accent-400' },
+                  { bg: 'bg-amber-600/10', text: 'text-amber-400' },
+                  { bg: 'bg-primary-600/10', text: 'text-primary-400' }
+                ];
+                const color = colors[index % colors.length];
+
                 return (
                   <div
                     key={index}
-                    className={`flex gap-4 ${
+                    className={`flex gap-5 ${
                       isVisible ? 'animate-slide-in-left' : 'opacity-0'
                     }`}
                     style={{ animationDelay: `${index * 150}ms` }}
                   >
-                    <div className="flex-shrink-0 p-3 bg-primary-600/10 rounded-lg h-fit">
-                      <Icon className="w-6 h-6 text-primary-400" />
+                    <div className={`flex-shrink-0 p-3 ${color.bg} rounded-lg h-fit`}>
+                      <Icon className={`w-6 h-6 ${color.text}`} />
                     </div>
                     <div>
                       <h3 className="text-xl font-semibold text-white mb-2">

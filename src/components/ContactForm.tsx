@@ -77,25 +77,25 @@ export function ContactForm() {
   ];
 
   return (
-    <section id="contact" className="py-24 bg-gradient-to-b from-dark-950 to-dark-900 relative overflow-hidden">
+    <section id="contact" className="py-24 bg-gradient-to-b from-dark-950 to-dark-900 relative overflow-hidden border-b border-amber-600/10">
       <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16">
+        <div className="grid lg:grid-cols-2 gap-20">
           <div className="animate-fade-in-up">
-            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
+            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-8">
               Let's Start the Conversation
             </h2>
 
-            <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+            <p className="text-xl text-gray-300 mb-10 leading-relaxed">
               Ready to transform your back-office operations? Fill out the form and our team
               will reach out to discuss how we can support your luxury transport business.
             </p>
 
-            <div className="space-y-6">
-              <div className="flex gap-4 items-start p-6 bg-dark-800/50 backdrop-blur-sm rounded-xl border border-dark-700">
-                <div className="p-3 bg-primary-600/10 rounded-lg">
-                  <Mail className="w-6 h-6 text-primary-400" />
+            <div className="space-y-8">
+              <div className="flex gap-5 items-start p-8 bg-dark-800/50 backdrop-blur-sm rounded-xl border border-amber-600/20 hover:border-amber-600/50 transition-colors">
+                <div className="p-3 bg-amber-600/10 rounded-lg">
+                  <Mail className="w-6 h-6 text-amber-400" />
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-white mb-2">Email Response</h3>
@@ -105,11 +105,11 @@ export function ContactForm() {
                 </div>
               </div>
 
-              <div className="p-6 bg-dark-800/50 backdrop-blur-sm rounded-xl border border-dark-700">
-                <h3 className="text-lg font-semibold text-white mb-4">Our Office</h3>
+              <div className="p-8 bg-dark-800/50 backdrop-blur-sm rounded-xl border border-primary-600/20 hover:border-primary-600/50 transition-colors">
+                <h3 className="text-lg font-semibold text-white mb-5">Our Office</h3>
                 <p className="text-gray-300 mb-2">4500 Cypresswood Drive</p>
                 <p className="text-gray-300 mb-4">Apt 825, Spring, TX 77379</p>
-                <p className="text-sm text-accent-400 font-medium">
+                <p className="text-sm text-primary-400 font-medium">
                   Remote services only - No physical visits
                 </p>
               </div>
@@ -117,9 +117,9 @@ export function ContactForm() {
           </div>
 
           <div className="animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-            <form onSubmit={handleSubmit} className="bg-dark-800/50 backdrop-blur-sm rounded-2xl p-8 border border-dark-700">
+            <form onSubmit={handleSubmit} className="bg-dark-800/50 backdrop-blur-sm rounded-2xl p-10 border border-dark-700">
               {status === 'success' && (
-                <div className="mb-6 p-4 bg-green-600/10 border border-green-600/30 rounded-lg flex items-center gap-3 animate-scale-in">
+                <div className="mb-8 p-5 bg-green-600/10 border border-green-600/30 rounded-lg flex items-center gap-3 animate-scale-in">
                   <CheckCircle2 className="w-6 h-6 text-green-400" />
                   <p className="text-green-400 font-medium">
                     Thank you! We'll be in touch soon.
@@ -128,7 +128,7 @@ export function ContactForm() {
               )}
 
               {status === 'error' && (
-                <div className="mb-6 p-4 bg-red-600/10 border border-red-600/30 rounded-lg flex items-center gap-3 animate-scale-in">
+                <div className="mb-8 p-5 bg-red-600/10 border border-red-600/30 rounded-lg flex items-center gap-3 animate-scale-in">
                   <AlertCircle className="w-6 h-6 text-red-400" />
                   <p className="text-red-400 font-medium">
                     {errorMessage || 'Something went wrong. Please try again.'}
@@ -136,7 +136,7 @@ export function ContactForm() {
                 </div>
               )}
 
-              <div className="space-y-6">
+              <div className="space-y-7">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
                     Full Name *
@@ -249,7 +249,7 @@ export function ContactForm() {
                 <button
                   type="submit"
                   disabled={status === 'submitting'}
-                  className="w-full px-8 py-4 bg-gradient-to-r from-primary-600 to-accent-600 hover:from-primary-500 hover:to-accent-500 text-white rounded-lg font-semibold text-lg transition-all hover:scale-105 hover:shadow-2xl hover:shadow-primary-600/50 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                  className="w-full px-8 py-4 bg-gradient-to-r from-primary-600 via-amber-600 to-accent-600 hover:from-primary-500 hover:via-amber-500 hover:to-accent-500 text-white rounded-lg font-semibold text-lg transition-all hover:scale-105 hover:shadow-2xl hover:shadow-amber-600/50 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                 >
                   {status === 'submitting' ? 'Submitting...' : 'Send Message'}
                 </button>
