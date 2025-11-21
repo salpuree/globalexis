@@ -117,9 +117,9 @@ export function ContactForm() {
           </div>
 
           <div className="animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-            <form onSubmit={handleSubmit} className="bg-dark-800/50 backdrop-blur-sm rounded-2xl p-8 border border-dark-700">
+            <form onSubmit={handleSubmit} className="bg-dark-800/50 backdrop-blur-sm rounded-2xl p-10 border border-dark-700">
               {status === 'success' && (
-                <div className="mb-6 p-4 bg-green-600/10 border border-green-600/30 rounded-lg flex items-center gap-3 animate-scale-in">
+                <div className="mb-8 p-5 bg-green-600/10 border border-green-600/30 rounded-lg flex items-center gap-3 animate-scale-in">
                   <CheckCircle2 className="w-6 h-6 text-green-400" />
                   <p className="text-green-400 font-medium">
                     Thank you! We'll be in touch soon.
@@ -128,7 +128,7 @@ export function ContactForm() {
               )}
 
               {status === 'error' && (
-                <div className="mb-6 p-4 bg-red-600/10 border border-red-600/30 rounded-lg flex items-center gap-3 animate-scale-in">
+                <div className="mb-8 p-5 bg-red-600/10 border border-red-600/30 rounded-lg flex items-center gap-3 animate-scale-in">
                   <AlertCircle className="w-6 h-6 text-red-400" />
                   <p className="text-red-400 font-medium">
                     {errorMessage || 'Something went wrong. Please try again.'}
@@ -136,7 +136,7 @@ export function ContactForm() {
                 </div>
               )}
 
-              <div className="space-y-6">
+              <div className="space-y-7">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
                     Full Name *
