@@ -1,56 +1,36 @@
 import { Phone, Mail, Calendar, RefreshCw, FileText, Clock } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 
-const gradientMap: { [key: string]: string } = {
-  'from-primary-600 to-primary-400': 'linear-gradient(135deg, #0284c7, #38bdf8)',
-  'from-accent-600 to-cyan-400': 'linear-gradient(135deg, #0891b2, #22d3ee)',
-  'from-blue-600 to-primary-400': 'linear-gradient(135deg, #2563eb, #38bdf8)',
-  'from-accent-600 to-accent-400': 'linear-gradient(135deg, #0891b2, #22d3ee)',
-  'from-cyan-600 to-primary-400': 'linear-gradient(135deg, #0891b2, #38bdf8)',
-};
-
 const services = [
   {
     icon: Phone,
     title: 'Professional Call Handling',
     description: 'Expert representatives manage your calls with professionalism and care, ensuring every client interaction reflects your luxury brand standards.',
-    gradient: 'from-primary-600 to-primary-400',
-    size: 'lg'
   },
   {
     icon: Mail,
     title: 'Email Management',
     description: 'Timely, professional responses to all email inquiries, maintaining your reputation for exceptional customer service around the clock.',
-    gradient: 'from-accent-600 to-cyan-400',
-    size: 'md'
   },
   {
     icon: Calendar,
     title: 'Booking Coordination',
     description: 'Seamless reservation management for your high-end clientele, from initial request to confirmed pickup with meticulous attention to detail.',
-    gradient: 'from-blue-600 to-primary-400',
-    size: 'md'
   },
   {
     icon: RefreshCw,
     title: 'Changes & Modifications',
     description: 'Flexible handling of schedule adjustments and service modifications, keeping your operations running smoothly without missing a beat.',
-    gradient: 'from-accent-600 to-accent-400',
-    size: 'md'
   },
   {
     icon: FileText,
     title: 'Status Updates',
     description: 'Real-time communication with clients about their service status, ensuring transparency and peace of mind throughout their journey.',
-    gradient: 'from-cyan-600 to-primary-400',
-    size: 'md'
   },
   {
     icon: Clock,
     title: 'Quote Inquiries',
     description: 'Accurate, professional rate quotes delivered promptly, helping convert inquiries into bookings with competitive and transparent pricing.',
-    gradient: 'from-primary-600 to-accent-400',
-    size: 'lg'
   },
 ];
 
@@ -82,6 +62,15 @@ export function Services() {
     return () => observer.disconnect();
   }, []);
 
+  const colors = [
+    'primary',
+    'accent',
+    'cyan',
+    'blue',
+    'accent',
+    'primary'
+  ];
+
   return (
     <section
       id="services"
@@ -101,68 +90,52 @@ export function Services() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-max">
+        <div className="space-y-6">
           {services.map((service, index) => {
             const Icon = service.icon;
             const isVisible = visibleItems.includes(index);
-            const isLarge = service.size === 'lg';
-            const offset = index % 2 === 0 ? 'md:translate-y-0' : 'md:translate-y-12';
-            const gradientColor = gradientMap[service.gradient] || 'linear-gradient(135deg, #0284c7, #38bdf8)';
-            
+            const isEven = index % 2 === 0;
+
             return (
               <div
                 key={index}
-                className={`group relative overflow-hidden rounded-2xl transition-all duration-500 cursor-pointer ${
-                  isLarge ? 'md:col-span-1 md:row-span-2' : 'md:col-span-1'
-                } ${offset} ${
+                className={`group relative overflow-hidden rounded-2xl transition-all duration-500 ${
                   isVisible ? 'animate-fade-in-up' : 'opacity-0'
                 }`}
                 style={{ animationDelay: `${index * 80}ms` }}
               >
-                {/* Gradient background with diagonal accent */}
-                <div
-                  className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-500"
-                  style={{ background: gradientColor }}
-                ></div>
+                {/* Accent bar on left */}
+                <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-primary-600 via-accent-600 to-primary-600 opacity-30 group-hover:opacity-100 transition-opacity duration-500"></div>
 
-                {/* Diagonal accent bar */}
-                <div
-                  className="absolute -top-24 -right-24 w-48 h-48 opacity-20 group-hover:opacity-30 rounded-full blur-3xl transition-all duration-500 group-hover:scale-110 group-hover:-top-20 group-hover:-right-20"
-                  style={{ background: gradientColor }}
-                ></div>
-
-                {/* Border */}
-                <div className="absolute inset-0 border border-dark-700/50 group-hover:border-dark-700 rounded-2xl transition-colors duration-500"></div>
-
-                {/* Content */}
-                <div className="relative z-10 p-8 h-full flex flex-col justify-between bg-dark-900/50 backdrop-blur-sm rounded-2xl">
-                  <div>
+                <div className="relative bg-dark-800/30 backdrop-blur-sm border border-dark-700/50 group-hover:border-dark-600 transition-all duration-500 p-8 hover:bg-dark-800/50">
+                  <div className="flex gap-8 items-start">
                     {/* Icon */}
-                    <div 
-                      className="mb-6 inline-flex p-4 rounded-xl opacity-20 group-hover:opacity-30 transition-all duration-500 group-hover:scale-110"
-                      style={{ background: gradientColor }}
-                    >
-                      <Icon className="w-8 h-8 text-white" />
+                    <div className="flex-shrink-0">
+                      <div className="flex items-center justify-center w-16 h-16 rounded-xl bg-primary-600/10 group-hover:bg-primary-600/20 transition-all duration-500">
+                        <Icon className="w-8 h-8 text-primary-400 group-hover:text-primary-300 transition-colors" />
+                      </div>
                     </div>
 
-                    {/* Title */}
-                    <h3 className="text-xl font-bold text-white mb-4 group-hover:text-primary-400 transition-colors duration-500">
-                      {service.title}
-                    </h3>
+                    {/* Content */}
+                    <div className="flex-1 min-w-0">
+                      <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-primary-400 transition-colors duration-500">
+                        {service.title}
+                      </h3>
+                      <p className="text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors duration-500">
+                        {service.description}
+                      </p>
+                    </div>
 
-                    {/* Description */}
-                    <p className="text-gray-400 text-sm leading-relaxed group-hover:text-gray-300 transition-colors duration-500">
-                      {service.description}
-                    </p>
+                    {/* Arrow accent */}
+                    <div className="flex-shrink-0 text-primary-600/30 group-hover:text-primary-400 transition-colors duration-500 transform group-hover:translate-x-2 duration-500">
+                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </div>
                   </div>
 
-                  {/* Bottom accent line */}
-                  <div className="mt-8 pt-6 border-t border-dark-700/30">
-                    <div 
-                      className="h-1 w-0 group-hover:w-12 transition-all duration-500"
-                      style={{ background: gradientColor }}
-                    ></div>
-                  </div>
+                  {/* Gradient overlay on hover */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-primary-600/0 to-accent-600/0 group-hover:from-primary-600/5 group-hover:to-accent-600/5 rounded-2xl transition-all duration-500 pointer-events-none"></div>
                 </div>
               </div>
             );
