@@ -89,7 +89,7 @@ export function Services() {
             return (
               <div
                 key={index}
-                className={`group flex gap-6 transition-all duration-500 ${
+                className={`group relative flex gap-6 transition-all duration-500 pb-4 ${
                   isVisible ? 'animate-fade-in-up' : 'opacity-0'
                 }`}
                 style={{ animationDelay: `${index * 80}ms` }}
@@ -112,7 +112,7 @@ export function Services() {
                 </div>
 
                 {/* Bottom border on hover */}
-                <div className="absolute bottom-0 left-6 right-6 h-px bg-gradient-to-r from-primary-600/0 via-primary-600/50 to-primary-600/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-primary-600/0 via-primary-600/50 to-primary-600/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
             );
           })}
