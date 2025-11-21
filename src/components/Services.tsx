@@ -85,7 +85,7 @@ export function Services() {
       <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-accent-600/20 to-amber-600/10 rounded-full blur-3xl animate-float-enhanced opacity-30" style={{ animationDelay: '1s' }}></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-24">
+        <div className="text-center mb-10">
           <h2 className="text-4xl sm:text-5xl font-bold text-white mb-8 animate-fade-in-up">
             Comprehensive Back-Office Solutions
           </h2>
