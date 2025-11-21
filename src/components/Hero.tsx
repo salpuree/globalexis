@@ -13,9 +13,9 @@ export function Hero() {
       id="hero"
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-dark-950 via-dark-900 to-dark-800"
     >
-      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1533473359331-35a2304efbef?w=1600')] bg-cover bg-center opacity-20"></div>
+      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1600')] bg-cover bg-center opacity-40"></div>
 
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-dark-900/50 to-dark-900"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-dark-900/30 to-dark-900"></div>
 
       <div className="absolute inset-0">
         <div className="absolute top-20 left-10 w-72 h-72 bg-primary-600/10 rounded-full blur-3xl animate-float"></div>
