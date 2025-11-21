@@ -1,5 +1,6 @@
 import { Navigation } from './components/Navigation';
 import { Hero } from './components/Hero';
+import { Stats } from './components/Stats';
 import { Services } from './components/Services';
 import { WhyChooseUs } from './components/WhyChooseUs';
 import { HowItWorks } from './components/HowItWorks';
@@ -11,6 +12,7 @@ function App() {
     <div className="min-h-screen bg-dark-950">
       <Navigation />
       <Hero />
+      <Stats />
       <Services />
       <WhyChooseUs />
       <HowItWorks />
