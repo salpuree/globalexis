@@ -12,11 +12,15 @@ export function Hero() {
     <section
       id="hero"
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-dark-950 via-dark-900 to-dark-800"
+      style={{
+        backgroundImage: `
+          linear-gradient(135deg, rgba(2, 6, 23, 1), rgba(15, 23, 42, 1)),
+          linear-gradient(135deg, rgba(6, 78, 110, 0.2), rgba(34, 211, 238, 0.2))
+        `,
+        backgroundSize: '100% 100%',
+        backgroundAttachment: 'fixed'
+      }}
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-primary-600/20 via-transparent to-accent-600/20"></div>
-
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-dark-900/30 to-dark-900"></div>
-
       <div className="absolute inset-0">
         <div className="absolute top-20 left-10 w-72 h-72 bg-primary-600/10 rounded-full blur-3xl animate-float"></div>
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent-600/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }}></div>
