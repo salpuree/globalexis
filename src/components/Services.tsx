@@ -35,8 +35,9 @@ const services = [
 ];
 
 export function Services() {
-  const [visibleCards, setVisibleCards] = useState<number[]>([]);
+  const [visibleItems, setVisibleItems] = useState<number[]>([]);
   const sectionRef = useRef<HTMLDivElement>(null);
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -45,8 +46,8 @@ export function Services() {
           if (entry.isIntersecting) {
             services.forEach((_, index) => {
               setTimeout(() => {
-                setVisibleCards((prev) => [...prev, index]);
-              }, index * 100);
+                setVisibleItems((prev) => [...prev, index]);
+              }, index * 80);
             });
             observer.disconnect();
           }
@@ -62,61 +63,90 @@ export function Services() {
     return () => observer.disconnect();
   }, []);
 
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    setMousePos({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top,
+    });
+  };
+
   return (
     <section
       id="services"
       ref={sectionRef}
-      className="py-24 bg-gradient-to-b from-dark-950 to-dark-900 relative overflow-hidden"
+      className="py-24 bg-gradient-to-b from-dark-900 to-dark-950 relative overflow-hidden"
     >
+      {/* Animated background elements */}
       <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
+      
+      {/* Floating accent orbs */}
+      <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-primary-600/20 to-transparent rounded-full blur-3xl animate-float-enhanced opacity-30"></div>
+      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-accent-600/20 to-transparent rounded-full blur-3xl animate-float-enhanced opacity-30" style={{ animationDelay: '1s' }}></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
+        <div className="text-center mb-20">
+          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6 animate-fade-in-up">
             Comprehensive Back-Office Solutions
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <div className="h-1 w-20 bg-gradient-to-r from-primary-600 to-accent-400 mx-auto mb-6 animate-pulse-glow"></div>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
             Everything you need to deliver world-class service to your luxury transport clients,
             handled with expertise and precision
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
           {services.map((service, index) => {
             const Icon = service.icon;
-            const isVisible = visibleCards.includes(index);
+            const isVisible = visibleItems.includes(index);
 
             return (
               <div
                 key={index}
-                className={`group relative bg-dark-800/50 backdrop-blur-sm rounded-2xl p-8 border border-dark-700 hover:border-primary-600 transition-all duration-500 hover:transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary-600/20 ${
-                  isVisible ? 'animate-scale-in' : 'opacity-0'
+                className={`group relative flex gap-6 transition-all duration-500 pb-4 ${
+                  isVisible ? 'animate-fade-in-up' : 'opacity-0'
                 }`}
-                style={{ animationDelay: `${index * 100}ms` }}
+                style={{ animationDelay: `${index * 80}ms` }}
+                onMouseMove={handleMouseMove}
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-primary-600/0 to-accent-600/0 group-hover:from-primary-600/5 group-hover:to-accent-600/5 rounded-2xl transition-all duration-500"></div>
+                {/* Neon glow background on hover */}
+                <div className="absolute inset-0 bg-gradient-to-r from-primary-600/0 via-primary-600/0 to-accent-600/0 group-hover:from-primary-600/5 group-hover:via-primary-600/10 group-hover:to-accent-600/5 opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-lg blur-xl -z-10"></div>
 
-                <div className="relative z-10">
-                  <div className="mb-6 inline-flex p-4 bg-primary-600/10 rounded-xl group-hover:bg-primary-600/20 transition-all group-hover:scale-110 duration-300">
-                    <Icon className="w-8 h-8 text-primary-400" />
+                {/* Icon container with neon glow */}
+                <div className="flex-shrink-0 pt-1 relative">
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary-600 to-accent-400 opacity-0 group-hover:opacity-30 blur-xl transition-all duration-500 rounded-lg"></div>
+                    <div className="relative flex items-center justify-center w-14 h-14 rounded-lg bg-primary-600/20 group-hover:bg-primary-600/40 transition-all duration-500 group-hover:scale-110 border border-primary-600/30 group-hover:border-primary-400/60">
+                      <Icon className="w-7 h-7 text-primary-400 group-hover:text-primary-300 transition-colors" />
+                    </div>
                   </div>
+                </div>
 
-                  <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-primary-400 transition-colors">
+                {/* Text content */}
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-lg font-bold text-white mb-2 group-hover:text-primary-400 transition-colors duration-500">
                     {service.title}
                   </h3>
-
-                  <p className="text-gray-400 leading-relaxed">
+                  <p className="text-gray-400 text-sm leading-relaxed group-hover:text-gray-300 transition-colors duration-500">
                     {service.description}
                   </p>
                 </div>
+
+                {/* Animated bottom border */}
+                <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-primary-600/0 via-primary-600/50 to-primary-600/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                {/* Top accent bar on hover */}
+                <div className="absolute top-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary-600 to-accent-400 group-hover:w-8 transition-all duration-500"></div>
               </div>
             );
           })}
         </div>
 
-        <div className="mt-16 text-center">
-          <div className="inline-flex items-center gap-3 px-6 py-3 bg-dark-800/50 backdrop-blur-sm border border-primary-600/30 rounded-full">
-            <div className="w-2 h-2 bg-primary-400 rounded-full animate-glow"></div>
+        {/* Footer badge with glow */}
+        <div className="mt-20 text-center">
+          <div className="inline-flex items-center gap-3 px-6 py-3 bg-dark-800/50 backdrop-blur-sm border border-primary-600/30 rounded-full animate-fade-in-up neon-glow" style={{ animationDelay: '0.5s' }}>
+            <div className="w-2 h-2 bg-primary-400 rounded-full animate-pulse-glow"></div>
             <span className="text-gray-300 font-medium">Available 24/7 for Your Business</span>
           </div>
         </div>

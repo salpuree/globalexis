@@ -19,4 +19,179 @@
       linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
     background-size: 40px 40px;
   }
+
+  /* Animated Gradient Text */
+  @keyframes gradient-shift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .animate-gradient-text {
+    background-size: 200% 200%;
+    animation: gradient-shift 4s ease infinite;
+  }
+
+  /* Neon Glow Effect */
+  @keyframes neon-glow {
+    0%, 100% {
+      box-shadow: 0 0 5px rgba(6, 78, 110, 0.3), 0 0 20px rgba(6, 78, 110, 0.1);
+    }
+    50% {
+      box-shadow: 0 0 20px rgba(6, 78, 110, 0.6), 0 0 40px rgba(6, 78, 110, 0.3);
+    }
+  }
+
+  .neon-glow {
+    animation: neon-glow 2s ease-in-out infinite;
+  }
+
+  /* Enhanced Float Animation */
+  @keyframes float-enhanced {
+    0%, 100% {
+      transform: translateY(0px) translateX(0px);
+    }
+    33% {
+      transform: translateY(-20px) translateX(10px);
+    }
+    66% {
+      transform: translateY(-10px) translateX(-10px);
+    }
+  }
+
+  .animate-float-enhanced {
+    animation: float-enhanced 6s ease-in-out infinite;
+  }
+
+  /* Parallax Movement */
+  @keyframes parallax-move {
+    0% {
+      transform: translateY(0px) scale(1);
+    }
+    100% {
+      transform: translateY(40px) scale(1.05);
+    }
+  }
+
+  .parallax {
+    animation: parallax-move 2s ease-out forwards;
+  }
+
+  /* Glassmorphic Pulse */
+  @keyframes glass-pulse {
+    0%, 100% {
+      background-color: rgba(15, 23, 42, 0.3);
+      border-color: rgba(2, 132, 199, 0.2);
+    }
+    50% {
+      background-color: rgba(15, 23, 42, 0.5);
+      border-color: rgba(2, 132, 199, 0.4);
+    }
+  }
+
+  .glass-pulse {
+    animation: glass-pulse 3s ease-in-out infinite;
+  }
+
+  /* Staggered Fade In Up */
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.8s ease-out forwards;
+  }
+
+  /* Counter Animation */
+  @keyframes counter-spin {
+    from {
+      opacity: 0;
+      transform: scale(0.5) rotateY(90deg);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1) rotateY(0deg);
+    }
+  }
+
+  .animate-counter {
+    animation: counter-spin 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  }
+
+  /* Shimmer Effect */
+  @keyframes shimmer {
+    0% {
+      background-position: -1000px 0;
+    }
+    100% {
+      background-position: 1000px 0;
+    }
+  }
+
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.2) 20%,
+      rgba(255, 255, 255, 0) 40%
+    );
+    background-size: 1000px 100%;
+    animation: shimmer 2s infinite;
+  }
+
+  /* Rotating Border */
+  @keyframes rotating-border {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .rotating-border {
+    animation: rotating-border 20s linear infinite;
+  }
+
+  /* Pulse Glow */
+  @keyframes pulse-glow {
+    0%, 100% {
+      opacity: 0.4;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  /* Text Reveal */
+  @keyframes text-reveal {
+    0% {
+      background-position: 0% center;
+    }
+    100% {
+      background-position: 100% center;
+    }
+  }
+
+  .text-reveal {
+    background-size: 200% auto;
+    animation: text-reveal 3s linear infinite;
+  }
 }
