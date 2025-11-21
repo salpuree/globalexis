@@ -104,7 +104,7 @@ export function Services() {
             return (
               <div
                 key={index}
-                className={`group relative flex gap-7 transition-all duration-500 pb-6 ${
+                className={`group relative flex gap-7 transition-all duration-500 pb-6 p-6 rounded-xl hover:bg-dark-800/40 ${
                   isVisible ? 'animate-fade-in-up' : 'opacity-0'
                 }`}
                 style={{ animationDelay: `${index * 80}ms` }}
