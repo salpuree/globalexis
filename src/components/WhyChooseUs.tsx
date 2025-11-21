@@ -52,9 +52,9 @@ export function WhyChooseUs() {
     <section
       id="why-us"
       ref={sectionRef}
-      className="py-24 bg-gradient-to-b from-dark-900 to-dark-950 relative overflow-hidden"
+      className="py-24 bg-gradient-to-b from-dark-900 to-dark-950 relative overflow-hidden border-b border-amber-600/10"
     >
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary-600/50 to-transparent"></div>
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-amber-600/30 to-transparent"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-20 items-center">
