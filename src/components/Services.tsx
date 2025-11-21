@@ -1,6 +1,14 @@
 import { Phone, Mail, Calendar, RefreshCw, FileText, Clock } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 
+const gradientMap: { [key: string]: string } = {
+  'from-primary-600 to-primary-400': 'linear-gradient(135deg, #0284c7, #38bdf8)',
+  'from-accent-600 to-cyan-400': 'linear-gradient(135deg, #0891b2, #22d3ee)',
+  'from-blue-600 to-primary-400': 'linear-gradient(135deg, #2563eb, #38bdf8)',
+  'from-accent-600 to-accent-400': 'linear-gradient(135deg, #0891b2, #22d3ee)',
+  'from-cyan-600 to-primary-400': 'linear-gradient(135deg, #0891b2, #38bdf8)',
+};
+
 const services = [
   {
     icon: Phone,
@@ -99,6 +107,7 @@ export function Services() {
             const isVisible = visibleItems.includes(index);
             const isLarge = service.size === 'lg';
             const offset = index % 2 === 0 ? 'md:translate-y-0' : 'md:translate-y-12';
+            const gradientColor = gradientMap[service.gradient] || 'linear-gradient(135deg, #0284c7, #38bdf8)';
             
             return (
               <div
@@ -112,12 +121,14 @@ export function Services() {
               >
                 {/* Gradient background with diagonal accent */}
                 <div
-                  className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-10 group-hover:opacity-20 transition-opacity duration-500`}
+                  className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-500"
+                  style={{ background: gradientColor }}
                 ></div>
 
                 {/* Diagonal accent bar */}
                 <div
-                  className={`absolute -top-24 -right-24 w-48 h-48 bg-gradient-to-br ${service.gradient} opacity-20 group-hover:opacity-30 rounded-full blur-3xl transition-all duration-500 group-hover:scale-110 group-hover:-top-20 group-hover:-right-20`}
+                  className="absolute -top-24 -right-24 w-48 h-48 opacity-20 group-hover:opacity-30 rounded-full blur-3xl transition-all duration-500 group-hover:scale-110 group-hover:-top-20 group-hover:-right-20"
+                  style={{ background: gradientColor }}
                 ></div>
 
                 {/* Border */}
@@ -127,8 +138,11 @@ export function Services() {
                 <div className="relative z-10 p-8 h-full flex flex-col justify-between bg-dark-900/50 backdrop-blur-sm rounded-2xl">
                   <div>
                     {/* Icon */}
-                    <div className={`mb-6 inline-flex p-4 rounded-xl bg-gradient-to-br ${service.gradient} opacity-20 group-hover:opacity-30 transition-all duration-500 group-hover:scale-110`}>
-                      <Icon className={`w-8 h-8 text-transparent bg-clip-text bg-gradient-to-r ${service.gradient}`} />
+                    <div 
+                      className="mb-6 inline-flex p-4 rounded-xl opacity-20 group-hover:opacity-30 transition-all duration-500 group-hover:scale-110"
+                      style={{ background: gradientColor }}
+                    >
+                      <Icon className="w-8 h-8 text-white" />
                     </div>
 
                     {/* Title */}
@@ -144,7 +158,10 @@ export function Services() {
 
                   {/* Bottom accent line */}
                   <div className="mt-8 pt-6 border-t border-dark-700/30">
-                    <div className={`h-1 w-0 bg-gradient-to-r ${service.gradient} group-hover:w-12 transition-all duration-500`}></div>
+                    <div 
+                      className="h-1 w-0 group-hover:w-12 transition-all duration-500"
+                      style={{ background: gradientColor }}
+                    ></div>
                   </div>
                 </div>
               </div>
