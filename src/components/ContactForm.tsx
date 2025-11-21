@@ -92,10 +92,10 @@ export function ContactForm() {
               will reach out to discuss how we can support your luxury transport business.
             </p>
 
-            <div className="space-y-6">
-              <div className="flex gap-4 items-start p-6 bg-dark-800/50 backdrop-blur-sm rounded-xl border border-dark-700">
-                <div className="p-3 bg-primary-600/10 rounded-lg">
-                  <Mail className="w-6 h-6 text-primary-400" />
+            <div className="space-y-8">
+              <div className="flex gap-5 items-start p-8 bg-dark-800/50 backdrop-blur-sm rounded-xl border border-amber-600/20 hover:border-amber-600/50 transition-colors">
+                <div className="p-3 bg-amber-600/10 rounded-lg">
+                  <Mail className="w-6 h-6 text-amber-400" />
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-white mb-2">Email Response</h3>
@@ -105,11 +105,11 @@ export function ContactForm() {
                 </div>
               </div>
 
-              <div className="p-6 bg-dark-800/50 backdrop-blur-sm rounded-xl border border-dark-700">
-                <h3 className="text-lg font-semibold text-white mb-4">Our Office</h3>
+              <div className="p-8 bg-dark-800/50 backdrop-blur-sm rounded-xl border border-primary-600/20 hover:border-primary-600/50 transition-colors">
+                <h3 className="text-lg font-semibold text-white mb-5">Our Office</h3>
                 <p className="text-gray-300 mb-2">4500 Cypresswood Drive</p>
                 <p className="text-gray-300 mb-4">Apt 825, Spring, TX 77379</p>
-                <p className="text-sm text-accent-400 font-medium">
+                <p className="text-sm text-primary-400 font-medium">
                   Remote services only - No physical visits
                 </p>
               </div>
