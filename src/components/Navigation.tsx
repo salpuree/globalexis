@@ -50,20 +50,20 @@ export function Navigation() {
               <span className="text-xl font-bold">Globalexis</span>
             </button>
 
-            <div className="hidden md:flex items-center gap-8">
+            <div className="hidden md:flex items-center gap-10">
               {navLinks.map((link) => (
                 <button
                   key={link.id}
                   onClick={() => scrollToSection(link.id)}
-                  className="text-gray-300 hover:text-primary-400 transition-colors font-medium relative group"
+                  className="text-gray-300 hover:text-amber-400 transition-colors font-medium relative group"
                 >
                   {link.label}
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-400 group-hover:w-full transition-all duration-300"></span>
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-amber-400 to-primary-400 group-hover:w-full transition-all duration-300"></span>
                 </button>
               ))}
               <button
                 onClick={() => scrollToSection('contact')}
-                className="px-6 py-2.5 bg-primary-600 hover:bg-primary-500 text-white rounded-lg font-medium transition-all hover:scale-105 hover:shadow-lg hover:shadow-primary-600/50"
+                className="px-7 py-2.5 bg-gradient-to-r from-primary-600 to-amber-600 hover:from-primary-500 hover:to-amber-500 text-white rounded-lg font-medium transition-all hover:scale-105 hover:shadow-lg hover:shadow-amber-600/50"
               >
                 Get Started
               </button>
