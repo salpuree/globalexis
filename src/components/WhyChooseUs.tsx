@@ -71,19 +71,27 @@ export function WhyChooseUs() {
               who understands the luxury transport industry inside and out.
             </p>
 
-            <div className="space-y-6">
+            <div className="space-y-8">
               {benefits.map((benefit, index) => {
                 const Icon = benefit.icon;
+                const colors = [
+                  { bg: 'bg-primary-600/10', text: 'text-primary-400' },
+                  { bg: 'bg-accent-600/10', text: 'text-accent-400' },
+                  { bg: 'bg-amber-600/10', text: 'text-amber-400' },
+                  { bg: 'bg-primary-600/10', text: 'text-primary-400' }
+                ];
+                const color = colors[index % colors.length];
+
                 return (
                   <div
                     key={index}
-                    className={`flex gap-4 ${
+                    className={`flex gap-5 ${
                       isVisible ? 'animate-slide-in-left' : 'opacity-0'
                     }`}
                     style={{ animationDelay: `${index * 150}ms` }}
                   >
-                    <div className="flex-shrink-0 p-3 bg-primary-600/10 rounded-lg h-fit">
-                      <Icon className="w-6 h-6 text-primary-400" />
+                    <div className={`flex-shrink-0 p-3 ${color.bg} rounded-lg h-fit`}>
+                      <Icon className={`w-6 h-6 ${color.text}`} />
                     </div>
                     <div>
                       <h3 className="text-xl font-semibold text-white mb-2">
