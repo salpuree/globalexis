@@ -26,7 +26,7 @@ export function Hero() {
       ></div>
 
       {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-dark-900/50 to-dark-900"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-dark-900/20 to-dark-900/40"></div>
 
       {/* Floating glassmorphic elements */}
       <div className="absolute inset-0 pointer-events-none">
