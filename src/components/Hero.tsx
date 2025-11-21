@@ -73,13 +73,13 @@ export function Hero() {
           </p>
 
           {/* CTA Buttons with neon glow */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
             <button
               onClick={() => scrollToSection('contact')}
-              className="relative px-8 py-4 bg-primary-600 hover:bg-primary-500 text-white rounded-lg font-semibold text-lg transition-all hover:scale-105 group overflow-hidden"
+              className="relative px-10 py-4 bg-gradient-to-r from-primary-600 to-amber-600 hover:from-primary-500 hover:to-amber-500 text-white rounded-lg font-semibold text-lg transition-all hover:scale-105 group overflow-hidden shadow-lg shadow-primary-600/30"
             >
               {/* Neon glow effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-primary-600 to-accent-400 opacity-0 group-hover:opacity-20 blur-lg transition-opacity"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-primary-600 to-amber-400 opacity-0 group-hover:opacity-20 blur-lg transition-opacity"></div>
               <span className="relative flex items-center gap-2">
                 Get Started Today
                 <span className="inline-block group-hover:translate-x-1 transition-transform">→</span>
