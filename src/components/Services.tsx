@@ -85,18 +85,18 @@ export function Services() {
       <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-accent-600/20 to-amber-600/10 rounded-full blur-3xl animate-float-enhanced opacity-30" style={{ animationDelay: '1s' }}></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-20">
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6 animate-fade-in-up">
+        <div className="text-center mb-24">
+          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-8 animate-fade-in-up">
             Comprehensive Back-Office Solutions
           </h2>
-          <div className="h-1 w-20 bg-gradient-to-r from-primary-600 to-accent-400 mx-auto mb-6 animate-pulse-glow"></div>
+          <div className="h-1 w-20 bg-gradient-to-r from-primary-600 via-amber-400 to-accent-400 mx-auto mb-8 animate-pulse-glow"></div>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
             Everything you need to deliver world-class service to your luxury transport clients,
             handled with expertise and precision
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-14 lg:gap-20">
           {services.map((service, index) => {
             const Icon = service.icon;
             const isVisible = visibleItems.includes(index);
