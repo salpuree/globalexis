@@ -53,11 +53,11 @@ export function Hero() {
           </div>
 
           {/* Main heading with animated gradient */}
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
             Elite Back-Office Services
             <br />
-            <span 
-              className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 via-accent-300 to-primary-400 animate-gradient-text"
+            <span
+              className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 via-amber-300 to-accent-400 animate-gradient-text"
               style={{
                 backgroundSize: '200% 200%'
               }}
@@ -67,7 +67,7 @@ export function Hero() {
           </h1>
 
           {/* Description */}
-          <p className="text-xl sm:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+          <p className="text-xl sm:text-2xl text-gray-300 mb-14 max-w-3xl mx-auto leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
             Professional call handling, booking management, and customer support
             tailored exclusively for luxury ground transportation companies
           </p>
