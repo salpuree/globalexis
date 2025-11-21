@@ -110,15 +110,15 @@ export function Hero() {
 
         {/* Floating stats cards */}
         <div className="grid grid-cols-3 gap-6 mt-3 max-w-2xl mx-auto">
-          <div className="glass-pulse backdrop-blur-sm bg-dark-800/30 border border-primary-600/20 rounded-xl p-6 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
+          <div className="glass-pulse backdrop-blur-sm bg-dark-800/30 rounded-xl p-6 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
             <div className="text-2xl font-bold text-primary-400">24/7</div>
             <div className="text-xs text-gray-400 mt-2">Always Available</div>
           </div>
-          <div className="glass-pulse backdrop-blur-sm bg-dark-800/30 border border-amber-600/20 rounded-xl p-6 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
+          <div className="glass-pulse backdrop-blur-sm bg-dark-800/30 rounded-xl p-6 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
             <div className="text-2xl font-bold text-amber-400">100%</div>
             <div className="text-xs text-gray-400 mt-2">Client Focused</div>
           </div>
-          <div className="glass-pulse backdrop-blur-sm bg-dark-800/30 border border-accent-600/20 rounded-xl p-6 animate-fade-in-up" style={{ animationDelay: '0.7s' }}>
+          <div className="glass-pulse backdrop-blur-sm bg-dark-800/30 rounded-xl p-6 animate-fade-in-up" style={{ animationDelay: '0.7s' }}>
             <div className="text-2xl font-bold text-accent-400">Expert</div>
             <div className="text-xs text-gray-400 mt-2">Team Support</div>
           </div>
