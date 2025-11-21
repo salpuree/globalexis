@@ -94,12 +94,7 @@ export function Stats() {
               <div className="absolute inset-0 bg-gradient-to-br from-primary-600/0 to-accent-600/0 group-hover:from-primary-600/10 group-hover:to-accent-600/10 rounded-lg transition-all duration-500 blur-xl -z-10"></div>
 
               {/* Card */}
-              <div className={`relative p-10 rounded-lg border transition-all duration-500 glass-pulse ${
-                index % 4 === 0 ? 'border-primary-600/20 group-hover:border-primary-600/50' :
-                index % 4 === 1 ? 'border-accent-600/20 group-hover:border-accent-600/50' :
-                index % 4 === 2 ? 'border-amber-600/20 group-hover:border-amber-600/50' :
-                'border-primary-600/20 group-hover:border-primary-600/50'
-              }`}>
+              <div className={`relative p-10 rounded-lg transition-all duration-500 glass-pulse`}>
                 {/* Number with animation */}
                 <div className="mb-6">
                   <span className={`text-5xl lg:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r ${
