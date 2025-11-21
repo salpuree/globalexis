@@ -41,10 +41,10 @@
   /* Neon Glow Effect */
   @keyframes neon-glow {
     0%, 100% {
-      box-shadow: 0 0 5px rgba(6, 78, 110, 0.3), 0 0 20px rgba(6, 78, 110, 0.1);
+      box-shadow: 0 0 5px rgba(6, 78, 110, 0.3), 0 0 20px rgba(6, 78, 110, 0.1), 0 0 15px rgba(217, 119, 6, 0.1);
     }
     50% {
-      box-shadow: 0 0 20px rgba(6, 78, 110, 0.6), 0 0 40px rgba(6, 78, 110, 0.3);
+      box-shadow: 0 0 20px rgba(6, 78, 110, 0.6), 0 0 40px rgba(6, 78, 110, 0.3), 0 0 25px rgba(217, 119, 6, 0.3);
     }
   }
 
