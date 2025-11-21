@@ -47,9 +47,9 @@ export function Hero() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-32">
         <div className="animate-fade-in-up">
           {/* Accent badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary-600/10 border border-primary-600/30 rounded-full mb-12 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
-            <Sparkles className="w-4 h-4 text-primary-400 animate-pulse-glow" />
-            <span className="text-sm text-primary-300 font-medium">Elevated Back-Office Solutions</span>
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-amber-600/10 border border-amber-600/30 rounded-full mb-12 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
+            <Sparkles className="w-4 h-4 text-amber-400 animate-pulse-glow" />
+            <span className="text-sm text-amber-300 font-medium">Elevated Back-Office Solutions</span>
           </div>
 
           {/* Main heading with animated gradient */}
