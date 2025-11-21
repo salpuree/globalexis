@@ -31,13 +31,13 @@ export function Hero() {
       {/* Floating glassmorphic elements */}
       <div className="absolute inset-0 pointer-events-none">
         {/* Top left floating card */}
-        <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-br from-primary-600/5 to-accent-600/5 rounded-full blur-3xl animate-float-enhanced opacity-60"></div>
-        
+        <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-br from-primary-600/5 to-amber-600/5 rounded-full blur-3xl animate-float-enhanced opacity-60"></div>
+
         {/* Bottom right floating card */}
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-br from-accent-600/5 to-primary-600/5 rounded-full blur-3xl animate-float-enhanced opacity-60" style={{ animationDelay: '1s' }}></div>
-        
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-br from-amber-600/5 to-accent-600/5 rounded-full blur-3xl animate-float-enhanced opacity-60" style={{ animationDelay: '1s' }}></div>
+
         {/* Center floating element */}
-        <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-gradient-to-r from-primary-600/3 to-accent-600/3 rounded-full blur-3xl animate-float-enhanced opacity-40" style={{ animationDelay: '2s', transform: 'translate(-50%, -50%)' }}></div>
+        <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-gradient-to-r from-accent-600/3 to-amber-600/3 rounded-full blur-3xl animate-float-enhanced opacity-40" style={{ animationDelay: '2s', transform: 'translate(-50%, -50%)' }}></div>
       </div>
 
       {/* Grid pattern overlay */}
