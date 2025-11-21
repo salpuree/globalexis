@@ -14,8 +14,8 @@ export function Hero() {
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-dark-950 via-dark-900 to-dark-800 border-b border-amber-600/10"
     >
       {/* Animated background with parallax */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center opacity-15"
+      <div
+        className="absolute inset-0 bg-cover bg-center opacity-40"
         style={{
           backgroundImage: "url('https://images.pexels.com/photos/5717044/pexels-photo-5717044.jpeg?w=1600&q=80')",
           backgroundPosition: 'center',
