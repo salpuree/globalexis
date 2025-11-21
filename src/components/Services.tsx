@@ -132,7 +132,7 @@ export function Services() {
                     </div>
 
                     {/* Title */}
-                    <h3 className="text-xl font-bold text-white mb-4 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r transition-all duration-500" style={{ backgroundImage: `linear-gradient(to right, var(--gradient-from), var(--gradient-to))` }}>
+                    <h3 className="text-xl font-bold text-white mb-4 group-hover:text-primary-400 transition-colors duration-500">
                       {service.title}
                     </h3>
 
