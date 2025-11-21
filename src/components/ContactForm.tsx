@@ -249,7 +249,7 @@ export function ContactForm() {
                 <button
                   type="submit"
                   disabled={status === 'submitting'}
-                  className="w-full px-8 py-4 bg-gradient-to-r from-primary-600 to-accent-600 hover:from-primary-500 hover:to-accent-500 text-white rounded-lg font-semibold text-lg transition-all hover:scale-105 hover:shadow-2xl hover:shadow-primary-600/50 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                  className="w-full px-8 py-4 bg-gradient-to-r from-primary-600 via-amber-600 to-accent-600 hover:from-primary-500 hover:via-amber-500 hover:to-accent-500 text-white rounded-lg font-semibold text-lg transition-all hover:scale-105 hover:shadow-2xl hover:shadow-amber-600/50 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                 >
                   {status === 'submitting' ? 'Submitting...' : 'Send Message'}
                 </button>
