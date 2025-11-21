@@ -57,16 +57,16 @@ export function WhyChooseUs() {
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary-600/50 to-transparent"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-20 items-center">
           <div className={`${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
-            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
+            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-8">
               Why Choose
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-accent-400">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 via-amber-300 to-accent-400">
                 {' '}Globalexis
               </span>
             </h2>
 
-            <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+            <p className="text-xl text-gray-300 mb-10 leading-relaxed">
               When your reputation depends on flawless service, you need a back-office partner
               who understands the luxury transport industry inside and out.
             </p>
