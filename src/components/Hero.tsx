@@ -109,7 +109,7 @@ export function Hero() {
         </div>
 
         {/* Floating stats cards */}
-        <div className="grid grid-cols-3 gap-6 mt-32 max-w-2xl mx-auto">
+        <div className="grid grid-cols-3 gap-6 mt-3 max-w-2xl mx-auto">
           <div className="glass-pulse backdrop-blur-sm bg-dark-800/30 border border-primary-600/20 rounded-xl p-6 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
             <div className="text-2xl font-bold text-primary-400">24/7</div>
             <div className="text-xs text-gray-400 mt-2">Always Available</div>
