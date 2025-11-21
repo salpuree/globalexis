@@ -95,14 +95,14 @@ export function Navigation() {
                 <button
                   key={link.id}
                   onClick={() => scrollToSection(link.id)}
-                  className="text-left text-gray-300 hover:text-primary-400 hover:bg-dark-800 px-4 py-3 rounded-lg transition-all font-medium"
+                  className="text-left text-gray-300 hover:text-amber-400 hover:bg-dark-800 px-4 py-3 rounded-lg transition-all font-medium"
                 >
                   {link.label}
                 </button>
               ))}
               <button
                 onClick={() => scrollToSection('contact')}
-                className="mt-2 px-4 py-3 bg-primary-600 hover:bg-primary-500 text-white rounded-lg font-medium transition-all"
+                className="mt-4 w-full px-4 py-3 bg-gradient-to-r from-primary-600 to-amber-600 hover:from-primary-500 hover:to-amber-500 text-white rounded-lg font-medium transition-all"
               >
                 Get Started
               </button>
