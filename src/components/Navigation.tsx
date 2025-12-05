@@ -46,9 +46,10 @@ export function Navigation() {
               style={{ backgroundColor: '#0d111c' }}
             >
               <img
-                src="https://cdn.builder.io/api/v1/image/assets%2Fde044ef8cfe842358fb55730203f5e75%2Fb0a99858b6974026988d389a76f844f0"
+                src="https://cdn.builder.io/api/v1/image/assets%2Fde044ef8cfe842358fb55730203f5e75%2Fa8d3493eb96d480eaf9257873ded0fd1"
                 alt="Globalexis Logo"
-                className="h-[103px] w-auto"
+                className="h-[76px] w-auto"
+                style={{ marginTop: '45px' }}
               />
             </button>
 
