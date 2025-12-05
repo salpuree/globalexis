@@ -1,4 +1,4 @@
-import { Headphones, Mail, MapPin, Phone } from 'lucide-react';
+import { Mail, MapPin, Phone } from 'lucide-react';
 
 export function Footer() {
   const scrollToSection = (id: string) => {
@@ -15,11 +15,12 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16">
           <div>
-            <div className="flex items-center gap-3 mb-6">
-              <div className="p-2 bg-gradient-to-br from-primary-600 to-amber-600 rounded-lg">
-                <Headphones className="w-6 h-6 text-white" />
-              </div>
-              <span className="text-xl font-bold text-white">Globalexis</span>
+            <div className="mb-6">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2Fde044ef8cfe842358fb55730203f5e75%2F9f7265d599aa486fac1b18adabd2c7ad?format=webp&width=800"
+                alt="Globalexis Logo"
+                className="h-16 w-auto mb-4"
+              />
             </div>
             <p className="text-gray-400 leading-relaxed">
               Elite back-office services tailored exclusively for luxury ground transportation companies.
