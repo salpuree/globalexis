@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Headphones } from 'lucide-react';
+import { Menu, X, Headphones, Phone, Mail } from 'lucide-react';
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -50,7 +50,7 @@ export function Navigation() {
               <span className="text-xl font-bold">Globalexis</span>
             </button>
 
-            <div className="hidden md:flex items-center gap-10">
+            <div className="hidden md:flex items-center gap-8">
               {navLinks.map((link) => (
                 <button
                   key={link.id}
@@ -61,6 +61,18 @@ export function Navigation() {
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-amber-400 to-primary-400 group-hover:w-full transition-all duration-300"></span>
                 </button>
               ))}
+
+              <div className="flex items-center gap-4 pl-6 border-l border-dark-700">
+                <a href="tel:+17035206130" className="flex items-center gap-2 text-gray-300 hover:text-amber-400 transition-colors">
+                  <Phone className="w-4 h-4" />
+                  <span className="text-sm font-medium">(703) 520-6130</span>
+                </a>
+                <a href="mailto:info@globalexisinc.com" className="flex items-center gap-2 text-gray-300 hover:text-primary-400 transition-colors">
+                  <Mail className="w-4 h-4" />
+                  <span className="text-sm font-medium">info@globalexisinc.com</span>
+                </a>
+              </div>
+
               <button
                 onClick={() => scrollToSection('contact')}
                 className="px-7 py-2.5 bg-gradient-to-r from-primary-600 to-amber-600 hover:from-primary-500 hover:to-amber-500 text-white rounded-lg font-medium transition-all hover:scale-105 hover:shadow-lg hover:shadow-amber-600/50"
