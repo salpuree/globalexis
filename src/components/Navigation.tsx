@@ -62,16 +62,10 @@ export function Navigation() {
                 </button>
               ))}
 
-              <div className="flex items-center gap-4 pl-6 border-l border-dark-700">
-                <a href="tel:+17035206130" className="flex items-center gap-2 text-gray-300 hover:text-amber-400 transition-colors">
-                  <Phone className="w-4 h-4" />
-                  <span className="text-sm font-medium">(703) 520-6130</span>
-                </a>
-                <a href="mailto:info@globalexisinc.com" className="flex items-center gap-2 text-gray-300 hover:text-primary-400 transition-colors">
-                  <Mail className="w-4 h-4" />
-                  <span className="text-sm font-medium">info@globalexisinc.com</span>
-                </a>
-              </div>
+              <a href="tel:+17035206130" className="flex items-center gap-2 text-gray-300 hover:text-amber-400 transition-colors pl-6 border-l border-dark-700">
+                <Phone className="w-4 h-4" />
+                <span className="text-sm font-medium">(703) 520-6130</span>
+              </a>
 
               <button
                 onClick={() => scrollToSection('contact')}
