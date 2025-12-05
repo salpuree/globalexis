@@ -45,9 +45,9 @@ export function Navigation() {
               className="flex items-center text-white hover:opacity-80 transition-opacity"
             >
               <img
-                src="https://cdn.builder.io/api/v1/image/assets%2Fde044ef8cfe842358fb55730203f5e75%2F9f7265d599aa486fac1b18adabd2c7ad?format=webp&width=800"
+                src="https://cdn.builder.io/api/v1/image/assets%2Fde044ef8cfe842358fb55730203f5e75%2F59cc1dd83373416eb7934b29866d17ef"
                 alt="Globalexis Logo"
-                className="h-12 w-auto"
+                className="h-[67px] w-auto drop-shadow-lg"
               />
             </button>
 
