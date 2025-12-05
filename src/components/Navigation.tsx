@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Headphones } from 'lucide-react';
+import { Menu, X, Phone } from 'lucide-react';
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -42,15 +42,17 @@ export function Navigation() {
           <div className="flex items-center justify-between h-20">
             <button
               onClick={() => scrollToSection('hero')}
-              className="flex items-center gap-3 text-white hover:text-amber-400 transition-colors group"
+              className="flex items-center hover:opacity-80 transition-opacity"
             >
-              <div className="p-2 bg-gradient-to-br from-primary-600 to-amber-600 rounded-lg group-hover:from-primary-500 group-hover:to-amber-500 transition-colors shadow-lg shadow-amber-600/30">
-                <Headphones className="w-6 h-6" />
-              </div>
-              <span className="text-xl font-bold">Globalexis</span>
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2Fde044ef8cfe842358fb55730203f5e75%2Fa8d3493eb96d480eaf9257873ded0fd1"
+                alt="Globalexis Logo"
+                className="h-[85px] w-auto"
+                style={{ marginTop: '45px' }}
+              />
             </button>
 
-            <div className="hidden md:flex items-center gap-10">
+            <div className="hidden md:flex items-center gap-8">
               {navLinks.map((link) => (
                 <button
                   key={link.id}
@@ -61,6 +63,12 @@ export function Navigation() {
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-amber-400 to-primary-400 group-hover:w-full transition-all duration-300"></span>
                 </button>
               ))}
+
+              <a href="tel:+17035206130" className="flex items-center gap-2 text-gray-300 hover:text-amber-400 transition-colors pl-6 border-l border-dark-700">
+                <Phone className="w-4 h-4" />
+                <span className="text-sm font-medium">(703) 520-6130</span>
+              </a>
+
               <button
                 onClick={() => scrollToSection('contact')}
                 className="px-7 py-2.5 bg-gradient-to-r from-primary-600 to-amber-600 hover:from-primary-500 hover:to-amber-500 text-white rounded-lg font-medium transition-all hover:scale-105 hover:shadow-lg hover:shadow-amber-600/50"

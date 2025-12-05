@@ -7,7 +7,6 @@ interface Stat {
 }
 
 const stats: Stat[] = [
-  { value: 500, suffix: '+', label: 'Luxury Clients Served' },
   { value: 99, suffix: '%', label: 'Client Satisfaction Rate' },
   { value: 24, suffix: '/7', label: 'Hours of Support' },
   { value: 15, suffix: '+', label: 'Years Experience' },
@@ -15,7 +14,7 @@ const stats: Stat[] = [
 
 export function Stats() {
   const [visibleItems, setVisibleItems] = useState<number[]>([]);
-  const [counters, setCounters] = useState<number[]>([0, 0, 0, 0]);
+  const [counters, setCounters] = useState<number[]>([0, 0, 0]);
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -81,7 +80,7 @@ export function Stats() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {stats.map((stat, index) => (
             <div
               key={index}

@@ -1,4 +1,4 @@
-import { Headphones, Mail, MapPin } from 'lucide-react';
+import { Mail, MapPin, Phone } from 'lucide-react';
 
 export function Footer() {
   const scrollToSection = (id: string) => {
@@ -15,11 +15,12 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16">
           <div>
-            <div className="flex items-center gap-3 mb-6">
-              <div className="p-2 bg-gradient-to-br from-primary-600 to-amber-600 rounded-lg">
-                <Headphones className="w-6 h-6 text-white" />
-              </div>
-              <span className="text-xl font-bold text-white">Globalexis</span>
+            <div className="mb-6">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2Fde044ef8cfe842358fb55730203f5e75%2Fa8d3493eb96d480eaf9257873ded0fd1"
+                alt="Globalexis Logo"
+                className="h-20 w-auto"
+              />
             </div>
             <p className="text-gray-400 leading-relaxed">
               Elite back-office services tailored exclusively for luxury ground transportation companies.
@@ -56,6 +57,20 @@ export function Footer() {
           <div>
             <h3 className="text-lg font-semibold text-white mb-6">Contact Info</h3>
             <div className="space-y-6">
+              <div className="flex items-center gap-4">
+                <Phone className="w-5 h-5 text-amber-400 flex-shrink-0" />
+                <a href="tel:+17035206130" className="text-gray-400 hover:text-amber-400 transition-colors text-sm">
+                  (703) 520-6130
+                </a>
+              </div>
+
+              <div className="flex items-center gap-4">
+                <Mail className="w-5 h-5 text-primary-400 flex-shrink-0" />
+                <a href="mailto:info@globalexisinc.com" className="text-gray-400 hover:text-primary-400 transition-colors text-sm">
+                  info@globalexisinc.com
+                </a>
+              </div>
+
               <div className="flex items-start gap-4">
                 <MapPin className="w-5 h-5 text-amber-400 flex-shrink-0 mt-1" />
                 <div className="text-gray-400 text-sm">
@@ -63,16 +78,6 @@ export function Footer() {
                   <p>Apt 825, Spring, TX 77379</p>
                   <p className="text-amber-400 mt-2 font-medium">Remote services only</p>
                 </div>
-              </div>
-
-              <div className="flex items-center gap-4">
-                <Mail className="w-5 h-5 text-primary-400 flex-shrink-0" />
-                <button
-                  onClick={() => scrollToSection('contact')}
-                  className="text-gray-400 hover:text-primary-400 transition-colors text-sm"
-                >
-                  Contact us via form
-                </button>
               </div>
             </div>
           </div>
