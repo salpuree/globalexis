@@ -39,6 +39,7 @@ export function ContactForm() {
           phone: formData.phone || 'Not provided',
           service_interest: formData.service_interest,
           message: formData.message,
+          to_email: 'info@globalexisinc.com',
         },
         publicKey
       );
