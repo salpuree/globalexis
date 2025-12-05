@@ -15,11 +15,11 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16">
           <div>
-            <div className="mb-6">
+            <div className="mb-6 inline-block p-3 bg-white/10 backdrop-blur-sm rounded-lg">
               <img
                 src="https://cdn.builder.io/api/v1/image/assets%2Fde044ef8cfe842358fb55730203f5e75%2F59cc1dd83373416eb7934b29866d17ef"
                 alt="Globalexis Logo"
-                className="h-20 w-auto mb-4"
+                className="h-20 w-auto"
               />
             </div>
             <p className="text-gray-400 leading-relaxed">
