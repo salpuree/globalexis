@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Headphones, Phone, Mail } from 'lucide-react';
+import { Menu, X, Headphones, Phone } from 'lucide-react';
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
