@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Headphones, Phone } from 'lucide-react';
+import { Menu, X, Phone } from 'lucide-react';
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -42,12 +42,13 @@ export function Navigation() {
           <div className="flex items-center justify-between h-20">
             <button
               onClick={() => scrollToSection('hero')}
-              className="flex items-center gap-3 text-white hover:text-amber-400 transition-colors group"
+              className="flex items-center text-white hover:opacity-80 transition-opacity"
             >
-              <div className="p-2 bg-gradient-to-br from-primary-600 to-amber-600 rounded-lg group-hover:from-primary-500 group-hover:to-amber-500 transition-colors shadow-lg shadow-amber-600/30">
-                <Headphones className="w-6 h-6" />
-              </div>
-              <span className="text-xl font-bold">Globalexis</span>
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2Fde044ef8cfe842358fb55730203f5e75%2F9f7265d599aa486fac1b18adabd2c7ad?format=webp&width=800"
+                alt="Globalexis Logo"
+                className="h-12 w-auto"
+              />
             </button>
 
             <div className="hidden md:flex items-center gap-8">
