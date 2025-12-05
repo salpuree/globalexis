@@ -42,12 +42,13 @@ export function Navigation() {
           <div className="flex items-center justify-between h-20">
             <button
               onClick={() => scrollToSection('hero')}
-              className="flex items-center px-3 py-2 hover:opacity-80 transition-opacity bg-white/10 backdrop-blur-sm rounded-lg"
+              className="flex items-center px-3 py-2 hover:opacity-80 transition-opacity rounded-lg"
+              style={{ backgroundColor: '#0d111c' }}
             >
               <img
-                src="https://cdn.builder.io/api/v1/image/assets%2Fde044ef8cfe842358fb55730203f5e75%2F59cc1dd83373416eb7934b29866d17ef"
+                src="https://cdn.builder.io/api/v1/image/assets%2Fde044ef8cfe842358fb55730203f5e75%2Fb0a99858b6974026988d389a76f844f0"
                 alt="Globalexis Logo"
-                className="h-[67px] w-auto"
+                className="h-[103px] w-auto"
               />
             </button>
 
