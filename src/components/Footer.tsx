@@ -17,9 +17,9 @@ export function Footer() {
           <div>
             <div className="mb-6">
               <img
-                src="https://cdn.builder.io/api/v1/image/assets%2Fde044ef8cfe842358fb55730203f5e75%2Fb0a99858b6974026988d389a76f844f0"
+                src="https://cdn.builder.io/api/v1/image/assets%2Fde044ef8cfe842358fb55730203f5e75%2Fa8d3493eb96d480eaf9257873ded0fd1"
                 alt="Globalexis Logo"
-                className="h-24 w-auto"
+                className="h-20 w-auto"
               />
             </div>
             <p className="text-gray-400 leading-relaxed">
