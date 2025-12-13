@@ -1,28 +1,33 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, useCallback } from 'react';
 
 export function useSnapScroll(totalSlides: number) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const wheelTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const isScrollingRef = useRef(false);
   const lastScrollTimeRef = useRef(0);
+  const currentSlideRef = useRef(0);
+
+  useEffect(() => {
+    currentSlideRef.current = currentSlide;
+  }, [currentSlide]);
 
   useEffect(() => {
     const handleWheel = (e: WheelEvent) => {
       e.preventDefault();
 
+      if (isScrollingRef.current) {
+        return;
+      }
+
       const now = Date.now();
       const timeSinceLastScroll = now - lastScrollTimeRef.current;
 
-      if (timeSinceLastScroll < 1200 || isScrollingRef.current) {
+      if (timeSinceLastScroll < 1500) {
         return;
       }
 
       lastScrollTimeRef.current = now;
       isScrollingRef.current = true;
-
-      if (wheelTimeoutRef.current) {
-        clearTimeout(wheelTimeoutRef.current);
-      }
 
       const direction = e.deltaY > 0 ? 1 : -1;
       setCurrentSlide(prevSlide => {
@@ -32,7 +37,7 @@ export function useSnapScroll(totalSlides: number) {
 
       wheelTimeoutRef.current = setTimeout(() => {
         isScrollingRef.current = false;
-      }, 1200);
+      }, 1500);
     };
 
     window.addEventListener('wheel', handleWheel, { passive: false });
@@ -42,7 +47,7 @@ export function useSnapScroll(totalSlides: number) {
         clearTimeout(wheelTimeoutRef.current);
       }
     };
-  }, [currentSlide, totalSlides]);
+  }, [totalSlides]);
 
   return currentSlide;
 }
