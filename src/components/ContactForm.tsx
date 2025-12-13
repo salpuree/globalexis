@@ -111,6 +111,9 @@ export function ContactForm() {
 
           {/* Right side - Form */}
           <div className="animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+            <h2 className="lg:hidden text-xl sm:text-2xl font-bold text-white mb-4">
+              Let's Start the Conversation
+            </h2>
             <form onSubmit={handleSubmit} className="bg-dark-800/50 backdrop-blur-sm rounded-xl sm:rounded-2xl border border-dark-700 p-4 sm:p-6 lg:p-8">
               {status === 'success' && (
                 <div className="mb-4 sm:mb-6 p-3 sm:p-4 bg-green-600/10 border border-green-600/30 rounded-lg flex items-center gap-2 sm:gap-3 animate-scale-in">
