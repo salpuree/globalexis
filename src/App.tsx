@@ -6,12 +6,12 @@ import { WhyChooseUs } from './components/WhyChooseUs';
 import { HowItWorks } from './components/HowItWorks';
 import { ContactForm } from './components/ContactForm';
 import { Footer } from './components/Footer';
-import { useSnapScroll } from './hooks/useSnapScroll';
+import { HorizontalSnapScroll } from './hooks/useSnapScroll';
 import { useRef } from 'react';
 
 function App() {
   const NUM_SECTIONS = 7;
-  const currentSlide = useSnapScroll(NUM_SECTIONS);
+  const currentSlide = HorizontalSnapScroll(NUM_SECTIONS);
   const contentRef = useRef<HTMLDivElement>(null);
   const translateX = -(currentSlide * 100);
 
@@ -19,7 +19,7 @@ function App() {
     <div className="relative bg-dark-950 overflow-hidden" style={{ height: '100vh' }}>
       <Navigation />
 
-      <div className="fixed top-20 left-0 right-0 h-[calc(100vh-80px)] w-screen overflow-hidden">
+      <div className="fixed top-20 left-0 right-0 w-screen overflow-hidden" style={{ height: 'calc(100vh - 80px)' }}>
         <div
           ref={contentRef}
           className="h-full flex transition-transform duration-700 ease-out"

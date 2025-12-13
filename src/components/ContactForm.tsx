@@ -78,29 +78,29 @@ export function ContactForm() {
   ];
 
   return (
-    <section id="contact" className="h-full w-full py-12 bg-gradient-to-b from-dark-950 to-dark-900 relative overflow-hidden border-b border-amber-600/10 flex items-center">
+    <section id="contact" className="h-full w-full py-8 bg-gradient-to-b from-dark-950 to-dark-900 relative overflow-hidden border-b border-amber-600/10 flex items-center">
       <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         <div className="grid lg:grid-cols-2 gap-8">
-          <div className="animate-fade-in-up" style={{ paddingTop: '138px' }}>
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
+          <div className="animate-fade-in-up" style={{ paddingBottom: '29px', margin: '75px 0 83px' }}>
+            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
               Let's Start the Conversation
             </h2>
 
-            <p className="text-lg text-gray-300 mb-6 leading-relaxed">
+            <p className="text-base text-gray-300 mb-4 leading-relaxed">
               Ready to transform your back-office operations? Fill out the form and our team
               will reach out to discuss how we can support your luxury transport business.
             </p>
 
-            <div className="space-y-6">
-              <div className="flex gap-5 items-start p-8 bg-dark-800/50 backdrop-blur-sm rounded-xl border border-amber-600/20 hover:border-amber-600/50 transition-colors">
-                <div className="p-3 bg-amber-600/10 rounded-lg">
-                  <Mail className="w-6 h-6 text-amber-400" />
+            <div className="space-y-4">
+              <div className="flex gap-4 items-start p-6 bg-dark-800/50 backdrop-blur-sm rounded-xl border border-amber-600/20 hover:border-amber-600/50 transition-colors">
+                <div className="p-2 bg-amber-600/10 rounded-lg flex-shrink-0">
+                  <Mail className="w-5 h-5 text-amber-400" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-white mb-2">Email Response</h3>
-                  <p className="text-gray-400">
+                  <h3 className="text-base font-semibold text-white mb-1">Email Response</h3>
+                  <p className="text-sm text-gray-400">
                     You'll receive a confirmation email immediately after submission
                   </p>
                 </div>
@@ -109,7 +109,7 @@ export function ContactForm() {
           </div>
 
           <div className="animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-            <form onSubmit={handleSubmit} className="bg-dark-800/50 backdrop-blur-sm rounded-2xl border border-dark-700" style={{ margin: '46px 0 20px', padding: '5px 20px' }}>
+            <form onSubmit={handleSubmit} className="bg-dark-800/50 backdrop-blur-sm rounded-2xl border border-dark-700 p-5">
               {status === 'success' && (
                 <div className="mb-8 p-5 bg-green-600/10 border border-green-600/30 rounded-lg flex items-center gap-3 animate-scale-in">
                   <CheckCircle2 className="w-6 h-6 text-green-400" />
@@ -128,9 +128,9 @@ export function ContactForm() {
                 </div>
               )}
 
-              <div className="space-y-7">
+              <div className="space-y-5" style={{ lineHeight: '16px' }}>
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-1.5">
                     Full Name *
                   </label>
                   <div className="relative">
@@ -141,14 +141,14 @@ export function ContactForm() {
                       required
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full pl-12 pr-4 py-3 bg-dark-900/50 border border-dark-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-primary-600 focus:ring-2 focus:ring-primary-600/20 transition-all"
+                      className="w-full pl-12 pr-4 py-2.5 bg-dark-900/50 border border-dark-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-primary-600 focus:ring-2 focus:ring-primary-600/20 transition-all"
                       placeholder="John Doe"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label htmlFor="company_name" className="block text-sm font-medium text-gray-300 mb-2">
+                  <label htmlFor="company_name" className="block text-sm font-medium text-gray-300 mb-1.5">
                     Company Name *
                   </label>
                   <div className="relative">
@@ -159,14 +159,14 @@ export function ContactForm() {
                       required
                       value={formData.company_name}
                       onChange={(e) => setFormData({ ...formData, company_name: e.target.value })}
-                      className="w-full pl-12 pr-4 py-3 bg-dark-900/50 border border-dark-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-primary-600 focus:ring-2 focus:ring-primary-600/20 transition-all"
+                      className="w-full pl-12 pr-4 py-2.5 bg-dark-900/50 border border-dark-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-primary-600 focus:ring-2 focus:ring-primary-600/20 transition-all"
                       placeholder="Your Company"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-1.5">
                     Email Address *
                   </label>
                   <div className="relative">
@@ -177,14 +177,14 @@ export function ContactForm() {
                       required
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full pl-12 pr-4 py-3 bg-dark-900/50 border border-dark-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-primary-600 focus:ring-2 focus:ring-primary-600/20 transition-all"
+                      className="w-full pl-12 pr-4 py-2.5 bg-dark-900/50 border border-dark-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-primary-600 focus:ring-2 focus:ring-primary-600/20 transition-all"
                       placeholder="john@company.com"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-gray-300 mb-2">
+                  <label htmlFor="phone" className="block text-sm font-medium text-gray-300 mb-1.5">
                     Phone Number
                   </label>
                   <div className="relative">
@@ -194,14 +194,14 @@ export function ContactForm() {
                       id="phone"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="w-full pl-12 pr-4 py-3 bg-dark-900/50 border border-dark-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-primary-600 focus:ring-2 focus:ring-primary-600/20 transition-all"
+                      className="w-full pl-12 pr-4 py-2.5 bg-dark-900/50 border border-dark-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-primary-600 focus:ring-2 focus:ring-primary-600/20 transition-all"
                       placeholder="+1 (555) 000-0000"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label htmlFor="service_interest" className="block text-sm font-medium text-gray-300 mb-2">
+                  <label htmlFor="service_interest" className="block text-sm font-medium text-gray-300 mb-1.5">
                     Service Interest *
                   </label>
                   <select
@@ -209,7 +209,7 @@ export function ContactForm() {
                     required
                     value={formData.service_interest}
                     onChange={(e) => setFormData({ ...formData, service_interest: e.target.value })}
-                    className="w-full px-4 py-3 bg-dark-900/50 border border-dark-600 rounded-lg text-white focus:outline-none focus:border-primary-600 focus:ring-2 focus:ring-primary-600/20 transition-all"
+                    className="w-full px-4 py-2.5 bg-dark-900/50 border border-dark-600 rounded-lg text-white focus:outline-none focus:border-primary-600 focus:ring-2 focus:ring-primary-600/20 transition-all"
                   >
                     <option value="">Select a service</option>
                     {services.map((service) => (
@@ -221,7 +221,7 @@ export function ContactForm() {
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-1.5">
                     Message *
                   </label>
                   <div className="relative">
@@ -232,7 +232,7 @@ export function ContactForm() {
                       rows={4}
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className="w-full pl-12 pr-4 py-3 bg-dark-900/50 border border-dark-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-primary-600 focus:ring-2 focus:ring-primary-600/20 transition-all resize-none"
+                      className="w-full pl-12 pr-4 py-2.5 bg-dark-900/50 border border-dark-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-primary-600 focus:ring-2 focus:ring-primary-600/20 transition-all resize-none"
                       placeholder="Tell us about your needs..."
                     />
                   </div>
@@ -241,7 +241,7 @@ export function ContactForm() {
                 <button
                   type="submit"
                   disabled={status === 'submitting'}
-                  className="w-full px-8 py-4 bg-gradient-to-r from-primary-600 via-amber-600 to-accent-600 hover:from-primary-500 hover:via-amber-500 hover:to-accent-500 text-white rounded-lg font-semibold text-lg transition-all hover:scale-105 hover:shadow-2xl hover:shadow-amber-600/50 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                  className="w-full px-6 py-3 bg-gradient-to-r from-primary-600 via-amber-600 to-accent-600 hover:from-primary-500 hover:via-amber-500 hover:to-accent-500 text-white rounded-lg font-semibold text-base transition-all hover:scale-105 hover:shadow-2xl hover:shadow-amber-600/50 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                 >
                   {status === 'submitting' ? 'Submitting...' : 'Send Message'}
                 </button>

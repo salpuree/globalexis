@@ -23,6 +23,7 @@ export function Navigation() {
   };
 
   const navLinks = [
+    { label: 'Home', id: 'hero' },
     { label: 'Services', id: 'services' },
     { label: 'Why Us', id: 'why-us' },
     { label: 'How It Works', id: 'how-it-works' },
