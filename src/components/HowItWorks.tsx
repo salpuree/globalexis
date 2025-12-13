@@ -56,7 +56,7 @@ export function HowItWorks() {
     <section
       id="how-it-works"
       ref={sectionRef}
-      className="h-full w-full py-8 sm:py-12 lg:py-16 bg-gradient-to-b from-dark-950 via-dark-900 to-dark-950 relative overflow-hidden border-b border-amber-600/10 flex flex-col justify-center"
+      className="h-full w-full pt-16 pb-8 sm:pt-20 sm:pb-12 lg:pt-24 lg:pb-16 bg-gradient-to-b from-dark-950 via-dark-900 to-dark-950 relative overflow-hidden border-b border-amber-600/10 flex flex-col justify-start"
     >
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/4 right-0 w-64 sm:w-96 h-64 sm:h-96 bg-primary-600/5 rounded-full blur-3xl"></div>

@@ -52,7 +52,7 @@ export function WhyChooseUs() {
     <section
       id="why-us"
       ref={sectionRef}
-      className="h-full w-full py-12 bg-gradient-to-b from-dark-900 to-dark-950 relative overflow-hidden border-b border-amber-600/10 flex items-center"
+      className="h-full w-full pt-16 pb-8 sm:pt-20 sm:pb-12 lg:pt-24 lg:pb-12 bg-gradient-to-b from-dark-900 to-dark-950 relative overflow-hidden border-b border-amber-600/10 flex items-center"
     >
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-amber-600/30 to-transparent"></div>
 
