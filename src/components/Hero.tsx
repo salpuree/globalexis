@@ -47,13 +47,13 @@ export function Hero() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-8 pb-4">
         <div className="animate-fade-in-up">
           {/* Accent badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-amber-600/10 border border-amber-600/30 rounded-full mb-12 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-amber-600/10 border border-amber-600/30 rounded-full mb-6 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
             <Sparkles className="w-4 h-4 text-amber-400 animate-pulse-glow" />
             <span className="text-sm text-amber-300 font-medium">Elevated Back-Office Solutions</span>
           </div>
 
           {/* Main heading with animated gradient */}
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
             Elite Back-Office Services
             <br />
             <span
@@ -67,7 +67,7 @@ export function Hero() {
           </h1>
 
           {/* Description */}
-          <p className="text-xl sm:text-2xl text-gray-300 mb-14 max-w-3xl mx-auto leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+          <p className="text-lg sm:text-xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
             Professional call handling, booking management, and customer support
             tailored exclusively for luxury ground transportation companies
           </p>
@@ -98,7 +98,7 @@ export function Hero() {
         </div>
 
         {/* Scroll indicator */}
-        <div className="mt-20 animate-fade-in" style={{ animationDelay: '0.6s' }}>
+        <div className="mt-8 animate-fade-in" style={{ animationDelay: '0.6s' }}>
           <button
             onClick={() => scrollToSection('services')}
             className="inline-flex flex-col items-center gap-2 text-gray-400 hover:text-primary-400 transition-colors group"
@@ -109,7 +109,7 @@ export function Hero() {
         </div>
 
         {/* Floating stats cards */}
-        <div className="grid grid-cols-3 gap-6 mt-3 max-w-2xl mx-auto">
+        <div className="grid grid-cols-3 gap-4 mt-2 max-w-2xl mx-auto">
           <div className="glass-pulse backdrop-blur-sm bg-dark-800/30 rounded-xl p-6 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
             <div className="text-2xl font-bold text-primary-400">24/7</div>
             <div className="text-xs text-gray-400 mt-2">Always Available</div>
