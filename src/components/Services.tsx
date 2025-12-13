@@ -75,7 +75,7 @@ export function Services() {
     <section
       id="services"
       ref={sectionRef}
-      className="py-24 bg-gradient-to-b from-dark-900 to-dark-950 relative overflow-hidden border-b border-amber-600/10"
+      className="h-screen w-screen py-16 bg-gradient-to-b from-dark-900 to-dark-950 relative overflow-hidden border-b border-amber-600/10 flex flex-col justify-center"
     >
       {/* Animated background elements */}
       <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
@@ -84,8 +84,8 @@ export function Services() {
       <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-primary-600/20 to-amber-600/10 rounded-full blur-3xl animate-float-enhanced opacity-30"></div>
       <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-accent-600/20 to-amber-600/10 rounded-full blur-3xl animate-float-enhanced opacity-30" style={{ animationDelay: '1s' }}></div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+        <div className="text-center mb-8">
           <h2 className="text-4xl sm:text-5xl font-bold text-white mb-8 animate-fade-in-up">
             Comprehensive Back-Office Solutions
           </h2>
@@ -96,7 +96,7 @@ export function Services() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-14 lg:gap-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
           {services.map((service, index) => {
             const Icon = service.icon;
             const isVisible = visibleItems.includes(index);
@@ -172,7 +172,7 @@ export function Services() {
         </div>
 
         {/* Footer badge with glow */}
-        <div className="mt-20 text-center">
+        <div className="mt-12 text-center">
           <div className="inline-flex items-center gap-3 px-6 py-3 bg-dark-800/50 backdrop-blur-sm border border-primary-600/30 rounded-full animate-fade-in-up neon-glow" style={{ animationDelay: '0.5s' }}>
             <div className="w-2 h-2 bg-primary-400 rounded-full animate-pulse-glow"></div>
             <span className="text-gray-300 font-medium">Available 24/7 for Your Business</span>
