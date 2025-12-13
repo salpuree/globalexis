@@ -83,8 +83,8 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-8 pt-6 border-t border-dark-700">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-dark-700">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-2 sm:gap-4">
             <p className="text-gray-400 text-sm">
               © {currentYear} Globalexis Inc. All rights reserved.
             </p>
