@@ -38,7 +38,7 @@ export function Hero() {
       <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
 
       {/* Main content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-8 lg:py-12">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-4 sm:py-6 lg:py-8">
         <div className="animate-fade-in-up">
           {/* Accent badge */}
           <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-amber-600/10 border border-amber-600/30 rounded-full mb-4 sm:mb-6 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>

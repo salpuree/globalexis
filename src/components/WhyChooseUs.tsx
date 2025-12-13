@@ -52,26 +52,26 @@ export function WhyChooseUs() {
     <section
       id="why-us"
       ref={sectionRef}
-      className="h-full w-full py-4 bg-gradient-to-b from-dark-900 to-dark-950 relative overflow-hidden border-b border-amber-600/10 flex items-center"
+      className="h-full w-full py-4 sm:py-8 lg:py-12 bg-gradient-to-b from-dark-900 to-dark-950 relative overflow-hidden border-b border-amber-600/10 flex items-center"
     >
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-amber-600/30 to-transparent"></div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full py-2">
-        <div className="grid lg:grid-cols-2 gap-8 items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+        <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
           <div className={`${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
-            <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-3">
+            <h2 className="text-xl sm:text-2xl lg:text-4xl font-bold text-white mb-4 sm:mb-6 lg:mb-8">
               Why Choose
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 via-amber-300 to-accent-400">
                 {' '}Globalexis
               </span>
             </h2>
 
-            <p className="text-sm lg:text-base text-gray-300 mb-4 leading-relaxed">
+            <p className="text-sm sm:text-base lg:text-lg text-gray-300 mb-6 sm:mb-8 lg:mb-10 leading-relaxed">
               When your reputation depends on flawless service, you need a back-office partner
               who understands the luxury transport industry.
             </p>
 
-            <div className="space-y-3">
+            <div className="space-y-3 sm:space-y-4 lg:space-y-5">
               {benefits.map((benefit, index) => {
                 const Icon = benefit.icon;
                 const colors = [
@@ -85,19 +85,19 @@ export function WhyChooseUs() {
                 return (
                   <div
                     key={index}
-                    className={`flex gap-3 ${
+                    className={`flex gap-3 sm:gap-4 ${
                       isVisible ? 'animate-slide-in-left' : 'opacity-0'
                     }`}
                     style={{ animationDelay: `${index * 150}ms` }}
                   >
-                    <div className={`flex-shrink-0 p-2 ${color.bg} rounded-lg h-fit`}>
-                      <Icon className={`w-4 h-4 ${color.text}`} />
+                    <div className={`flex-shrink-0 p-2.5 sm:p-3 lg:p-3.5 ${color.bg} rounded-lg h-fit`}>
+                      <Icon className={`w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 ${color.text}`} />
                     </div>
-                    <div>
-                      <h3 className="text-sm lg:text-base font-semibold text-white mb-0.5">
+                    <div className="flex-1">
+                      <h3 className="text-sm sm:text-base lg:text-lg font-semibold text-white mb-1 sm:mb-2">
                         {benefit.title}
                       </h3>
-                      <p className="text-xs lg:text-sm text-gray-400 leading-snug">
+                      <p className="text-xs sm:text-sm lg:text-base text-gray-400 leading-relaxed">
                         {benefit.description}
                       </p>
                     </div>
@@ -108,7 +108,7 @@ export function WhyChooseUs() {
           </div>
 
           <div className={`relative ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '300ms' }}>
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative rounded-lg sm:rounded-2xl lg:rounded-3xl overflow-hidden shadow-2xl lg:shadow-3xl">
               <img
                 src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800"
                 alt="Professional team collaboration"
@@ -117,16 +117,16 @@ export function WhyChooseUs() {
               <div className="absolute inset-0 bg-gradient-to-t from-dark-900 via-transparent to-transparent"></div>
             </div>
 
-            <div className="absolute -bottom-8 -left-8 bg-dark-800 border border-primary-600/30 rounded-2xl p-6 shadow-2xl backdrop-blur-sm">
-              <div className="flex items-center gap-4">
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-primary-400">24/7</div>
-                  <div className="text-sm text-gray-400">Available</div>
+            <div className="relative lg:absolute lg:-bottom-12 lg:-left-10 bg-dark-800 border border-primary-600/30 rounded-lg sm:rounded-2xl lg:rounded-2xl p-4 sm:p-6 lg:p-8 shadow-2xl lg:shadow-3xl backdrop-blur-sm mt-4 sm:mt-6 lg:mt-0">
+              <div className="flex items-center gap-3 sm:gap-4 lg:gap-6">
+                <div className="text-center flex-1">
+                  <div className="text-2xl sm:text-4xl lg:text-5xl font-bold text-primary-400">24/7</div>
+                  <div className="text-xs sm:text-sm lg:text-base text-gray-400 mt-1">Available</div>
                 </div>
-                <div className="w-px h-12 bg-dark-600"></div>
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-accent-400">100%</div>
-                  <div className="text-sm text-gray-400">Luxury Focus</div>
+                <div className="w-px h-10 sm:h-12 lg:h-16 bg-dark-600"></div>
+                <div className="text-center flex-1">
+                  <div className="text-2xl sm:text-4xl lg:text-5xl font-bold text-accent-400">100%</div>
+                  <div className="text-xs sm:text-sm lg:text-base text-gray-400 mt-1">Luxury Focus</div>
                 </div>
               </div>
             </div>

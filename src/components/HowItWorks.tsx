@@ -56,16 +56,16 @@ export function HowItWorks() {
     <section
       id="how-it-works"
       ref={sectionRef}
-      className="h-full w-full pt-4 pb-4 sm:pt-6 sm:pb-6 lg:pt-8 lg:pb-8 bg-gradient-to-b from-dark-950 via-dark-900 to-dark-950 relative overflow-y-auto border-b border-amber-600/10 flex flex-col justify-start"
+      className="h-full w-full pt-4 pb-4 sm:pt-6 sm:pb-6 lg:pt-8 lg:pb-8 bg-gradient-to-b from-dark-950 via-dark-900 to-dark-950 relative overflow-hidden border-b border-amber-600/10 flex flex-col justify-center"
     >
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/4 right-0 w-64 sm:w-96 h-64 sm:h-96 bg-primary-600/5 rounded-full blur-3xl"></div>
         <div className="absolute bottom-1/4 left-0 w-64 sm:w-96 h-64 sm:h-96 bg-accent-600/5 rounded-full blur-3xl"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full py-4 sm:py-6">
         {/* Header */}
-        <div className="text-center mb-6 sm:mb-8 lg:mb-12">
+        <div className="text-center mb-4 sm:mb-6 lg:mb-8">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-3 lg:mb-4">
             How It Works
           </h2>
@@ -80,7 +80,7 @@ export function HowItWorks() {
           {/* Connecting line - desktop only */}
           <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-primary-600/20 via-amber-600/30 to-primary-600/20 transform -translate-y-1/2 z-0"></div>
 
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6 relative z-10">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3 lg:gap-4 relative z-10">
             {steps.map((step, index) => {
               const Icon = step.icon;
               const isVisible = visibleSteps.includes(index);
@@ -145,7 +145,7 @@ export function HowItWorks() {
         </div>
 
         {/* CTA */}
-        <div className="mt-6 sm:mt-8 lg:mt-12 text-center">
+        <div className="mt-4 sm:mt-6 lg:mt-8 text-center">
           <p className="text-gray-300 text-sm sm:text-base lg:text-lg mb-3 lg:mb-4">
             Ready to elevate your back-office operations?
           </p>

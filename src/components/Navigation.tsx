@@ -52,7 +52,7 @@ export function Navigation({ activeSection }: NavigationProps) {
                 src="https://cdn.builder.io/api/v1/image/assets%2Fde044ef8cfe842358fb55730203f5e75%2Fa8d3493eb96d480eaf9257873ded0fd1"
                 alt="Globalexis Logo"
                 className="h-[85px] w-auto"
-                style={{ marginTop: '20px' }}
+                style={{ marginTop: '16px' }}
               />
             </button>
 

@@ -78,13 +78,13 @@ export function ContactForm() {
   ];
 
   return (
-    <section id="contact" className="h-full w-full py-8 sm:py-12 lg:py-16 bg-gradient-to-b from-dark-950 to-dark-900 relative overflow-hidden border-b border-amber-600/10 flex items-center">
+    <section id="contact" className="h-full w-full py-6 sm:py-8 lg:py-12 bg-gradient-to-b from-dark-950 to-dark-900 relative overflow-hidden border-b border-amber-600/10 flex items-center justify-center">
       <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-        <div className="grid lg:grid-cols-2 gap-6 lg:gap-12">
+        <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
           {/* Left side - Info */}
-          <div className="animate-fade-in-up flex flex-col justify-center">
+          <div className="hidden lg:flex animate-fade-in-up flex-col justify-center">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4 lg:mb-6">
               Let's Start the Conversation
             </h2>
@@ -111,93 +111,96 @@ export function ContactForm() {
 
           {/* Right side - Form */}
           <div className="animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-            <form onSubmit={handleSubmit} className="bg-dark-800/50 backdrop-blur-sm rounded-2xl border border-dark-700 p-5 lg:p-8">
+            <h2 className="lg:hidden text-xl sm:text-2xl font-bold text-white mb-4">
+              Let's Start the Conversation
+            </h2>
+            <form onSubmit={handleSubmit} className="bg-dark-800/50 backdrop-blur-sm rounded-xl sm:rounded-2xl border border-dark-700 p-4 sm:p-6 lg:p-8">
               {status === 'success' && (
-                <div className="mb-6 p-4 bg-green-600/10 border border-green-600/30 rounded-lg flex items-center gap-3 animate-scale-in">
-                  <CheckCircle2 className="w-6 h-6 text-green-400 flex-shrink-0" />
-                  <p className="text-green-400 font-medium">
+                <div className="mb-4 sm:mb-6 p-3 sm:p-4 bg-green-600/10 border border-green-600/30 rounded-lg flex items-center gap-2 sm:gap-3 animate-scale-in">
+                  <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-green-400 flex-shrink-0" />
+                  <p className="text-green-400 font-medium text-sm sm:text-base">
                     Thank you! We'll be in touch soon.
                   </p>
                 </div>
               )}
 
               {status === 'error' && (
-                <div className="mb-6 p-4 bg-red-600/10 border border-red-600/30 rounded-lg flex items-center gap-3 animate-scale-in">
-                  <AlertCircle className="w-6 h-6 text-red-400 flex-shrink-0" />
-                  <p className="text-red-400 font-medium">
+                <div className="mb-4 sm:mb-6 p-3 sm:p-4 bg-red-600/10 border border-red-600/30 rounded-lg flex items-center gap-2 sm:gap-3 animate-scale-in">
+                  <AlertCircle className="w-5 h-5 sm:w-6 sm:h-6 text-red-400 flex-shrink-0" />
+                  <p className="text-red-400 font-medium text-sm sm:text-base">
                     {errorMessage || 'Something went wrong. Please try again.'}
                   </p>
                 </div>
               )}
 
-              <div className="space-y-4 lg:space-y-5">
+              <div className="space-y-3 sm:space-y-4 lg:space-y-5">
                 <div>
-                  <label htmlFor="name" className="block text-sm lg:text-base font-medium text-gray-300 mb-1.5">
+                  <label htmlFor="name" className="block text-xs sm:text-sm lg:text-base font-medium text-gray-300 mb-1.5">
                     Full Name *
                   </label>
                   <div className="relative">
-                    <User className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-500" />
+                    <User className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 sm:w-5 sm:h-5 text-gray-500" />
                     <input
                       type="text"
                       id="name"
                       required
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full pl-12 pr-4 py-2.5 lg:py-3 bg-dark-900/50 border border-dark-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-primary-600 focus:ring-2 focus:ring-primary-600/20 transition-all"
+                      className="w-full pl-10 sm:pl-12 pr-4 py-2 sm:py-2.5 lg:py-3 bg-dark-900/50 border border-dark-600 rounded-lg text-sm sm:text-base text-white placeholder-gray-500 focus:outline-none focus:border-primary-600 focus:ring-2 focus:ring-primary-600/20 transition-all"
                       placeholder="John Doe"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label htmlFor="company_name" className="block text-sm lg:text-base font-medium text-gray-300 mb-1.5">
+                  <label htmlFor="company_name" className="block text-xs sm:text-sm lg:text-base font-medium text-gray-300 mb-1.5">
                     Company Name *
                   </label>
                   <div className="relative">
-                    <Building className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-500" />
+                    <Building className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 sm:w-5 sm:h-5 text-gray-500" />
                     <input
                       type="text"
                       id="company_name"
                       required
                       value={formData.company_name}
                       onChange={(e) => setFormData({ ...formData, company_name: e.target.value })}
-                      className="w-full pl-12 pr-4 py-2.5 lg:py-3 bg-dark-900/50 border border-dark-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-primary-600 focus:ring-2 focus:ring-primary-600/20 transition-all"
+                      className="w-full pl-10 sm:pl-12 pr-4 py-2 sm:py-2.5 lg:py-3 bg-dark-900/50 border border-dark-600 rounded-lg text-sm sm:text-base text-white placeholder-gray-500 focus:outline-none focus:border-primary-600 focus:ring-2 focus:ring-primary-600/20 transition-all"
                       placeholder="Your Company"
                     />
                   </div>
                 </div>
 
-                <div className="grid sm:grid-cols-2 gap-4">
+                <div className="grid sm:grid-cols-2 gap-3 sm:gap-4">
                   <div>
-                    <label htmlFor="email" className="block text-sm lg:text-base font-medium text-gray-300 mb-1.5">
+                    <label htmlFor="email" className="block text-xs sm:text-sm lg:text-base font-medium text-gray-300 mb-1.5">
                       Email Address *
                     </label>
                     <div className="relative">
-                      <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-500" />
+                      <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 sm:w-5 sm:h-5 text-gray-500" />
                       <input
                         type="email"
                         id="email"
                         required
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="w-full pl-12 pr-4 py-2.5 lg:py-3 bg-dark-900/50 border border-dark-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-primary-600 focus:ring-2 focus:ring-primary-600/20 transition-all"
+                        className="w-full pl-10 sm:pl-12 pr-4 py-2 sm:py-2.5 lg:py-3 bg-dark-900/50 border border-dark-600 rounded-lg text-sm sm:text-base text-white placeholder-gray-500 focus:outline-none focus:border-primary-600 focus:ring-2 focus:ring-primary-600/20 transition-all"
                         placeholder="john@company.com"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label htmlFor="phone" className="block text-sm lg:text-base font-medium text-gray-300 mb-1.5">
+                    <label htmlFor="phone" className="block text-xs sm:text-sm lg:text-base font-medium text-gray-300 mb-1.5">
                       Phone Number
                     </label>
                     <div className="relative">
-                      <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-500" />
+                      <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 sm:w-5 sm:h-5 text-gray-500" />
                       <input
                         type="tel"
                         id="phone"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        className="w-full pl-12 pr-4 py-2.5 lg:py-3 bg-dark-900/50 border border-dark-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-primary-600 focus:ring-2 focus:ring-primary-600/20 transition-all"
+                        className="w-full pl-10 sm:pl-12 pr-4 py-2 sm:py-2.5 lg:py-3 bg-dark-900/50 border border-dark-600 rounded-lg text-sm sm:text-base text-white placeholder-gray-500 focus:outline-none focus:border-primary-600 focus:ring-2 focus:ring-primary-600/20 transition-all"
                         placeholder="+1 (555) 000-0000"
                       />
                     </div>
@@ -205,7 +208,7 @@ export function ContactForm() {
                 </div>
 
                 <div>
-                  <label htmlFor="service_interest" className="block text-sm lg:text-base font-medium text-gray-300 mb-1.5">
+                  <label htmlFor="service_interest" className="block text-xs sm:text-sm lg:text-base font-medium text-gray-300 mb-1.5">
                     Service Interest *
                   </label>
                   <select
@@ -213,7 +216,7 @@ export function ContactForm() {
                     required
                     value={formData.service_interest}
                     onChange={(e) => setFormData({ ...formData, service_interest: e.target.value })}
-                    className="w-full px-4 py-2.5 lg:py-3 bg-dark-900/50 border border-dark-600 rounded-lg text-white focus:outline-none focus:border-primary-600 focus:ring-2 focus:ring-primary-600/20 transition-all"
+                    className="w-full px-4 py-2 sm:py-2.5 lg:py-3 bg-dark-900/50 border border-dark-600 rounded-lg text-sm sm:text-base text-white focus:outline-none focus:border-primary-600 focus:ring-2 focus:ring-primary-600/20 transition-all"
                   >
                     <option value="">Select a service</option>
                     {services.map((service) => (
@@ -233,10 +236,10 @@ export function ContactForm() {
                     <textarea
                       id="message"
                       required
-                      rows={4}
+                      rows={3}
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className="w-full pl-12 pr-4 py-2.5 bg-dark-900/50 border border-dark-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-primary-600 focus:ring-2 focus:ring-primary-600/20 transition-all resize-none"
+                      className="w-full pl-12 pr-4 py-2.5 lg:py-3 bg-dark-900/50 border border-dark-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-primary-600 focus:ring-2 focus:ring-primary-600/20 transition-all resize-none text-sm lg:text-base"
                       placeholder="Tell us about your needs..."
                     />
                   </div>
@@ -245,7 +248,7 @@ export function ContactForm() {
                 <button
                   type="submit"
                   disabled={status === 'submitting'}
-                  className="w-full px-6 py-3 lg:py-4 bg-gradient-to-r from-primary-600 via-amber-600 to-accent-600 hover:from-primary-500 hover:via-amber-500 hover:to-accent-500 text-white rounded-lg font-semibold text-base lg:text-lg transition-all hover:scale-[1.02] hover:shadow-2xl hover:shadow-amber-600/50 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                  className="w-full px-6 py-2.5 sm:py-3 lg:py-4 bg-gradient-to-r from-primary-600 via-amber-600 to-accent-600 hover:from-primary-500 hover:via-amber-500 hover:to-accent-500 text-white rounded-lg font-semibold text-sm sm:text-base lg:text-lg transition-all hover:scale-[1.02] hover:shadow-2xl hover:shadow-amber-600/50 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 mt-2"
                 >
                   {status === 'submitting' ? 'Submitting...' : 'Send Message'}
                 </button>
