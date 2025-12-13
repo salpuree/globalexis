@@ -85,19 +85,19 @@ export function WhyChooseUs() {
                 return (
                   <div
                     key={index}
-                    className={`flex gap-3 ${
+                    className={`flex gap-3 sm:gap-4 ${
                       isVisible ? 'animate-slide-in-left' : 'opacity-0'
                     }`}
                     style={{ animationDelay: `${index * 150}ms` }}
                   >
-                    <div className={`flex-shrink-0 p-2 ${color.bg} rounded-lg h-fit`}>
-                      <Icon className={`w-4 h-4 ${color.text}`} />
+                    <div className={`flex-shrink-0 p-2.5 sm:p-3 lg:p-3.5 ${color.bg} rounded-lg h-fit`}>
+                      <Icon className={`w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 ${color.text}`} />
                     </div>
-                    <div>
-                      <h3 className="text-sm lg:text-base font-semibold text-white mb-0.5">
+                    <div className="flex-1">
+                      <h3 className="text-sm sm:text-base lg:text-lg font-semibold text-white mb-1 sm:mb-2">
                         {benefit.title}
                       </h3>
-                      <p className="text-xs lg:text-sm text-gray-400 leading-snug">
+                      <p className="text-xs sm:text-sm lg:text-base text-gray-400 leading-relaxed">
                         {benefit.description}
                       </p>
                     </div>
