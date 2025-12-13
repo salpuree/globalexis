@@ -148,7 +148,7 @@ export function ContactForm() {
                 </div>
 
                 <div>
-                  <label htmlFor="company_name" className="block text-sm font-medium text-gray-300 mb-2">
+                  <label htmlFor="company_name" className="block text-sm font-medium text-gray-300 mb-1.5">
                     Company Name *
                   </label>
                   <div className="relative">
