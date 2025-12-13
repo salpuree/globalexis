@@ -71,7 +71,7 @@ export function Stats() {
     <section
       id="stats"
       ref={sectionRef}
-      className="h-screen w-screen py-20 bg-gradient-to-r from-dark-900 via-dark-950 to-dark-900 relative overflow-hidden border-y border-amber-600/10 flex items-center justify-center"
+      className="h-full w-full py-16 bg-gradient-to-r from-dark-900 via-dark-950 to-dark-900 relative overflow-hidden border-y border-amber-600/10 flex items-center justify-center"
     >
       {/* Animated background effects */}
       <div className="absolute inset-0">

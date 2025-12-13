@@ -75,7 +75,7 @@ export function Services() {
     <section
       id="services"
       ref={sectionRef}
-      className="h-screen w-screen py-16 bg-gradient-to-b from-dark-900 to-dark-950 relative overflow-hidden border-b border-amber-600/10 flex flex-col justify-center"
+      className="h-full w-full py-12 bg-gradient-to-b from-dark-900 to-dark-950 relative overflow-hidden border-b border-amber-600/10 flex flex-col justify-center"
     >
       {/* Animated background elements */}
       <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
