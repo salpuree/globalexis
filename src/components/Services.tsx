@@ -75,7 +75,7 @@ export function Services() {
     <section
       id="services"
       ref={sectionRef}
-      className="h-full w-full py-12 bg-gradient-to-b from-dark-900 to-dark-950 relative overflow-hidden border-b border-amber-600/10 flex flex-col justify-center"
+      className="h-full w-full bg-gradient-to-b from-dark-900 to-dark-950 relative overflow-hidden border-b border-amber-600/10 flex flex-col justify-center"
     >
       {/* Animated background elements */}
       <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
@@ -84,19 +84,19 @@ export function Services() {
       <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-primary-600/20 to-amber-600/10 rounded-full blur-3xl animate-float-enhanced opacity-30"></div>
       <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-accent-600/20 to-amber-600/10 rounded-full blur-3xl animate-float-enhanced opacity-30" style={{ animationDelay: '1s' }}></div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full py-2">
-        <div className="text-center mb-4">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4 animate-fade-in-up">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full" style={{ margin: '32px auto 121px' }}>
+        <div className="text-center" style={{ marginTop: '90px' }}>
+          <h2 className="text-2xl sm:text-3xl font-bold text-white animate-fade-in-up" style={{ marginBottom: '5px', fontSize: '33px', lineHeight: '33px' }}>
             Comprehensive Back-Office Solutions
           </h2>
-          <div className="h-1 w-20 bg-gradient-to-r from-primary-600 via-amber-400 to-accent-400 mx-auto mb-8 animate-pulse-glow"></div>
+          <div className="h-1 w-20 bg-gradient-to-r from-primary-600 via-amber-400 to-accent-400 mx-auto animate-pulse-glow" style={{ margin: '0 auto 32px' }}></div>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
             Everything you need to deliver world-class service to your luxury transport clients,
             handled with expertise and precision
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2" style={{ gap: '10px' }}>
           {services.map((service, index) => {
             const Icon = service.icon;
             const isVisible = visibleItems.includes(index);
@@ -172,7 +172,7 @@ export function Services() {
         </div>
 
         {/* Footer badge with glow */}
-        <div className="mt-6 text-center">
+        <div className="text-center">
           <div className="inline-flex items-center gap-3 px-6 py-3 bg-dark-800/50 backdrop-blur-sm border border-primary-600/30 rounded-full animate-fade-in-up neon-glow" style={{ animationDelay: '0.5s' }}>
             <div className="w-2 h-2 bg-primary-400 rounded-full animate-pulse-glow"></div>
             <span className="text-gray-300 font-medium">Available 24/7 for Your Business</span>
