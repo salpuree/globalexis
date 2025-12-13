@@ -82,9 +82,9 @@ export function ContactForm() {
       <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-        <div className="grid lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-10">
+        <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
           {/* Left side - Info */}
-          <div className="animate-fade-in-up flex flex-col justify-center">
+          <div className="hidden lg:flex animate-fade-in-up flex-col justify-center">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4 lg:mb-6">
               Let's Start the Conversation
             </h2>
@@ -111,7 +111,7 @@ export function ContactForm() {
 
           {/* Right side - Form */}
           <div className="animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-            <form onSubmit={handleSubmit} className="bg-dark-800/50 backdrop-blur-sm rounded-2xl border border-dark-700 p-5 lg:p-8">
+            <form onSubmit={handleSubmit} className="bg-dark-800/50 backdrop-blur-sm rounded-xl sm:rounded-2xl border border-dark-700 p-4 sm:p-6 lg:p-8">
               {status === 'success' && (
                 <div className="mb-6 p-4 bg-green-600/10 border border-green-600/30 rounded-lg flex items-center gap-3 animate-scale-in">
                   <CheckCircle2 className="w-6 h-6 text-green-400 flex-shrink-0" />
@@ -130,7 +130,7 @@ export function ContactForm() {
                 </div>
               )}
 
-              <div className="space-y-4 lg:space-y-5">
+              <div className="space-y-3 sm:space-y-4 lg:space-y-5">
                 <div>
                   <label htmlFor="name" className="block text-sm lg:text-base font-medium text-gray-300 mb-1.5">
                     Full Name *
@@ -167,7 +167,7 @@ export function ContactForm() {
                   </div>
                 </div>
 
-                <div className="grid sm:grid-cols-2 gap-4">
+                <div className="grid sm:grid-cols-2 gap-3 sm:gap-4">
                   <div>
                     <label htmlFor="email" className="block text-sm lg:text-base font-medium text-gray-300 mb-1.5">
                       Email Address *
@@ -233,10 +233,10 @@ export function ContactForm() {
                     <textarea
                       id="message"
                       required
-                      rows={4}
+                      rows={3}
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className="w-full pl-12 pr-4 py-2.5 bg-dark-900/50 border border-dark-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-primary-600 focus:ring-2 focus:ring-primary-600/20 transition-all resize-none"
+                      className="w-full pl-12 pr-4 py-2.5 lg:py-3 bg-dark-900/50 border border-dark-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-primary-600 focus:ring-2 focus:ring-primary-600/20 transition-all resize-none text-sm lg:text-base"
                       placeholder="Tell us about your needs..."
                     />
                   </div>
@@ -245,7 +245,7 @@ export function ContactForm() {
                 <button
                   type="submit"
                   disabled={status === 'submitting'}
-                  className="w-full px-6 py-3 lg:py-4 bg-gradient-to-r from-primary-600 via-amber-600 to-accent-600 hover:from-primary-500 hover:via-amber-500 hover:to-accent-500 text-white rounded-lg font-semibold text-base lg:text-lg transition-all hover:scale-[1.02] hover:shadow-2xl hover:shadow-amber-600/50 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                  className="w-full px-6 py-2.5 sm:py-3 lg:py-4 bg-gradient-to-r from-primary-600 via-amber-600 to-accent-600 hover:from-primary-500 hover:via-amber-500 hover:to-accent-500 text-white rounded-lg font-semibold text-sm sm:text-base lg:text-lg transition-all hover:scale-[1.02] hover:shadow-2xl hover:shadow-amber-600/50 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 mt-2"
                 >
                   {status === 'submitting' ? 'Submitting...' : 'Send Message'}
                 </button>
