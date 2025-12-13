@@ -7,60 +7,63 @@ import { HowItWorks } from './components/HowItWorks';
 import { ContactForm } from './components/ContactForm';
 import { Footer } from './components/Footer';
 import { useHorizontalScroll } from './hooks/useHorizontalScroll';
+import { useRef } from 'react';
 
 function App() {
   const scrollProgress = useHorizontalScroll();
-  const translateX = -(scrollProgress / 100) * 85;
+  const contentRef = useRef<HTMLDivElement>(null);
+  const translateX = -(scrollProgress / 100) * (7 * 100 - 100);
 
   return (
-    <div className="relative overflow-hidden bg-dark-950">
+    <div className="relative bg-dark-950">
       <Navigation />
 
-      <div className="fixed inset-0 top-[80px] overflow-hidden">
+      <div className="relative overflow-hidden h-screen w-screen fixed top-20">
         <div
-          className="h-full flex transition-transform duration-300 ease-out"
+          ref={contentRef}
+          className="h-screen flex transition-transform duration-500 ease-out"
           style={{
             transform: `translateX(${translateX}%)`,
-            width: '100%'
+            width: 'max-content'
           }}
         >
-          <section className="w-screen flex-shrink-0">
+          <div className="w-screen h-screen flex-shrink-0">
             <Hero />
-          </section>
+          </div>
 
-          <section className="w-screen flex-shrink-0">
+          <div className="w-screen h-screen flex-shrink-0">
             <Stats />
-          </section>
+          </div>
 
-          <section className="w-screen flex-shrink-0">
+          <div className="w-screen h-screen flex-shrink-0">
             <Services />
-          </section>
+          </div>
 
-          <section className="w-screen flex-shrink-0">
+          <div className="w-screen h-screen flex-shrink-0">
             <WhyChooseUs />
-          </section>
+          </div>
 
-          <section className="w-screen flex-shrink-0">
+          <div className="w-screen h-screen flex-shrink-0">
             <HowItWorks />
-          </section>
+          </div>
 
-          <section className="w-screen flex-shrink-0">
+          <div className="w-screen h-screen flex-shrink-0">
             <ContactForm />
-          </section>
+          </div>
 
-          <section className="w-screen flex-shrink-0">
+          <div className="w-screen h-screen flex-shrink-0">
             <Footer />
-          </section>
+          </div>
         </div>
       </div>
 
-      <div className="relative h-screen" />
-      <div className="relative h-screen" />
-      <div className="relative h-screen" />
-      <div className="relative h-screen" />
-      <div className="relative h-screen" />
-      <div className="relative h-screen" />
-      <div className="relative h-screen" />
+      <div className="h-screen" />
+      <div className="h-screen" />
+      <div className="h-screen" />
+      <div className="h-screen" />
+      <div className="h-screen" />
+      <div className="h-screen" />
+      <div className="h-screen" />
     </div>
   );
 }
