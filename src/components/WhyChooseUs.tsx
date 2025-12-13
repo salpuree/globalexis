@@ -57,7 +57,7 @@ export function WhyChooseUs() {
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-amber-600/30 to-transparent"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-        <div className="grid lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 items-center">
+        <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
           <div className={`${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
             <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-3">
               Why Choose
