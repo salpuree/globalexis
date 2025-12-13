@@ -79,8 +79,8 @@ export function Stats() {
         <div className="absolute top-1/2 right-1/4 w-96 h-96 bg-gradient-to-br from-accent-600/10 to-amber-600/5 rounded-full blur-3xl opacity-40 animate-float-enhanced" style={{ animationDelay: '1s' }}></div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full py-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full py-4 sm:py-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-6">
           {stats.map((stat, index) => (
             <div
               key={index}
