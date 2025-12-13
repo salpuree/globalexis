@@ -109,7 +109,7 @@ export function ContactForm() {
           </div>
 
           <div className="animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-            <form onSubmit={handleSubmit} className="bg-dark-800/50 backdrop-blur-sm rounded-2xl border border-dark-700" style={{ margin: '46px 0 20px', padding: '5px 20px' }}>
+            <form onSubmit={handleSubmit} className="bg-dark-800/50 backdrop-blur-sm rounded-2xl border border-dark-700 p-6">
               {status === 'success' && (
                 <div className="mb-8 p-5 bg-green-600/10 border border-green-600/30 rounded-lg flex items-center gap-3 animate-scale-in">
                   <CheckCircle2 className="w-6 h-6 text-green-400" />
