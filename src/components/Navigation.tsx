@@ -1,7 +1,11 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, Phone } from 'lucide-react';
 
-export function Navigation() {
+interface NavigationProps {
+  activeSection?: string;
+}
+
+export function Navigation({ activeSection }: NavigationProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -17,7 +21,7 @@ export function Navigation() {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      element.scrollIntoView({ behavior: 'smooth', inline: 'start' });
       setIsMobileMenuOpen(false);
     }
   };
@@ -25,7 +29,7 @@ export function Navigation() {
   const navLinks = [
     { label: 'Home', id: 'hero' },
     { label: 'Services', id: 'services' },
-    { label: 'Why Us', id: 'why-us' },
+    { label: 'Why Us', id: 'why-choose-us' },
     { label: 'How It Works', id: 'how-it-works' },
     { label: 'Contact', id: 'contact' },
   ];
@@ -33,11 +37,10 @@ export function Navigation() {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled
-            ? 'bg-dark-900/95 backdrop-blur-md shadow-lg shadow-amber-600/10 border-b border-amber-600/10'
-            : 'bg-transparent'
-        }`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
+          ? 'bg-dark-900/95 backdrop-blur-md shadow-lg shadow-amber-600/10 border-b border-amber-600/10'
+          : 'bg-dark-900/80 backdrop-blur-sm'
+          }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
@@ -49,21 +52,30 @@ export function Navigation() {
                 src="https://cdn.builder.io/api/v1/image/assets%2Fde044ef8cfe842358fb55730203f5e75%2Fa8d3493eb96d480eaf9257873ded0fd1"
                 alt="Globalexis Logo"
                 className="h-[85px] w-auto"
-                style={{ marginTop: '45px' }}
+                style={{ marginTop: '20px' }}
               />
             </button>
 
             <div className="hidden md:flex items-center gap-8">
-              {navLinks.map((link) => (
-                <button
-                  key={link.id}
-                  onClick={() => scrollToSection(link.id)}
-                  className="text-gray-300 hover:text-amber-400 transition-colors font-medium relative group"
-                >
-                  {link.label}
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-amber-400 to-primary-400 group-hover:w-full transition-all duration-300"></span>
-                </button>
-              ))}
+              {navLinks.map((link) => {
+                const isActive = activeSection === link.id;
+                return (
+                  <button
+                    key={link.id}
+                    onClick={() => scrollToSection(link.id)}
+                    className={`transition-colors font-medium relative group ${isActive
+                        ? 'text-amber-400'
+                        : 'text-gray-300 hover:text-amber-400'
+                      }`}
+                  >
+                    {link.label}
+                    <span
+                      className={`absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-amber-400 to-primary-400 transition-all duration-300 ${isActive ? 'w-full' : 'w-0 group-hover:w-full'
+                        }`}
+                    />
+                  </button>
+                );
+              })}
 
               <a href="tel:+17035206130" className="flex items-center gap-2 text-gray-300 hover:text-amber-400 transition-colors pl-6 border-l border-dark-700">
                 <Phone className="w-4 h-4" />
@@ -100,15 +112,21 @@ export function Navigation() {
           ></div>
           <div className="absolute top-20 right-0 left-0 bg-dark-900 border-t border-dark-700 shadow-xl animate-fade-in-down">
             <div className="flex flex-col p-4 gap-2">
-              {navLinks.map((link) => (
-                <button
-                  key={link.id}
-                  onClick={() => scrollToSection(link.id)}
-                  className="text-left text-gray-300 hover:text-amber-400 hover:bg-dark-800 px-4 py-3 rounded-lg transition-all font-medium"
-                >
-                  {link.label}
-                </button>
-              ))}
+              {navLinks.map((link) => {
+                const isActive = activeSection === link.id;
+                return (
+                  <button
+                    key={link.id}
+                    onClick={() => scrollToSection(link.id)}
+                    className={`text-left px-4 py-3 rounded-lg transition-all font-medium ${isActive
+                        ? 'text-amber-400 bg-dark-800'
+                        : 'text-gray-300 hover:text-amber-400 hover:bg-dark-800'
+                      }`}
+                  >
+                    {link.label}
+                  </button>
+                );
+              })}
               <button
                 onClick={() => scrollToSection('contact')}
                 className="mt-4 w-full px-4 py-3 bg-gradient-to-r from-primary-600 to-amber-600 hover:from-primary-500 hover:to-amber-500 text-white rounded-lg font-medium transition-all"

@@ -20,6 +20,29 @@
     perspective: 1000px;
   }
 
+  /* Native CSS Scroll Snap */
+  .horizontal-scroll {
+    display: flex;
+    height: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+  }
+
+  .horizontal-scroll::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+  }
+
+  .horizontal-scroll > section {
+    min-width: 100vw;
+    height: 100%;
+    scroll-snap-align: start;
+    flex-shrink: 0;
+  }
+
   /* Section Slide In Animation */
   @keyframes slide-in-right {
     from {

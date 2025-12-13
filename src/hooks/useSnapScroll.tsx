@@ -1,53 +1,68 @@
-import { useEffect, useState, useRef } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
-export function HorizontalSnapScroll(totalSlides: number) {
+/**
+ * Hook for enhancing native CSS scroll-snap with keyboard navigation
+ * and current slide tracking. The actual scrolling is handled by native
+ * CSS scroll-snap - this just adds keyboard support and progress tracking.
+ */
+export function useSnapScroll(containerRef: React.RefObject<HTMLElement | null>) {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const wheelTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-  const isScrollingRef = useRef(false);
-  const lastScrollTimeRef = useRef(0);
-  const currentSlideRef = useRef(0);
+  const sectionsRef = useRef<HTMLElement[]>([]);
 
+  // Update sections reference when container changes
   useEffect(() => {
-    currentSlideRef.current = currentSlide;
-  }, [currentSlide]);
+    if (containerRef.current) {
+      sectionsRef.current = Array.from(containerRef.current.children) as HTMLElement[];
+    }
+  }, [containerRef]);
 
+  // Track current slide on scroll
   useEffect(() => {
-    const handleWheel = (e: WheelEvent) => {
-      e.preventDefault();
+    const container = containerRef.current;
+    if (!container) return;
 
-      if (isScrollingRef.current) {
-        return;
-      }
-
-      const now = Date.now();
-      const timeSinceLastScroll = now - lastScrollTimeRef.current;
-
-      if (timeSinceLastScroll < 4000) {
-        return;
-      }
-
-      lastScrollTimeRef.current = now;
-      isScrollingRef.current = true;
-
-      const direction = e.deltaY > 0 ? 1 : -1;
-      setCurrentSlide(prevSlide => {
-        const nextSlide = Math.max(0, Math.min(totalSlides - 1, prevSlide + direction));
-        return nextSlide;
-      });
-
-      wheelTimeoutRef.current = setTimeout(() => {
-        isScrollingRef.current = false;
-      }, 4000);
+    const handleScroll = () => {
+      const scrollLeft = container.scrollLeft;
+      const slideWidth = container.offsetWidth;
+      const newSlide = Math.round(scrollLeft / slideWidth);
+      setCurrentSlide(newSlide);
     };
 
-    window.addEventListener('wheel', handleWheel, { passive: false });
-    return () => {
-      window.removeEventListener('wheel', handleWheel);
-      if (wheelTimeoutRef.current) {
-        clearTimeout(wheelTimeoutRef.current);
+    container.addEventListener('scroll', handleScroll, { passive: true });
+    return () => container.removeEventListener('scroll', handleScroll);
+  }, [containerRef]);
+
+  // Keyboard navigation
+  const scrollToSlide = useCallback((index: number) => {
+    const sections = sectionsRef.current;
+    if (index >= 0 && index < sections.length) {
+      sections[index].scrollIntoView({ behavior: 'smooth', inline: 'start' });
+    }
+  }, []);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      const sections = sectionsRef.current;
+      if (sections.length === 0) return;
+
+      if (['ArrowRight', 'ArrowDown', 'PageDown', ' '].includes(e.key)) {
+        e.preventDefault();
+        if (currentSlide < sections.length - 1) {
+          scrollToSlide(currentSlide + 1);
+        }
+      }
+
+      if (['ArrowLeft', 'ArrowUp', 'PageUp'].includes(e.key)) {
+        e.preventDefault();
+        if (currentSlide > 0) {
+          scrollToSlide(currentSlide - 1);
+        }
       }
     };
-  }, [totalSlides]);
 
-  return currentSlide;
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [currentSlide, scrollToSlide]);
+
+  return { currentSlide, scrollToSlide, totalSlides: sectionsRef.current.length };
 }
