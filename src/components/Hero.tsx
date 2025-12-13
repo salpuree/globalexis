@@ -109,18 +109,18 @@ export function Hero() {
         </div>
 
         {/* Floating stats cards */}
-        <div className="grid grid-cols-3 gap-4 mt-2 max-w-2xl mx-auto">
-          <div className="glass-pulse backdrop-blur-sm bg-dark-800/30 rounded-xl p-6 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
-            <div className="text-2xl font-bold text-primary-400">24/7</div>
-            <div className="text-xs text-gray-400 mt-2">Always Available</div>
+        <div className="grid grid-cols-3 gap-3 mt-1 max-w-2xl mx-auto">
+          <div className="glass-pulse backdrop-blur-sm bg-dark-800/30 rounded-lg p-4 animate-fade-in-up text-center" style={{ animationDelay: '0.5s' }}>
+            <div className="text-xl font-bold text-primary-400">24/7</div>
+            <div className="text-xs text-gray-400 mt-1">Always Available</div>
           </div>
-          <div className="glass-pulse backdrop-blur-sm bg-dark-800/30 rounded-xl p-6 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
-            <div className="text-2xl font-bold text-amber-400">100%</div>
-            <div className="text-xs text-gray-400 mt-2">Client Focused</div>
+          <div className="glass-pulse backdrop-blur-sm bg-dark-800/30 rounded-lg p-4 animate-fade-in-up text-center" style={{ animationDelay: '0.6s' }}>
+            <div className="text-xl font-bold text-amber-400">100%</div>
+            <div className="text-xs text-gray-400 mt-1">Client Focused</div>
           </div>
-          <div className="glass-pulse backdrop-blur-sm bg-dark-800/30 rounded-xl p-6 animate-fade-in-up" style={{ animationDelay: '0.7s' }}>
-            <div className="text-2xl font-bold text-accent-400">Expert</div>
-            <div className="text-xs text-gray-400 mt-2">Team Support</div>
+          <div className="glass-pulse backdrop-blur-sm bg-dark-800/30 rounded-lg p-4 animate-fade-in-up text-center" style={{ animationDelay: '0.7s' }}>
+            <div className="text-xl font-bold text-accent-400">Expert</div>
+            <div className="text-xs text-gray-400 mt-1">Team Support</div>
           </div>
         </div>
       </div>
