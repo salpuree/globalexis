@@ -71,7 +71,7 @@ export function WhyChooseUs() {
               who understands the luxury transport industry.
             </p>
 
-            <div className="space-y-3">
+            <div className="space-y-3 sm:space-y-4 lg:space-y-5">
               {benefits.map((benefit, index) => {
                 const Icon = benefit.icon;
                 const colors = [
