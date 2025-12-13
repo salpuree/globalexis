@@ -78,22 +78,22 @@ export function ContactForm() {
   ];
 
   return (
-    <section id="contact" className="py-24 bg-gradient-to-b from-dark-950 to-dark-900 relative overflow-hidden border-b border-amber-600/10">
+    <section id="contact" className="h-full w-full py-12 bg-gradient-to-b from-dark-950 to-dark-900 relative overflow-hidden border-b border-amber-600/10 flex items-center">
       <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-20">
-          <div className="animate-fade-in-up">
-            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+        <div className="grid lg:grid-cols-2 gap-8">
+          <div className="animate-fade-in-up" style={{ paddingTop: '138px' }}>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
               Let's Start the Conversation
             </h2>
 
-            <p className="text-xl text-gray-300 mb-10 leading-relaxed">
+            <p className="text-lg text-gray-300 mb-6 leading-relaxed">
               Ready to transform your back-office operations? Fill out the form and our team
               will reach out to discuss how we can support your luxury transport business.
             </p>
 
-            <div className="space-y-8">
+            <div className="space-y-6">
               <div className="flex gap-5 items-start p-8 bg-dark-800/50 backdrop-blur-sm rounded-xl border border-amber-600/20 hover:border-amber-600/50 transition-colors">
                 <div className="p-3 bg-amber-600/10 rounded-lg">
                   <Mail className="w-6 h-6 text-amber-400" />
@@ -109,7 +109,7 @@ export function ContactForm() {
           </div>
 
           <div className="animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-            <form onSubmit={handleSubmit} className="bg-dark-800/50 backdrop-blur-sm rounded-2xl p-10 border border-dark-700">
+            <form onSubmit={handleSubmit} className="bg-dark-800/50 backdrop-blur-sm rounded-2xl border border-dark-700" style={{ margin: '46px 0 20px', padding: '5px 20px' }}>
               {status === 'success' && (
                 <div className="mb-8 p-5 bg-green-600/10 border border-green-600/30 rounded-lg flex items-center gap-3 animate-scale-in">
                   <CheckCircle2 className="w-6 h-6 text-green-400" />
