@@ -6,12 +6,12 @@ import { WhyChooseUs } from './components/WhyChooseUs';
 import { HowItWorks } from './components/HowItWorks';
 import { ContactForm } from './components/ContactForm';
 import { Footer } from './components/Footer';
-import { useSnapScroll } from './hooks/useSnapScroll';
+import { HorizontalSnapScroll } from './hooks/useSnapScroll';
 import { useRef } from 'react';
 
 function App() {
   const NUM_SECTIONS = 7;
-  const currentSlide = useSnapScroll(NUM_SECTIONS);
+  const currentSlide = HorizontalSnapScroll(NUM_SECTIONS);
   const contentRef = useRef<HTMLDivElement>(null);
   const translateX = -(currentSlide * 100);
 
