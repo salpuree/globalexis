@@ -131,8 +131,8 @@ export function Services() {
         </div>
 
         {/* Footer badge */}
-        <div className="text-center mt-3 lg:mt-4">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-dark-800/50 backdrop-blur-sm border border-primary-600/30 rounded-full animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
+        <div className="text-center mt-2 sm:mt-3 lg:mt-4">
+          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-dark-800/50 backdrop-blur-sm border border-primary-600/30 rounded-full animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
             <div className="w-1.5 h-1.5 bg-primary-400 rounded-full animate-pulse-glow"></div>
             <span className="text-xs lg:text-sm text-gray-300 font-medium">Available 24/7 for Your Business</span>
           </div>
