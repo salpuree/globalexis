@@ -71,7 +71,7 @@ export function Stats() {
     <section
       id="stats"
       ref={sectionRef}
-      className="h-full w-full pt-20 pb-16 sm:pt-24 sm:pb-16 lg:pt-28 lg:pb-16 bg-gradient-to-r from-dark-900 via-dark-950 to-dark-900 relative overflow-hidden border-y border-amber-600/10 flex items-center justify-center"
+      className="h-full w-full pt-4 pb-4 sm:pt-6 sm:pb-6 lg:pt-8 lg:pb-8 bg-gradient-to-r from-dark-900 via-dark-950 to-dark-900 relative overflow-y-auto border-y border-amber-600/10 flex items-center justify-center"
     >
       {/* Animated background effects */}
       <div className="absolute inset-0">

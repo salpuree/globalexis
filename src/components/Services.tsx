@@ -66,7 +66,7 @@ export function Services() {
     <section
       id="services"
       ref={sectionRef}
-      className="h-full w-full pt-16 pb-8 sm:pt-20 sm:pb-12 lg:pt-24 lg:pb-16 bg-gradient-to-b from-dark-900 to-dark-950 relative overflow-hidden border-b border-amber-600/10 flex flex-col justify-start"
+      className="h-full w-full pt-4 pb-4 sm:pt-6 sm:pb-6 lg:pt-8 lg:pb-8 bg-gradient-to-b from-dark-900 to-dark-950 relative overflow-y-auto border-b border-amber-600/10 flex flex-col justify-start"
     >
       {/* Animated background elements */}
       <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
