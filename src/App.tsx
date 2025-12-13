@@ -6,23 +6,23 @@ import { WhyChooseUs } from './components/WhyChooseUs';
 import { HowItWorks } from './components/HowItWorks';
 import { ContactForm } from './components/ContactForm';
 import { Footer } from './components/Footer';
-import { useHorizontalScroll } from './hooks/useHorizontalScroll';
+import { useSnapScroll } from './hooks/useSnapScroll';
 import { useRef } from 'react';
 
 function App() {
-  const scrollProgress = useHorizontalScroll();
-  const contentRef = useRef<HTMLDivElement>(null);
   const NUM_SECTIONS = 7;
-  const translateX = -(scrollProgress / 100) * ((NUM_SECTIONS - 1) * 100);
+  const currentSlide = useSnapScroll(NUM_SECTIONS);
+  const contentRef = useRef<HTMLDivElement>(null);
+  const translateX = -(currentSlide * 100);
 
   return (
-    <div className="relative bg-dark-950 overflow-x-hidden">
+    <div className="relative bg-dark-950 overflow-hidden" style={{ height: '100vh' }}>
       <Navigation />
 
       <div className="fixed top-20 left-0 right-0 h-[calc(100vh-80px)] w-screen overflow-hidden">
         <div
           ref={contentRef}
-          className="h-full flex transition-transform duration-300 ease-out"
+          className="h-full flex transition-transform duration-700 ease-out"
           style={{
             transform: `translateX(${translateX}%)`,
             width: `${NUM_SECTIONS * 100}%`,
@@ -59,13 +59,12 @@ function App() {
         </div>
       </div>
 
-      <div style={{ height: '100vh' }} />
-      <div style={{ height: '100vh' }} />
-      <div style={{ height: '100vh' }} />
-      <div style={{ height: '100vh' }} />
-      <div style={{ height: '100vh' }} />
-      <div style={{ height: '100vh' }} />
-      <div style={{ height: '100vh' }} />
+      {/* Hidden scroll container for maintaining scroll history */}
+      <div className="hidden">
+        {Array.from({ length: NUM_SECTIONS }).map((_, i) => (
+          <div key={i} style={{ height: '100vh' }} />
+        ))}
+      </div>
     </div>
   );
 }
