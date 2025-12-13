@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import type { CSSProperties } from 'react';
 
 const SLIDES = [
   { id: 0, color: '#111', label: 'Slide 1' },
@@ -182,6 +183,7 @@ export default function HorizontalSnapScroll() {
 /* ---------- STYLES ---------- */
 
 const styles: Record<string, React.CSSProperties> = {
+
   viewport: {
     width: '100vw',
     height: '100vh',
