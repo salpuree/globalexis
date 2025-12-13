@@ -108,7 +108,7 @@ export function WhyChooseUs() {
           </div>
 
           <div className={`relative ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '300ms' }}>
-            <div className="relative rounded-lg sm:rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative rounded-lg sm:rounded-2xl lg:rounded-3xl overflow-hidden shadow-2xl lg:shadow-3xl">
               <img
                 src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800"
                 alt="Professional team collaboration"
@@ -117,16 +117,16 @@ export function WhyChooseUs() {
               <div className="absolute inset-0 bg-gradient-to-t from-dark-900 via-transparent to-transparent"></div>
             </div>
 
-            <div className="relative lg:absolute lg:-bottom-8 lg:-left-8 bg-dark-800 border border-primary-600/30 rounded-lg sm:rounded-2xl p-4 sm:p-6 shadow-2xl backdrop-blur-sm mt-4 lg:mt-0">
-              <div className="flex items-center gap-2 sm:gap-4">
+            <div className="relative lg:absolute lg:-bottom-12 lg:-left-10 bg-dark-800 border border-primary-600/30 rounded-lg sm:rounded-2xl lg:rounded-2xl p-4 sm:p-6 lg:p-8 shadow-2xl lg:shadow-3xl backdrop-blur-sm mt-4 sm:mt-6 lg:mt-0">
+              <div className="flex items-center gap-3 sm:gap-4 lg:gap-6">
                 <div className="text-center flex-1">
-                  <div className="text-2xl sm:text-4xl font-bold text-primary-400">24/7</div>
-                  <div className="text-xs sm:text-sm text-gray-400">Available</div>
+                  <div className="text-2xl sm:text-4xl lg:text-5xl font-bold text-primary-400">24/7</div>
+                  <div className="text-xs sm:text-sm lg:text-base text-gray-400 mt-1">Available</div>
                 </div>
-                <div className="w-px h-8 sm:h-12 bg-dark-600"></div>
+                <div className="w-px h-10 sm:h-12 lg:h-16 bg-dark-600"></div>
                 <div className="text-center flex-1">
-                  <div className="text-2xl sm:text-4xl font-bold text-accent-400">100%</div>
-                  <div className="text-xs sm:text-sm text-gray-400">Luxury Focus</div>
+                  <div className="text-2xl sm:text-4xl lg:text-5xl font-bold text-accent-400">100%</div>
+                  <div className="text-xs sm:text-sm lg:text-base text-gray-400 mt-1">Luxury Focus</div>
                 </div>
               </div>
             </div>
