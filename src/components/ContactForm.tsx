@@ -83,7 +83,7 @@ export function ContactForm() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         <div className="grid lg:grid-cols-2 gap-8">
-          <div className="animate-fade-in-up">
+          <div className="animate-fade-in-up" style={{ paddingBottom: '29px', margin: '75px 0 83px' }}>
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
               Let's Start the Conversation
             </h2>
@@ -109,7 +109,7 @@ export function ContactForm() {
           </div>
 
           <div className="animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-            <form onSubmit={handleSubmit} className="bg-dark-800/50 backdrop-blur-sm rounded-2xl border border-dark-700 p-6">
+            <form onSubmit={handleSubmit} className="bg-dark-800/50 backdrop-blur-sm rounded-2xl border border-dark-700 p-5">
               {status === 'success' && (
                 <div className="mb-8 p-5 bg-green-600/10 border border-green-600/30 rounded-lg flex items-center gap-3 animate-scale-in">
                   <CheckCircle2 className="w-6 h-6 text-green-400" />
@@ -128,7 +128,7 @@ export function ContactForm() {
                 </div>
               )}
 
-              <div className="space-y-5">
+              <div className="space-y-5" style={{ lineHeight: '16px' }}>
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-1.5">
                     Full Name *
