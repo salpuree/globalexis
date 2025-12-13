@@ -205,7 +205,7 @@ export function ContactForm() {
                 </div>
 
                 <div>
-                  <label htmlFor="service_interest" className="block text-sm lg:text-base font-medium text-gray-300 mb-1.5">
+                  <label htmlFor="service_interest" className="block text-xs sm:text-sm lg:text-base font-medium text-gray-300 mb-1.5">
                     Service Interest *
                   </label>
                   <select
@@ -213,7 +213,7 @@ export function ContactForm() {
                     required
                     value={formData.service_interest}
                     onChange={(e) => setFormData({ ...formData, service_interest: e.target.value })}
-                    className="w-full px-4 py-2.5 lg:py-3 bg-dark-900/50 border border-dark-600 rounded-lg text-white focus:outline-none focus:border-primary-600 focus:ring-2 focus:ring-primary-600/20 transition-all"
+                    className="w-full px-4 py-2 sm:py-2.5 lg:py-3 bg-dark-900/50 border border-dark-600 rounded-lg text-sm sm:text-base text-white focus:outline-none focus:border-primary-600 focus:ring-2 focus:ring-primary-600/20 transition-all"
                   >
                     <option value="">Select a service</option>
                     {services.map((service) => (
