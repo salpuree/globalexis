@@ -12,58 +12,60 @@ import { useRef } from 'react';
 function App() {
   const scrollProgress = useHorizontalScroll();
   const contentRef = useRef<HTMLDivElement>(null);
-  const translateX = -(scrollProgress / 100) * (7 * 100 - 100);
+  const NUM_SECTIONS = 7;
+  const translateX = -(scrollProgress / 100) * ((NUM_SECTIONS - 1) * 100);
 
   return (
-    <div className="relative bg-dark-950">
+    <div className="relative bg-dark-950 overflow-x-hidden">
       <Navigation />
 
-      <div className="relative overflow-hidden h-screen w-screen fixed top-20">
+      <div className="fixed top-20 left-0 right-0 h-[calc(100vh-80px)] w-screen overflow-hidden">
         <div
           ref={contentRef}
-          className="h-screen flex transition-transform duration-500 ease-out"
+          className="h-full flex transition-transform duration-300 ease-out"
           style={{
             transform: `translateX(${translateX}%)`,
-            width: 'max-content'
+            width: `${NUM_SECTIONS * 100}%`,
+            willChange: 'transform'
           }}
         >
-          <div className="w-screen h-screen flex-shrink-0">
+          <div style={{ width: `${100 / NUM_SECTIONS}%` }} className="h-full flex-shrink-0">
             <Hero />
           </div>
 
-          <div className="w-screen h-screen flex-shrink-0">
+          <div style={{ width: `${100 / NUM_SECTIONS}%` }} className="h-full flex-shrink-0">
             <Stats />
           </div>
 
-          <div className="w-screen h-screen flex-shrink-0">
+          <div style={{ width: `${100 / NUM_SECTIONS}%` }} className="h-full flex-shrink-0">
             <Services />
           </div>
 
-          <div className="w-screen h-screen flex-shrink-0">
+          <div style={{ width: `${100 / NUM_SECTIONS}%` }} className="h-full flex-shrink-0">
             <WhyChooseUs />
           </div>
 
-          <div className="w-screen h-screen flex-shrink-0">
+          <div style={{ width: `${100 / NUM_SECTIONS}%` }} className="h-full flex-shrink-0">
             <HowItWorks />
           </div>
 
-          <div className="w-screen h-screen flex-shrink-0">
+          <div style={{ width: `${100 / NUM_SECTIONS}%` }} className="h-full flex-shrink-0">
             <ContactForm />
           </div>
 
-          <div className="w-screen h-screen flex-shrink-0">
+          <div style={{ width: `${100 / NUM_SECTIONS}%` }} className="h-full flex-shrink-0">
             <Footer />
           </div>
         </div>
       </div>
 
-      <div className="h-screen" />
-      <div className="h-screen" />
-      <div className="h-screen" />
-      <div className="h-screen" />
-      <div className="h-screen" />
-      <div className="h-screen" />
-      <div className="h-screen" />
+      <div style={{ height: '100vh' }} />
+      <div style={{ height: '100vh' }} />
+      <div style={{ height: '100vh' }} />
+      <div style={{ height: '100vh' }} />
+      <div style={{ height: '100vh' }} />
+      <div style={{ height: '100vh' }} />
+      <div style={{ height: '100vh' }} />
     </div>
   );
 }
