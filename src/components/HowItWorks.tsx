@@ -63,12 +63,12 @@ export function HowItWorks() {
         <div className="absolute bottom-1/4 left-0 w-96 h-96 bg-accent-600/5 rounded-full blur-3xl"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full py-2">
+        <div className="text-center mb-8">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
             How It Works
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
             Getting started is simple. Our proven process ensures you're up and running
             quickly with minimal disruption to your operations.
           </p>
@@ -77,7 +77,7 @@ export function HowItWorks() {
         <div className="relative">
           <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-primary-600/20 via-amber-600/20 via-accent-600/20 to-primary-600/20 transform -translate-y-1/2"></div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 relative">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
             {steps.map((step, index) => {
               const Icon = step.icon;
               const isVisible = visibleSteps.includes(index);
@@ -141,8 +141,8 @@ export function HowItWorks() {
           </div>
         </div>
 
-        <div className="mt-12 text-center">
-          <p className="text-gray-300 text-lg mb-8">
+        <div className="mt-8 text-center">
+          <p className="text-gray-300 text-base mb-6">
             Ready to elevate your back-office operations?
           </p>
           <button

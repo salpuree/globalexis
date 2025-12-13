@@ -82,18 +82,18 @@ export function ContactForm() {
       <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-8">
           <div className="animate-fade-in-up">
-            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-8">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
               Let's Start the Conversation
             </h2>
 
-            <p className="text-xl text-gray-300 mb-10 leading-relaxed">
+            <p className="text-lg text-gray-300 mb-6 leading-relaxed">
               Ready to transform your back-office operations? Fill out the form and our team
               will reach out to discuss how we can support your luxury transport business.
             </p>
 
-            <div className="space-y-8">
+            <div className="space-y-6">
               <div className="flex gap-5 items-start p-8 bg-dark-800/50 backdrop-blur-sm rounded-xl border border-amber-600/20 hover:border-amber-600/50 transition-colors">
                 <div className="p-3 bg-amber-600/10 rounded-lg">
                   <Mail className="w-6 h-6 text-amber-400" />

@@ -56,22 +56,22 @@ export function WhyChooseUs() {
     >
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-amber-600/30 to-transparent"></div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full py-2">
+        <div className="grid lg:grid-cols-2 gap-8 items-center">
           <div className={`${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
-            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-8">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
               Why Choose
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 via-amber-300 to-accent-400">
                 {' '}Globalexis
               </span>
             </h2>
 
-            <p className="text-xl text-gray-300 mb-10 leading-relaxed">
+            <p className="text-lg text-gray-300 mb-6 leading-relaxed">
               When your reputation depends on flawless service, you need a back-office partner
               who understands the luxury transport industry inside and out.
             </p>
 
-            <div className="space-y-8">
+            <div className="space-y-6">
               {benefits.map((benefit, index) => {
                 const Icon = benefit.icon;
                 const colors = [

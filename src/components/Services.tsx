@@ -84,9 +84,9 @@ export function Services() {
       <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-primary-600/20 to-amber-600/10 rounded-full blur-3xl animate-float-enhanced opacity-30"></div>
       <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-accent-600/20 to-amber-600/10 rounded-full blur-3xl animate-float-enhanced opacity-30" style={{ animationDelay: '1s' }}></div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-        <div className="text-center mb-8">
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-8 animate-fade-in-up">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full py-2">
+        <div className="text-center mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4 animate-fade-in-up">
             Comprehensive Back-Office Solutions
           </h2>
           <div className="h-1 w-20 bg-gradient-to-r from-primary-600 via-amber-400 to-accent-400 mx-auto mb-8 animate-pulse-glow"></div>
@@ -96,7 +96,7 @@ export function Services() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
           {services.map((service, index) => {
             const Icon = service.icon;
             const isVisible = visibleItems.includes(index);
@@ -172,7 +172,7 @@ export function Services() {
         </div>
 
         {/* Footer badge with glow */}
-        <div className="mt-12 text-center">
+        <div className="mt-6 text-center">
           <div className="inline-flex items-center gap-3 px-6 py-3 bg-dark-800/50 backdrop-blur-sm border border-primary-600/30 rounded-full animate-fade-in-up neon-glow" style={{ animationDelay: '0.5s' }}>
             <div className="w-2 h-2 bg-primary-400 rounded-full animate-pulse-glow"></div>
             <span className="text-gray-300 font-medium">Available 24/7 for Your Business</span>
