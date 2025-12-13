@@ -122,16 +122,31 @@ export default function HorizontalSnapFlick({
         const container = containerRef.current;
         if (!container) return;
 
+        const touchStartX = { current: null as number | null };
+
         const onTouchStart = (e: TouchEvent) => {
             touchStartY.current = e.touches[0].clientY;
+            touchStartX.current = e.touches[0].clientX;
             touchStartTime.current = Date.now();
             touchDeltaAcc.current = 0;
         };
 
         const onTouchMove = (e: TouchEvent) => {
-            if (touchStartY.current == null) return;
+            if (touchStartY.current == null || touchStartX.current == null) return;
+            
             const deltaY = touchStartY.current - e.touches[0].clientY;
-            touchDeltaAcc.current = deltaY;
+            const deltaX = touchStartX.current - e.touches[0].clientX;
+            
+            // Use whichever direction has more movement (vertical or horizontal)
+            // This allows both swipe directions to trigger horizontal scroll
+            if (Math.abs(deltaY) > Math.abs(deltaX)) {
+                touchDeltaAcc.current = deltaY;
+            } else {
+                touchDeltaAcc.current = deltaX;
+            }
+            
+            // Prevent default to stop any native scrolling
+            e.preventDefault();
         };
 
         const onTouchEnd = () => {
@@ -139,8 +154,8 @@ export default function HorizontalSnapFlick({
             const delta = touchDeltaAcc.current;
             const elapsed = Date.now() - touchStartTime.current;
 
-            // Only trigger if swipe is significant enough
-            if (Math.abs(delta) > 30) {
+            // Lower threshold for mobile - 20px instead of 30px
+            if (Math.abs(delta) > 20) {
                 const velocity = Math.abs(delta) / elapsed;
                 let steps = velocity > 0.3 ? Math.min(2, Math.ceil(velocity * 2)) : 1;
 
@@ -152,11 +167,12 @@ export default function HorizontalSnapFlick({
             }
 
             touchStartY.current = null;
+            touchStartX.current = null;
             touchDeltaAcc.current = 0;
         };
 
         container.addEventListener('touchstart', onTouchStart, { passive: true });
-        container.addEventListener('touchmove', onTouchMove, { passive: true });
+        container.addEventListener('touchmove', onTouchMove, { passive: false });
         container.addEventListener('touchend', onTouchEnd, { passive: true });
 
         return () => {
