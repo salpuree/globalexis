@@ -187,17 +187,17 @@ export function ContactForm() {
                   </div>
 
                   <div>
-                    <label htmlFor="phone" className="block text-sm lg:text-base font-medium text-gray-300 mb-1.5">
+                    <label htmlFor="phone" className="block text-xs sm:text-sm lg:text-base font-medium text-gray-300 mb-1.5">
                       Phone Number
                     </label>
                     <div className="relative">
-                      <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-500" />
+                      <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 sm:w-5 sm:h-5 text-gray-500" />
                       <input
                         type="tel"
                         id="phone"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        className="w-full pl-12 pr-4 py-2.5 lg:py-3 bg-dark-900/50 border border-dark-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-primary-600 focus:ring-2 focus:ring-primary-600/20 transition-all"
+                        className="w-full pl-10 sm:pl-12 pr-4 py-2 sm:py-2.5 lg:py-3 bg-dark-900/50 border border-dark-600 rounded-lg text-sm sm:text-base text-white placeholder-gray-500 focus:outline-none focus:border-primary-600 focus:ring-2 focus:ring-primary-600/20 transition-all"
                         placeholder="+1 (555) 000-0000"
                       />
                     </div>
