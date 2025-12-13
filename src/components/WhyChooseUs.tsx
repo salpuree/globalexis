@@ -66,7 +66,7 @@ export function WhyChooseUs() {
               </span>
             </h2>
 
-            <p className="text-sm lg:text-base text-gray-300 mb-4 leading-relaxed">
+            <p className="text-sm sm:text-base lg:text-lg text-gray-300 mb-6 sm:mb-8 lg:mb-10 leading-relaxed">
               When your reputation depends on flawless service, you need a back-office partner
               who understands the luxury transport industry.
             </p>
