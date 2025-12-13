@@ -128,9 +128,9 @@ export function ContactForm() {
                 </div>
               )}
 
-              <div className="space-y-7">
+              <div className="space-y-5">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-1.5">
                     Full Name *
                   </label>
                   <div className="relative">
