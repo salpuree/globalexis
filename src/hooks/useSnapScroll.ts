@@ -17,32 +17,28 @@ export default function HorizontalSnapScroll() {
 
   const lockedRef = useRef(false);
   const touchStartY = useRef<number | null>(null);
-  const touchStartTime = useRef<number>(0);
+  const touchStartTime = useRef(0);
 
   const maxIndex = SLIDES.length - 1;
 
-  /* ---------- MOVE ---------- */
   const move = (dir: 1 | -1) => {
     if (lockedRef.current) return;
 
-    const next = Math.max(0, Math.min(maxIndex, index + dir));
-
-    // allow normal scroll after last slide
-    if (index === maxIndex && dir === 1) return;
-    if (index === 0 && dir === -1) return;
+    if ((index === 0 && dir === -1) || (index === maxIndex && dir === 1)) {
+      return;
+    }
 
     lockedRef.current = true;
-    setIndex(next);
+    setIndex(i => i + dir);
 
     setTimeout(() => {
       lockedRef.current = false;
     }, reducedMotion ? 0 : ANIMATION_MS);
   };
 
-  /* ---------- URL SYNC ---------- */
+  /* URL sync */
   useEffect(() => {
-    const path = `/slide/${index}`;
-    window.history.pushState({ index }, '', path);
+    history.pushState({ index }, '', `/slide/${index}`);
   }, [index]);
 
   useEffect(() => {
@@ -51,65 +47,45 @@ export default function HorizontalSnapScroll() {
         setIndex(e.state.index);
       }
     };
-
     window.addEventListener('popstate', onPop);
     return () => window.removeEventListener('popstate', onPop);
   }, []);
 
-  /* ---------- REDUCED MOTION ---------- */
+  /* reduced motion */
   useEffect(() => {
-    const media = window.matchMedia('(prefers-reduced-motion: reduce)');
-    setReducedMotion(media.matches);
-
-    const listener = () => setReducedMotion(media.matches);
-    media.addEventListener('change', listener);
-    return () => media.removeEventListener('change', listener);
+    const mq = matchMedia('(prefers-reduced-motion: reduce)');
+    setReducedMotion(mq.matches);
+    mq.addEventListener('change', () => setReducedMotion(mq.matches));
   }, []);
 
-  /* ---------- WHEEL ---------- */
+  /* wheel */
   useEffect(() => {
     const onWheel = (e: WheelEvent) => {
-      if (index === 0 && e.deltaY < 0) return;
-      if (index === maxIndex && e.deltaY > 0) return;
-
-      e.preventDefault();
       if (Math.abs(e.deltaY) < 30) return;
-
+      e.preventDefault();
       move(e.deltaY > 0 ? 1 : -1);
     };
-
     window.addEventListener('wheel', onWheel, { passive: false });
     return () => window.removeEventListener('wheel', onWheel);
   }, [index]);
 
-  /* ---------- KEYBOARD ---------- */
+  /* keyboard */
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if (
-        e.key === 'ArrowDown' ||
-        e.key === 'ArrowRight' ||
-        e.key === 'PageDown' ||
-        e.key === ' '
-      ) {
+      if (['ArrowDown', 'ArrowRight', 'PageDown', ' '].includes(e.key)) {
         e.preventDefault();
         move(1);
       }
-
-      if (
-        e.key === 'ArrowUp' ||
-        e.key === 'ArrowLeft' ||
-        e.key === 'PageUp'
-      ) {
+      if (['ArrowUp', 'ArrowLeft', 'PageUp'].includes(e.key)) {
         e.preventDefault();
         move(-1);
       }
     };
-
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
   }, [index]);
 
-  /* ---------- TOUCH (INERTIAL) ---------- */
+  /* touch */
   useEffect(() => {
     const onTouchStart = (e: TouchEvent) => {
       touchStartY.current = e.touches[0].clientY;
@@ -117,19 +93,15 @@ export default function HorizontalSnapScroll() {
     };
 
     const onTouchMove = (e: TouchEvent) => {
-      if (touchStartY.current === null) return;
+      if (touchStartY.current == null) return;
 
       const deltaY = touchStartY.current - e.touches[0].clientY;
       const time = Date.now() - touchStartTime.current;
 
-      // quick flick or long drag
-      const isIntent =
-        Math.abs(deltaY) > TOUCH_THRESHOLD || time < 200;
-
-      if (!isIntent) return;
-
-      move(deltaY > 0 ? 1 : -1);
-      touchStartY.current = null;
+      if (Math.abs(deltaY) > TOUCH_THRESHOLD || time < 200) {
+        move(deltaY > 0 ? 1 : -1);
+        touchStartY.current = null;
+      }
     };
 
     window.addEventListener('touchstart', onTouchStart, { passive: true });
@@ -147,32 +119,22 @@ export default function HorizontalSnapScroll() {
         style={{
           ...styles.track,
           transform: `translateX(-${index * 100}vw)`,
-          transition: reducedMotion
-            ? 'none'
-            : `transform ${ANIMATION_MS}ms ease`
+          transition: reducedMotion ? 'none' : `transform ${ANIMATION_MS}ms ease`
         }}
       >
-        {SLIDES.map(slide => (
-          <section
-            key={slide.id}
-            style={{ ...styles.slide, background: slide.color }}
-          >
-            {slide.label}
+        {SLIDES.map(s => (
+          <section key={s.id} style={{ ...styles.slide, background: s.color }}>
+            {s.label}
           </section>
         ))}
       </div>
 
-      {/* PROGRESS DOTS */}
       <div style={styles.dots}>
         {SLIDES.map((_, i) => (
           <button
             key={i}
             onClick={() => setIndex(i)}
-            style={{
-              ...styles.dot,
-              opacity: i === index ? 1 : 0.4
-            }}
-            aria-label={`Go to slide ${i + 1}`}
+            style={{ ...styles.dot, opacity: i === index ? 1 : 0.4 }}
           />
         ))}
       </div>
@@ -180,10 +142,8 @@ export default function HorizontalSnapScroll() {
   );
 }
 
-/* ---------- STYLES ---------- */
-
-const styles: Record<string, React.CSSProperties> = {
-
+/* styles */
+const styles: Record<string, CSSProperties> = {
   viewport: {
     width: '100vw',
     height: '100vh',
