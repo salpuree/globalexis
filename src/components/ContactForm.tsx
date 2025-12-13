@@ -169,18 +169,18 @@ export function ContactForm() {
 
                 <div className="grid sm:grid-cols-2 gap-3 sm:gap-4">
                   <div>
-                    <label htmlFor="email" className="block text-sm lg:text-base font-medium text-gray-300 mb-1.5">
+                    <label htmlFor="email" className="block text-xs sm:text-sm lg:text-base font-medium text-gray-300 mb-1.5">
                       Email Address *
                     </label>
                     <div className="relative">
-                      <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-500" />
+                      <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 sm:w-5 sm:h-5 text-gray-500" />
                       <input
                         type="email"
                         id="email"
                         required
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="w-full pl-12 pr-4 py-2.5 lg:py-3 bg-dark-900/50 border border-dark-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-primary-600 focus:ring-2 focus:ring-primary-600/20 transition-all"
+                        className="w-full pl-10 sm:pl-12 pr-4 py-2 sm:py-2.5 lg:py-3 bg-dark-900/50 border border-dark-600 rounded-lg text-sm sm:text-base text-white placeholder-gray-500 focus:outline-none focus:border-primary-600 focus:ring-2 focus:ring-primary-600/20 transition-all"
                         placeholder="john@company.com"
                       />
                     </div>
