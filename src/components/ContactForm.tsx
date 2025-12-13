@@ -78,12 +78,12 @@ export function ContactForm() {
   ];
 
   return (
-    <section id="contact" className="h-full w-full py-12 bg-gradient-to-b from-dark-950 to-dark-900 relative overflow-hidden border-b border-amber-600/10 flex items-center">
+    <section id="contact" className="h-full w-full py-8 bg-gradient-to-b from-dark-950 to-dark-900 relative overflow-hidden border-b border-amber-600/10 flex items-center">
       <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         <div className="grid lg:grid-cols-2 gap-8">
-          <div className="animate-fade-in-up" style={{ paddingTop: '138px' }}>
+          <div className="animate-fade-in-up">
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
               Let's Start the Conversation
             </h2>
