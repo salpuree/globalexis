@@ -113,18 +113,18 @@ export function ContactForm() {
           <div className="animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
             <form onSubmit={handleSubmit} className="bg-dark-800/50 backdrop-blur-sm rounded-xl sm:rounded-2xl border border-dark-700 p-4 sm:p-6 lg:p-8">
               {status === 'success' && (
-                <div className="mb-6 p-4 bg-green-600/10 border border-green-600/30 rounded-lg flex items-center gap-3 animate-scale-in">
-                  <CheckCircle2 className="w-6 h-6 text-green-400 flex-shrink-0" />
-                  <p className="text-green-400 font-medium">
+                <div className="mb-4 sm:mb-6 p-3 sm:p-4 bg-green-600/10 border border-green-600/30 rounded-lg flex items-center gap-2 sm:gap-3 animate-scale-in">
+                  <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-green-400 flex-shrink-0" />
+                  <p className="text-green-400 font-medium text-sm sm:text-base">
                     Thank you! We'll be in touch soon.
                   </p>
                 </div>
               )}
 
               {status === 'error' && (
-                <div className="mb-6 p-4 bg-red-600/10 border border-red-600/30 rounded-lg flex items-center gap-3 animate-scale-in">
-                  <AlertCircle className="w-6 h-6 text-red-400 flex-shrink-0" />
-                  <p className="text-red-400 font-medium">
+                <div className="mb-4 sm:mb-6 p-3 sm:p-4 bg-red-600/10 border border-red-600/30 rounded-lg flex items-center gap-2 sm:gap-3 animate-scale-in">
+                  <AlertCircle className="w-5 h-5 sm:w-6 sm:h-6 text-red-400 flex-shrink-0" />
+                  <p className="text-red-400 font-medium text-sm sm:text-base">
                     {errorMessage || 'Something went wrong. Please try again.'}
                   </p>
                 </div>
