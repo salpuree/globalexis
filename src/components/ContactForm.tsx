@@ -78,11 +78,11 @@ export function ContactForm() {
   ];
 
   return (
-    <section id="contact" className="py-24 bg-gradient-to-b from-dark-950 to-dark-900 relative overflow-hidden border-b border-amber-600/10">
+    <section id="contact" className="h-screen w-screen py-16 bg-gradient-to-b from-dark-950 to-dark-900 relative overflow-hidden border-b border-amber-600/10 flex items-center">
       <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+        <div className="grid lg:grid-cols-2 gap-12">
           <div className="animate-fade-in-up">
             <h2 className="text-4xl sm:text-5xl font-bold text-white mb-8">
               Let's Start the Conversation

@@ -56,15 +56,15 @@ export function HowItWorks() {
     <section
       id="how-it-works"
       ref={sectionRef}
-      className="py-24 bg-gradient-to-b from-dark-950 via-dark-900 to-dark-950 relative overflow-hidden border-b border-amber-600/10"
+      className="h-screen w-screen py-16 bg-gradient-to-b from-dark-950 via-dark-900 to-dark-950 relative overflow-hidden border-b border-amber-600/10 flex flex-col justify-center"
     >
       <div className="absolute inset-0">
         <div className="absolute top-1/4 right-0 w-96 h-96 bg-primary-600/5 rounded-full blur-3xl"></div>
         <div className="absolute bottom-1/4 left-0 w-96 h-96 bg-accent-600/5 rounded-full blur-3xl"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+        <div className="text-center mb-12">
           <h2 className="text-4xl sm:text-5xl font-bold text-white mb-8">
             How It Works
           </h2>
@@ -141,7 +141,7 @@ export function HowItWorks() {
           </div>
         </div>
 
-        <div className="mt-20 text-center">
+        <div className="mt-12 text-center">
           <p className="text-gray-300 text-lg mb-8">
             Ready to elevate your back-office operations?
           </p>
