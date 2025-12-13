@@ -66,7 +66,7 @@ export function Services() {
     <section
       id="services"
       ref={sectionRef}
-      className="h-full w-full py-4 bg-gradient-to-b from-dark-900 to-dark-950 relative overflow-hidden border-b border-amber-600/10 flex flex-col justify-center"
+      className="h-full w-full py-4 sm:py-6 bg-gradient-to-b from-dark-900 to-dark-950 relative overflow-hidden border-b border-amber-600/10 flex flex-col justify-center"
     >
       {/* Animated background elements */}
       <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
@@ -77,7 +77,7 @@ export function Services() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         {/* Header */}
-        <div className="text-center mb-3 sm:mb-4 lg:mb-6">
+        <div className="text-center mb-2 sm:mb-3 lg:mb-4">
           <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-1 animate-fade-in-up">
             Comprehensive Back-Office Solutions
           </h2>
