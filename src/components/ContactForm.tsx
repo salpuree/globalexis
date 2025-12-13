@@ -84,11 +84,11 @@ export function ContactForm() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         <div className="grid lg:grid-cols-2 gap-8">
           <div className="animate-fade-in-up">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
+            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
               Let's Start the Conversation
             </h2>
 
-            <p className="text-lg text-gray-300 mb-6 leading-relaxed">
+            <p className="text-base text-gray-300 mb-4 leading-relaxed">
               Ready to transform your back-office operations? Fill out the form and our team
               will reach out to discuss how we can support your luxury transport business.
             </p>
