@@ -22,7 +22,7 @@ export function useSnapScroll(totalSlides: number) {
       const now = Date.now();
       const timeSinceLastScroll = now - lastScrollTimeRef.current;
 
-      if (timeSinceLastScroll < 2500) {
+      if (timeSinceLastScroll < 4000) {
         return;
       }
 
@@ -37,7 +37,7 @@ export function useSnapScroll(totalSlides: number) {
 
       wheelTimeoutRef.current = setTimeout(() => {
         isScrollingRef.current = false;
-      }, 2500);
+      }, 4000);
     };
 
     window.addEventListener('wheel', handleWheel, { passive: false });
