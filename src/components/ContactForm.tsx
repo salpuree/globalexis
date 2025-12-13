@@ -93,14 +93,14 @@ export function ContactForm() {
               will reach out to discuss how we can support your luxury transport business.
             </p>
 
-            <div className="space-y-6">
-              <div className="flex gap-5 items-start p-8 bg-dark-800/50 backdrop-blur-sm rounded-xl border border-amber-600/20 hover:border-amber-600/50 transition-colors">
-                <div className="p-3 bg-amber-600/10 rounded-lg">
-                  <Mail className="w-6 h-6 text-amber-400" />
+            <div className="space-y-4">
+              <div className="flex gap-4 items-start p-6 bg-dark-800/50 backdrop-blur-sm rounded-xl border border-amber-600/20 hover:border-amber-600/50 transition-colors">
+                <div className="p-2 bg-amber-600/10 rounded-lg flex-shrink-0">
+                  <Mail className="w-5 h-5 text-amber-400" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-white mb-2">Email Response</h3>
-                  <p className="text-gray-400">
+                  <h3 className="text-base font-semibold text-white mb-1">Email Response</h3>
+                  <p className="text-sm text-gray-400">
                     You'll receive a confirmation email immediately after submission
                   </p>
                 </div>
