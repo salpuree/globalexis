@@ -19,7 +19,7 @@ function App() {
     <div className="relative bg-dark-950 overflow-hidden" style={{ height: '100vh' }}>
       <Navigation />
 
-      <div className="fixed top-20 left-0 right-0 h-[calc(100vh-80px)] w-screen overflow-hidden">
+      <div className="fixed top-20 left-0 right-0 w-screen overflow-hidden" style={{ height: 'calc(100vh - 80px)' }}>
         <div
           ref={contentRef}
           className="h-full flex transition-transform duration-700 ease-out"
