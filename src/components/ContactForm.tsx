@@ -166,7 +166,7 @@ export function ContactForm() {
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-1.5">
                     Email Address *
                   </label>
                   <div className="relative">
@@ -184,7 +184,7 @@ export function ContactForm() {
                 </div>
 
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-gray-300 mb-2">
+                  <label htmlFor="phone" className="block text-sm font-medium text-gray-300 mb-1.5">
                     Phone Number
                   </label>
                   <div className="relative">
@@ -201,7 +201,7 @@ export function ContactForm() {
                 </div>
 
                 <div>
-                  <label htmlFor="service_interest" className="block text-sm font-medium text-gray-300 mb-2">
+                  <label htmlFor="service_interest" className="block text-sm font-medium text-gray-300 mb-1.5">
                     Service Interest *
                   </label>
                   <select
@@ -221,7 +221,7 @@ export function ContactForm() {
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-1.5">
                     Message *
                   </label>
                   <div className="relative">
