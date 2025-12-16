@@ -21,7 +21,7 @@ export function Navigation({ activeSection }: NavigationProps) {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth', inline: 'start' });
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
       setIsMobileMenuOpen(false);
     }
   };
@@ -64,8 +64,8 @@ export function Navigation({ activeSection }: NavigationProps) {
                     key={link.id}
                     onClick={() => scrollToSection(link.id)}
                     className={`transition-colors font-medium relative group ${isActive
-                        ? 'text-amber-400'
-                        : 'text-gray-300 hover:text-amber-400'
+                      ? 'text-amber-400'
+                      : 'text-gray-300 hover:text-amber-400'
                       }`}
                   >
                     {link.label}
@@ -119,8 +119,8 @@ export function Navigation({ activeSection }: NavigationProps) {
                     key={link.id}
                     onClick={() => scrollToSection(link.id)}
                     className={`text-left px-4 py-3 rounded-lg transition-all font-medium ${isActive
-                        ? 'text-amber-400 bg-dark-800'
-                        : 'text-gray-300 hover:text-amber-400 hover:bg-dark-800'
+                      ? 'text-amber-400 bg-dark-800'
+                      : 'text-gray-300 hover:text-amber-400 hover:bg-dark-800'
                       }`}
                   >
                     {link.label}

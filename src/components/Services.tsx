@@ -66,7 +66,7 @@ export function Services() {
     <section
       id="services"
       ref={sectionRef}
-      className="h-full w-full py-4 sm:py-8 lg:py-12 bg-gradient-to-b from-dark-900 to-dark-950 relative overflow-hidden border-b border-amber-600/10 flex flex-col justify-center"
+      className="w-full py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-dark-900 to-dark-950 relative overflow-hidden border-b border-amber-600/10"
     >
       {/* Animated background elements */}
       <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
@@ -103,12 +103,12 @@ export function Services() {
                 {/* Icon container */}
                 <div className="flex-shrink-0">
                   <div className={`relative flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 rounded-lg transition-all duration-500 group-hover:scale-105 border ${index % 3 === 0 ? 'bg-primary-600/20 group-hover:bg-primary-600/40 border-primary-600/30' :
-                      index % 3 === 1 ? 'bg-accent-600/20 group-hover:bg-accent-600/40 border-accent-600/30' :
-                        'bg-amber-600/20 group-hover:bg-amber-600/40 border-amber-600/30'
+                    index % 3 === 1 ? 'bg-accent-600/20 group-hover:bg-accent-600/40 border-accent-600/30' :
+                      'bg-amber-600/20 group-hover:bg-amber-600/40 border-amber-600/30'
                     }`}>
                     <Icon className={`w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 transition-colors ${index % 3 === 0 ? 'text-primary-400' :
-                        index % 3 === 1 ? 'text-accent-400' :
-                          'text-amber-400'
+                      index % 3 === 1 ? 'text-accent-400' :
+                        'text-amber-400'
                       }`} />
                   </div>
                 </div>
@@ -116,8 +116,8 @@ export function Services() {
                 {/* Text content */}
                 <div className="flex-1 min-w-0">
                   <h3 className={`text-sm sm:text-base lg:text-lg font-bold text-white mb-1 sm:mb-2 transition-colors duration-500 ${index % 3 === 0 ? 'group-hover:text-primary-400' :
-                      index % 3 === 1 ? 'group-hover:text-accent-400' :
-                        'group-hover:text-amber-400'
+                    index % 3 === 1 ? 'group-hover:text-accent-400' :
+                      'group-hover:text-amber-400'
                     }`}>
                     {service.title}
                   </h3>

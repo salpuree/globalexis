@@ -78,7 +78,7 @@ export function ContactForm() {
   ];
 
   return (
-    <section id="contact" className="h-full w-full py-6 sm:py-8 lg:py-12 bg-gradient-to-b from-dark-950 to-dark-900 relative overflow-hidden border-b border-amber-600/10 flex items-center justify-center">
+    <section id="contact" className="w-full py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-dark-950 to-dark-900 relative overflow-hidden border-b border-amber-600/10">
       <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">

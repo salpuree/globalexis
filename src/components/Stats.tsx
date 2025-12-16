@@ -71,7 +71,7 @@ export function Stats() {
     <section
       id="stats"
       ref={sectionRef}
-      className="h-full w-full pt-4 pb-4 sm:pt-6 sm:pb-6 lg:pt-8 lg:pb-8 bg-gradient-to-r from-dark-900 via-dark-950 to-dark-900 relative overflow-hidden border-y border-amber-600/10 flex items-center justify-center"
+      className="w-full py-16 sm:py-20 lg:py-24 bg-gradient-to-r from-dark-900 via-dark-950 to-dark-900 relative overflow-hidden border-y border-amber-600/10"
     >
       {/* Animated background effects */}
       <div className="absolute inset-0">
@@ -84,9 +84,8 @@ export function Stats() {
           {stats.map((stat, index) => (
             <div
               key={index}
-              className={`group relative text-center transition-all duration-500 ${
-                visibleItems.includes(index) ? 'animate-fade-in-up' : 'opacity-0'
-              }`}
+              className={`group relative text-center transition-all duration-500 ${visibleItems.includes(index) ? 'animate-fade-in-up' : 'opacity-0'
+                }`}
               style={{ animationDelay: `${index * 100}ms` }}
             >
               {/* Glowing background */}
@@ -96,20 +95,18 @@ export function Stats() {
               <div className={`relative p-10 rounded-lg transition-all duration-500 glass-pulse`}>
                 {/* Number with animation */}
                 <div className="mb-6">
-                  <span className={`text-5xl lg:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r ${
-                    index % 4 === 0 ? 'from-primary-400 to-amber-400' :
-                    index % 4 === 1 ? 'from-accent-400 to-amber-400' :
-                    index % 4 === 2 ? 'from-amber-400 to-primary-400' :
-                    'from-primary-400 to-accent-400'
-                  }`}>
+                  <span className={`text-5xl lg:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r ${index % 4 === 0 ? 'from-primary-400 to-amber-400' :
+                      index % 4 === 1 ? 'from-accent-400 to-amber-400' :
+                        index % 4 === 2 ? 'from-amber-400 to-primary-400' :
+                          'from-primary-400 to-accent-400'
+                    }`}>
                     {counters[index] || 0}
                   </span>
-                  <span className={`text-3xl font-bold ml-1 ${
-                    index % 4 === 0 ? 'text-primary-400' :
-                    index % 4 === 1 ? 'text-accent-400' :
-                    index % 4 === 2 ? 'text-amber-400' :
-                    'text-primary-400'
-                  }`}>
+                  <span className={`text-3xl font-bold ml-1 ${index % 4 === 0 ? 'text-primary-400' :
+                      index % 4 === 1 ? 'text-accent-400' :
+                        index % 4 === 2 ? 'text-amber-400' :
+                          'text-primary-400'
+                    }`}>
                     {stat.suffix}
                   </span>
                 </div>
@@ -120,12 +117,11 @@ export function Stats() {
                 </p>
 
                 {/* Top accent line */}
-                <div className={`absolute top-0 left-1/2 -translate-x-1/2 w-0 h-1 group-hover:w-12 transition-all duration-500 ${
-                  index % 4 === 0 ? 'bg-gradient-to-r from-primary-600 to-amber-400' :
-                  index % 4 === 1 ? 'bg-gradient-to-r from-accent-600 to-amber-400' :
-                  index % 4 === 2 ? 'bg-gradient-to-r from-amber-600 to-primary-400' :
-                  'bg-gradient-to-r from-primary-600 to-accent-400'
-                }`}></div>
+                <div className={`absolute top-0 left-1/2 -translate-x-1/2 w-0 h-1 group-hover:w-12 transition-all duration-500 ${index % 4 === 0 ? 'bg-gradient-to-r from-primary-600 to-amber-400' :
+                    index % 4 === 1 ? 'bg-gradient-to-r from-accent-600 to-amber-400' :
+                      index % 4 === 2 ? 'bg-gradient-to-r from-amber-600 to-primary-400' :
+                        'bg-gradient-to-r from-primary-600 to-accent-400'
+                  }`}></div>
               </div>
             </div>
           ))}

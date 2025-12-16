@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Navigation } from './components/Navigation';
 import { Hero } from './components/Hero';
 import { Stats } from './components/Stats';
@@ -7,36 +7,48 @@ import { WhyChooseUs } from './components/WhyChooseUs';
 import { HowItWorks } from './components/HowItWorks';
 import { ContactForm } from './components/ContactForm';
 import { Footer } from './components/Footer';
-import HorizontalSnapFlick from './components/HorizontalSnapFlick';
 
 function App() {
   const [activeSection, setActiveSection] = useState('hero');
 
-  const slides = [
-    { id: 'hero', content: <Hero /> },
-    { id: 'stats', content: <Stats /> },
-    { id: 'services', content: <Services /> },
-    { id: 'why-choose-us', content: <WhyChooseUs /> },
-    { id: 'how-it-works', content: <HowItWorks /> },
-    { id: 'contact', content: <ContactForm /> },
-    { id: 'footer', content: <Footer /> },
-  ];
+  // Track active section based on scroll position
+  useEffect(() => {
+    const sections = ['hero', 'stats', 'services', 'why-choose-us', 'how-it-works', 'contact', 'footer'];
 
-  const handleSlideChange = (_index: number, slideId: string) => {
-    setActiveSection(slideId);
-  };
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + 100;
+
+      for (const sectionId of sections) {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          const { offsetTop, offsetHeight } = element;
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            setActiveSection(sectionId);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll(); // Initial check
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <div className="relative bg-dark-950" style={{ height: '100vh', overflow: 'hidden' }}>
+    <div className="bg-dark-950">
       <Navigation activeSection={activeSection} />
 
-      <div style={{ height: 'calc(100vh - 80px)', marginTop: '80px' }}>
-        <HorizontalSnapFlick
-          slides={slides}
-          animationMs={500}
-          onSlideChange={handleSlideChange}
-        />
-      </div>
+      <main>
+        <Hero />
+        <Stats />
+        <Services />
+        <WhyChooseUs />
+        <HowItWorks />
+        <ContactForm />
+        <Footer />
+      </main>
     </div>
   );
 }

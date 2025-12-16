@@ -50,9 +50,9 @@ export function WhyChooseUs() {
 
   return (
     <section
-      id="why-us"
+      id="why-choose-us"
       ref={sectionRef}
-      className="h-full w-full py-4 sm:py-8 lg:py-12 bg-gradient-to-b from-dark-900 to-dark-950 relative overflow-hidden border-b border-amber-600/10 flex items-center"
+      className="w-full py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-dark-900 to-dark-950 relative overflow-hidden border-b border-amber-600/10"
     >
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-amber-600/30 to-transparent"></div>
 
@@ -85,9 +85,8 @@ export function WhyChooseUs() {
                 return (
                   <div
                     key={index}
-                    className={`flex gap-3 sm:gap-4 ${
-                      isVisible ? 'animate-slide-in-left' : 'opacity-0'
-                    }`}
+                    className={`flex gap-3 sm:gap-4 ${isVisible ? 'animate-slide-in-left' : 'opacity-0'
+                      }`}
                     style={{ animationDelay: `${index * 150}ms` }}
                   >
                     <div className={`flex-shrink-0 p-2.5 sm:p-3 lg:p-3.5 ${color.bg} rounded-lg h-fit`}>
